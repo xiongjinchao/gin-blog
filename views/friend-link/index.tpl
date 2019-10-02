@@ -3,7 +3,7 @@
 
 {{ define "content" }}
 
-    <div class="container-fluid container">
+    <div class="container-fluid">
         <div style="height:50px;"></div>
 
         <div class="card-group border-0 mt-5">

@@ -1,10 +1,10 @@
 {{ define "footer" }}
-    <div class="footer p-2">
-        <div class="float-right">
-            10GB of <strong>250GB</strong> Free.
-        </div>
-        <div>
-            <strong>Copyright</strong> Gin Blog
+    <div class="container-fluid p-0">
+        <div class="text-center">
+            <p>
+                30GB of <strong>40GB</strong> Free.
+                <strong>Copyright</strong> Gin Blog
+            </p>
         </div>
     </div>
 {{ end }}

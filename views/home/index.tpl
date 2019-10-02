@@ -3,7 +3,8 @@
 
 {{ define "content" }}
 
-<div id="main-carousel" class="carousel slide" data-ride="carousel">
+<div class="container-fluid p-0">
+    <div id="main-carousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#main-carousel" data-slide-to="0" class=""></li>
         <li data-target="#main-carousel" data-slide-to="1" class="active"></li>
@@ -74,7 +75,8 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<div class="container-fluid container">
+</div>
+<div class="container">
     <!-- Content here -->
     <div class="row mt-5">
         <div class="col-lg-12 text-center">
