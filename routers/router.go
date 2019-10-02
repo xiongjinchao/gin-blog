@@ -48,5 +48,28 @@ func Router() *gin.Engine {
 	home := &blog.Home{}
 	router.GET("/", home.Index)
 
+	// 文章
+	article := &blog.Article{}
+	router.GET("/article", article.Index)
+	router.GET("/article/category/:tag", article.Category)
+	router.GET("/article/detail/:id", article.Detail)
+
+	// 书籍
+	book := &blog.Book{}
+	router.GET("/book", book.Index)
+	router.GET("/book/detail", book.Detail)
+
+	// 友情链接
+	friendLink := &blog.FriendLink{}
+	router.GET("/friend-link", friendLink.Index)
+
+	// 我的收藏
+	collection := &blog.Collection{}
+	router.GET("/collection", collection.Index)
+
+	// 其他静态页
+	page := &blog.Page{}
+	router.GET("/about", page.About)
+
 	return router
 }
