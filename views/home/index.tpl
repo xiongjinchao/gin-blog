@@ -154,8 +154,8 @@
         </div>
     </div>
 
-    <div class="card-group mt-3">
-        <div class="card border-info border-0">
+    <div class="card-group article mt-3">
+        <div class="card border-0">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item border-0">
                     <span class="d-block github-title">Golang ORM</span>
@@ -179,7 +179,7 @@
                 </li>
             </ul>
         </div>
-        <div class="card border-info border-0">
+        <div class="card border-0">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item border-0">
                     <span class="d-block github-title">Golang redis</span>
@@ -216,29 +216,29 @@
             <small class="text-black-50">The internet event.</small>
         </div>
     </div>
-    <div class="card-group mt-3">
-        <div class="card border-info border-0">
+    <div class="card-group article mt-3">
+        <div class="card border-0">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item border-0">我的 Go 语言学习之路</li>
-                <li class="list-group-item border-0">GCTT：Go中文翻译组成立了，期待大家的加入</li>
-                <li class="list-group-item border-0">为什么80%的码农都做不了架构师？</li>
-                <li class="list-group-item border-0">架构师应该如何判断技术演进的方向？</li>
-                <li class="list-group-item border-0">为什么80%的码农都做不了架构师？</li>
-                <li class="list-group-item border-0">我的 Go 语言学习之路</li>
-                <li class="list-group-item border-0">GCTT：Go中文翻译组成立了，期待大家的加入</li>
-                <li class="list-group-item border-0">为什么80%的码农都做不了架构师？</li>
+                <li class="list-group-item border-0"><a href="#">我的 Go 语言学习之路</a><span class="float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="#">GCTT：Go中文翻译组成立了，期待大家的加入</a><span class="float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="#">架构师应该如何判断技术演进的方向？</a><span class="float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="#">我的 Go 语言学习之路</a><span class="float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="#">GCTT：Go中文翻译组成立了，期待大家的加入</a><span class="float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="float-right text-black-50">2019/10/01</span></li>
             </ul>
         </div>
-        <div class="card border-info border-0">
+        <div class="card border-0">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item border-0">我的 Go 语言学习之路</li>
-                <li class="list-group-item border-0">GCTT：Go中文翻译组成立了，期待大家的加入</li>
-                <li class="list-group-item border-0">为什么80%的码农都做不了架构师？</li>
-                <li class="list-group-item border-0">架构师应该如何判断技术演进的方向？</li>
-                <li class="list-group-item border-0">为什么80%的码农都做不了架构师？</li>
-                <li class="list-group-item border-0">我的 Go 语言学习之路</li>
-                <li class="list-group-item border-0">GCTT：Go中文翻译组成立了，期待大家的加入</li>
-                <li class="list-group-item border-0">为什么80%的码农都做不了架构师？</li>
+                <li class="list-group-item border-0"><a href="#">我的 Go 语言学习之路</a><span class="float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="#">GCTT：Go中文翻译组成立了，期待大家的加入</a><span class="float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="#">架构师应该如何判断技术演进的方向？</a><span class="float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="#">我的 Go 语言学习之路</a><span class="float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="#">GCTT：Go中文翻译组成立了，期待大家的加入</a><span class="float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="float-right text-black-50">2019/10/01</span></li>
             </ul>
         </div>
     </div>

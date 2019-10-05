@@ -38,7 +38,7 @@
                         <a class="nav-link" href="/friend-link">优秀博客</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/collection">我的收藏</a>
+                        <a class="nav-link" href="/collection">网址导航</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/about">Who is Susan?</a>
