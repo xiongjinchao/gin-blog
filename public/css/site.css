@@ -51,6 +51,6 @@ body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"å¾
 
 .content-left .card .media img{width:160px;background:#666}
 @media (max-width:576px ) {
-    .content-left .card .media img{width:140px;margin-left:0.5rem!important;}
+    .content-left .card .media img{width:120px;margin-left:0.5rem!important;}
     .content-left .card .media .media-summary{display:none}
 }
