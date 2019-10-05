@@ -48,3 +48,9 @@ body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"å¾
 .content-right .card .card-text{color:#999999;}
 
 .sub-container li.list-group-item:hover{background:#f3f3f4;}
+
+.content-left .card .media img{width:160px;background:#666}
+@media (max-width:576px ) {
+    .content-left .card .media img{width:140px;margin-left:0.5rem!important;}
+    .content-left .card .media .media-summary{display:none}
+}
