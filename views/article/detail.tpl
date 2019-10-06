@@ -55,6 +55,14 @@ func removeDuplicateElement(addrs []string) []string {
 
                     </textarea>
                 </div>
+                <div class="article-tips text-right">
+                    <i class="fa fa-tags"></i>
+                    <a href="#">Golang</a> <a href="#">Slice</a>
+                </div>
+                <div class="article-notice">
+                    <p class="mb-1">未经允许不得转载：转载以 <span class="text-primary">超链接形式</span> 并注明出处。</p>
+                    <p class="m-0">原文地址：<a class="text-primary" href="/article/detail/1">《【Golang】json自定义序列化的深入解析》</a> 发布于2019-09-13</p>
+                </div>
 
                 <div class="text-center mt-4">
                     <div class="navy-line"></div>
