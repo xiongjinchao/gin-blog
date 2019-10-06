@@ -1,5 +1,6 @@
 {{ define "css" }}
     <link rel="stylesheet" href="/public/plug-in/editor-md/css/editormd.preview.css" />
+    <link rel="stylesheet" href="/public/plug-in/editor-md/css/tomorrow-night-eighties.css">
 {{ end }}
 
 {{ define "content" }}
