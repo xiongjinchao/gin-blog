@@ -50,7 +50,16 @@ body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"�
 .sub-container li.list-group-item:hover{background:#f3f3f4;}
 
 .content-left .card .media img{width:160px;background:#666}
+
+
+/*文章详情*/
+.article-title{font-size:1.75rem;margin:1rem 0;}
+.article-icon span{margin-right:1rem;color:#999999;font-size:.875rem;}
+
+/*小屏样式*/
 @media (max-width:576px ) {
+    .card-time{display: none}
     .content-left .card .media img{width:120px;margin-left:0.5rem!important;}
     .content-left .card .media .media-summary{display:none}
+    .article-title{font-size:1.25rem;}
 }
