@@ -64,10 +64,15 @@ a:hover{color:#007bff}
 .article-icon span{margin-right:1rem;color:#999999;font-size:.875rem;}
 .article-icon span a{color:#999999}
 
+/*代码高亮*/
+.editormd-html-preview pre{background:#2d2d2d;overflow:auto;}
+.editormd-html-preview ol.linenums li{border-left:1px solid #4d4d4d;}
+
 /*小屏样式*/
 @media (max-width:576px ) {
     .card-time{display: none}
     .content-left .card .media img{width:120px;margin-left:0.5rem!important;}
     .content-left .card .media .media-summary{display:none}
     .article-title{font-size:1.25rem;}
+    .editormd-html-preview ol.linenums li {min-width:1024px;}
 }
