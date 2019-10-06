@@ -14,6 +14,7 @@
                     <span><a href="#"><i class="fa fa-eye"></i> 520</a></span>
                     <span><a href="#"><i class="fa fa-comment-o"></i> 3</a></span>
                     <span><a href="#"><i class="fa fa-heart-o"></i> 100</a></span>
+                    <span><i class="fa fa-clock-o"></i> 2019-10-01</span>
                 </div>
                 <div id="article-content" class="article-content">
                     <textarea style="display:none;">> golang标准库本身没有提供一个去除slice中重复元素的函数，需要自己去实现。今天读源码时发现了一个，算是比较优秀的技巧了，如果你有更好的办法，欢迎讨论！
@@ -60,8 +61,8 @@ func removeDuplicateElement(addrs []string) []string {
                     <a href="#">Golang</a> <a href="#">Slice</a>
                 </div>
                 <div class="article-notice">
-                    <p class="mb-1">未经允许不得转载：转载以 <span class="text-primary">超链接形式</span> 并注明出处。</p>
-                    <p class="m-0">原文地址：<a class="text-primary" href="/article/detail/1">《【Golang】json自定义序列化的深入解析》</a> 发布于2019-09-13</p>
+                    <p class="mb-1">未经允许不得转载：转载以<span class="text-primary">超链接形式</span>并注明出处。</p>
+                    <p class="m-0">原文地址：<a class="text-primary" href="/article/detail/1">《【Golang】json自定义序列化的深入解析》</a></p>
                 </div>
 
                 <div class="text-center mt-4">
