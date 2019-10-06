@@ -175,13 +175,15 @@
                     </ul>
                 </div>
 
-                <ul class="pagination mt-4">
-                    <li class="page-item disabled"><a class="page-link" href="#">«</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">»</a></li>
-                </ul>
+                <div class="row justify-content-center mt-4">
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a class="page-link" href="#">«</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">»</a></li>
+                    </ul>
+                </div>
 
             </div>
             <div class="col-lg-3 content-right">

@@ -1,6 +1,6 @@
 /** 首页样式 **/
 body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"微软雅黑";color:#333333;}
-.footer{font-size:.875rem}
+.footer a{font-size:.875rem;color:rgba(255,255,255,.5);padding:0 .25rem;}
 
 /*导航*/
 .navbar a.navbar-brand{font-size:1.125rem}
