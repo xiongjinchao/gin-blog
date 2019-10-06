@@ -1,10 +1,8 @@
 {{ define "footer" }}
-    <div class="container-fluid p-0">
-        <div class="text-center">
-            <p>
-                30GB of <strong>40GB</strong> Free.
-                <strong>Copyright</strong> Gin Blog
-            </p>
+    <div class="container-fluid p-0 bg-dark">
+        <div class="footer text-center text-white-50 py-4">
+            <p class="mb-0"><a href="/">首页</a>·<a href="/">杂谈</a>·<a href="/">技术手册</a>·<a href="/">资讯</a>·<a href="/">优秀博客</a>·<a href="/">网址导航</a>·<a href="/">关于我</a></p>
+            <p class="mb-0">Copyright©2019 www.susan.org.cn all rights reserved. 冀ICP备11037862</p>
         </div>
     </div>
 {{ end }}

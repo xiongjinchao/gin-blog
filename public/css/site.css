@@ -1,5 +1,6 @@
 /** 首页样式 **/
 body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"微软雅黑";color:#333333;}
+.footer{font-size:.875rem}
 
 /*导航*/
 .navbar a.navbar-brand{font-size:1.125rem}
@@ -16,8 +17,10 @@ body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"�
 #main-carousel .btn{font-size:.875rem;}
 
 /*大标题*/
-.navy-title{font-size:1.75rem;font-weight:500;}
-.navy-line{width: 60px;height: 1px;margin: 0 auto;border-bottom: 2px solid #007bff;margin-bottom:1rem;}
+.navy-title{font-size:1.75rem;font-weight:500;margin-top:1rem;}
+.navy-title .active{color:#007bff}
+.navy-line{width: 60px;height: 1px;margin: 0 auto;border-bottom: 2px solid #007bff;}
+
 /*卡片*/
 .card-text{font-size:.875rem}
 .github-title{font-size:1rem;font-weight:200;}
@@ -26,6 +29,8 @@ body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"�
 .article .list-group-item{padding:.25rem 1.25rem .25rem 0;font-size:.875rem;}
 
 /*链接效果*/
+a{color:#333333;}
+a:hover{color:#007bff}
 .card a{text-decoration:underline;}
 
 
@@ -34,11 +39,14 @@ body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"�
 /**子页面**/
 .sub-container{margin-top:5rem;}
 .banner img,.media img{border-radius:.25rem;}
+
 /*文章列表*/
 .content-left .card.article-list .list-group-item{padding:.75rem;}
 .content-left .card.article-list .list-group-item .media-body h5{font-size:1rem;font-weight:600;}
 .content-left .card.article-list .list-group-item .media-body p{font-size:.875rem;color:#999999;}
 .content-left .card.article-list .list-group-item .media-body p span{margin-right:1rem;}
+.content-left .card .media img{width:160px;background:#666}
+.sub-container .card li.list-group-item:hover{background:#f8f9fa;}
 
 .content-right .card .card-footer{font-size:.875rem;font-weight:normal;color:#666666;}
 .content-right .card .card-footer span{margin:0 .4rem;}
@@ -47,14 +55,13 @@ body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"�
 .content-right .card .card-title span{font-weight:bold;}
 .content-right .card .card-text{color:#999999;}
 
-.sub-container li.list-group-item:hover{background:#f3f3f4;}
 
-.content-left .card .media img{width:160px;background:#666}
 
 
 /*文章详情*/
 .article-title{font-size:1.75rem;margin:1rem 0;}
 .article-icon span{margin-right:1rem;color:#999999;font-size:.875rem;}
+.article-icon span a{color:#999999}
 
 /*小屏样式*/
 @media (max-width:576px ) {

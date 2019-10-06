@@ -13,7 +13,7 @@
                 <div class="text-center mt-4">
                     <div class="navy-line"></div>
                     <h1 class="font-weight-light navy-title">
-                        首页 / 笔记 / 杂谈
+                        首页 / 笔记 / <span class="active">杂谈</span>
                     </h1>
                     <small class="text-black-50">Stand on daniel's shoulders.</small>
                 </div>
@@ -25,7 +25,11 @@
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="/article/detail/1">GCTT：Go中文翻译组成立了，期待大家的加入</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart"></i> 100</span></p>
+                                    <p class="mb-1 media-icon">
+                                        <span><i class="fa fa-eye"></i> 520</span>
+                                        <span><i class="fa fa-comment-o"></i> 3</span>
+                                        <span><i class="fa fa-heart-o"></i> 100</span>
+                                    </p>
                                 </div>
                                 <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
                             </div>
@@ -36,7 +40,11 @@
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="#">PHP与Golang如何通信</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart"></i> 100</span></p>
+                                    <p class="mb-1 media-icon">
+                                        <span><i class="fa fa-eye"></i> 520</span>
+                                        <span><i class="fa fa-comment-o"></i> 3</span>
+                                        <span><i class="fa fa-heart-o"></i> 100</span>
+                                    </p>
                                 </div>
                                 <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
                             </div>
@@ -46,7 +54,11 @@
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="#">Rabin-Karp算法在go的实现</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart"></i> 100</span></p>
+                                    <p class="mb-1 media-icon">
+                                        <span><i class="fa fa-eye"></i> 520</span>
+                                        <span><i class="fa fa-comment-o"></i> 3</span>
+                                        <span><i class="fa fa-heart-o"></i> 100</span>
+                                    </p>
                                 </div>
                                 <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
                             </div>
@@ -56,7 +68,11 @@
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="#">你离告别GOPATH只差一步</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart"></i> 100</span></p>
+                                    <p class="mb-1 media-icon">
+                                        <span><i class="fa fa-eye"></i> 520</span>
+                                        <span><i class="fa fa-comment-o"></i> 3</span>
+                                        <span><i class="fa fa-heart-o"></i> 100</span>
+                                    </p>
                                 </div>
                             </div>
                         </li>
@@ -65,7 +81,11 @@
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="#">如何使用 Golang 日志监控你的应用程序</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart"></i> 100</span></p>
+                                    <p class="mb-1 media-icon">
+                                        <span><i class="fa fa-eye"></i> 520</span>
+                                        <span><i class="fa fa-comment-o"></i> 3</span>
+                                        <span><i class="fa fa-heart-o"></i> 100</span>
+                                    </p>
                                 </div>
                                 <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
                             </div>
@@ -75,7 +95,11 @@
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="#">Rabin-Karp算法在go的实现</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart"></i> 100</span></p>
+                                    <p class="mb-1 media-icon">
+                                        <span><i class="fa fa-eye"></i> 520</span>
+                                        <span><i class="fa fa-comment-o"></i> 3</span>
+                                        <span><i class="fa fa-heart-o"></i> 100</span>
+                                    </p>
                                 </div>
                                 <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
                             </div>
@@ -85,7 +109,11 @@
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="#">你离告别GOPATH只差一步</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart"></i> 100</span></p>
+                                    <p class="mb-1 media-icon">
+                                        <span><i class="fa fa-eye"></i> 520</span>
+                                        <span><i class="fa fa-comment-o"></i> 3</span>
+                                        <span><i class="fa fa-heart-o"></i> 100</span>
+                                    </p>
                                 </div>
                             </div>
                         </li>
@@ -94,7 +122,11 @@
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="#">如何使用 Golang 日志监控你的应用程序</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart"></i> 100</span></p>
+                                    <p class="mb-1 media-icon">
+                                        <span><i class="fa fa-eye"></i> 520</span>
+                                        <span><i class="fa fa-comment-o"></i> 3</span>
+                                        <span><i class="fa fa-heart-o"></i> 100</span>
+                                    </p>
                                 </div>
                                 <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
                             </div>
@@ -104,7 +136,11 @@
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="#">Rabin-Karp算法在go的实现</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart"></i> 100</span></p>
+                                    <p class="mb-1 media-icon">
+                                        <span><i class="fa fa-eye"></i> 520</span>
+                                        <span><i class="fa fa-comment-o"></i> 3</span>
+                                        <span><i class="fa fa-heart-o"></i> 100</span>
+                                    </p>
                                 </div>
                                 <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
                             </div>
@@ -114,7 +150,11 @@
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="#">你离告别GOPATH只差一步</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart"></i> 100</span></p>
+                                    <p class="mb-1 media-icon">
+                                        <span><i class="fa fa-eye"></i> 520</span>
+                                        <span><i class="fa fa-comment-o"></i> 3</span>
+                                        <span><i class="fa fa-heart-o"></i> 100</span>
+                                    </p>
                                 </div>
                             </div>
                         </li>
@@ -123,13 +163,25 @@
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="#">如何使用 Golang 日志监控你的应用程序</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart"></i> 100</span></p>
+                                    <p class="mb-1 media-icon">
+                                        <span><i class="fa fa-eye"></i> 520</span>
+                                        <span><i class="fa fa-comment-o"></i> 3</span>
+                                        <span><i class="fa fa-heart-o"></i> 100</span>
+                                    </p>
                                 </div>
                                 <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
                             </div>
                         </li>
                     </ul>
                 </div>
+
+                <ul class="pagination mt-4">
+                    <li class="page-item disabled"><a class="page-link" href="#">«</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">»</a></li>
+                </ul>
 
             </div>
             <div class="col-lg-3 content-right">

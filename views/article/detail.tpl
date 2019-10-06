@@ -9,7 +9,12 @@
         <div class="row">
             <div class="col-lg-9 content-left mb-4">
                 <h1 class="article-title text-center">【Golang】json自定义序列化的深入解析</h1>
-                <div class="article-icon text-center"><span>来源：简书</span><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart"></i> 100</span></div>
+                <div class="article-icon text-center">
+                    <span>来源：<a href="#">简书</a></span>
+                    <span><a href="#"><i class="fa fa-eye"></i> 520</a></span>
+                    <span><a href="#"><i class="fa fa-comment-o"></i> 3</a></span>
+                    <span><a href="#"><i class="fa fa-heart-o"></i> 100</a></span>
+                </div>
                 <div id="article-content" class="article-content">
                     <textarea style="display:none;">> golang标准库本身没有提供一个去除slice中重复元素的函数，需要自己去实现。今天读源码时发现了一个，算是比较优秀的技巧了，如果你有更好的办法，欢迎讨论！
 
