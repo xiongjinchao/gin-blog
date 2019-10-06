@@ -66,7 +66,7 @@ a:hover{color:#007bff}
 .article-icon span a{color:#999999}
 .article-tips{font-size:.875rem;padding:1rem 0 .5rem 0;color:#999999}
 .article-tips a{color:#999999;text-decoration:underline}
-.article-notice{padding:1rem;border:1px solid rgba(0,0,0,.125);background:#ffffff;border-radius:.25rem;font-size:.875rem;color:#999999}
+.article-notice{padding:1rem .5rem;border:1px solid rgba(0,0,0,.125);background:#ffffff;border-radius:.25rem;font-size:.875rem;color:#999999}
 
 /*代码高亮*/
 .editormd-html-preview pre{background:#2d2d2d;overflow:auto;}

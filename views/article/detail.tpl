@@ -10,7 +10,6 @@
             <div class="col-lg-9 content-left mb-4">
                 <h1 class="article-title text-center">【Golang】json自定义序列化的深入解析</h1>
                 <div class="article-icon text-center">
-                    <span>来源：<a href="#">简书</a></span>
                     <span><a href="#"><i class="fa fa-eye"></i> 520</a></span>
                     <span><a href="#"><i class="fa fa-comment-o"></i> 3</a></span>
                     <span><a href="#"><i class="fa fa-heart-o"></i> 100</a></span>
