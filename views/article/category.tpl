@@ -197,7 +197,7 @@
                         <h5 class="card-title mt-2 mb-0">
                             <span>关于我</span>
                         </h5>
-                        <small>PHPer GOPer</small>
+                        <small>PHPer Gopher</small>
                         <p class="card-text mt-4">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
                     </div>
                     <div class="card-footer bg-transparent text-center">
