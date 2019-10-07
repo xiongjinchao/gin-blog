@@ -68,9 +68,9 @@ a:hover{color:#007bff}
 .article-tips a{color:#999999;text-decoration:underline}
 .article-notice{padding:1rem .5rem;border:1px solid rgba(0,0,0,.125);background:#ffffff;border-radius:.25rem;font-size:.875rem;color:#999999}
 
-/*代码高亮*/
-.editormd-html-preview pre{background:#2d2d2d;overflow:auto;}
-.editormd-html-preview ol.linenums li{border-left:1px solid #4d4d4d;}
+/*代码高亮左右滚动*/
+pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow:auto!important;background:#2d2d2d!important;}
+pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;}
 
 /*小屏样式*/
 @media (max-width:576px ) {
@@ -78,5 +78,4 @@ a:hover{color:#007bff}
     .content-left .card .media img{width:120px;margin-left:0.5rem!important;}
     .content-left .card .media .media-summary{display:none}
     .article-title{font-size:1.25rem;}
-    .editormd-html-preview ol.linenums li {min-width:1024px;}
 }
