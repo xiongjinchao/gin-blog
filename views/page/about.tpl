@@ -5,6 +5,9 @@
 
     <div class="container">
         <div style="height:50px;"></div>
+                冬夜读书示子聿
+        古人学问无遗力，少壮工夫老始成。
+        纸上得来终觉浅，绝知此事要躬行。
 
         <div class="card-group border-0 mt-5">
             <div class="card border-0">
