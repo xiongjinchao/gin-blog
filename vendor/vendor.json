@@ -86,7 +86,6 @@
 			"revision": "71201497bace774495daed26a3874fd339e0b538",
 			"revisionTime": "2017-03-27T19:17:03Z"
 		},
-
 		{
 			"checksumSHA1": "aNZPEOjiyAgS+Y0n19AF8vimMc4=",
 			"path": "github.com/go-sql-driver/mysql",
