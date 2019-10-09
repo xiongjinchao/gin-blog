@@ -27,7 +27,8 @@ body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"�
 .github-title{font-size:1rem;font-weight:200;}
 
 /*文章列表*/
-.article .list-group-item{padding:.25rem 1.25rem .25rem 0;font-size:.875rem;}
+.component.component-right{text-align:right}
+.component .list-group-item,.article .list-group-item{padding:.5rem 0;font-size:.875rem;}
 
 /*链接效果*/
 a{color:#333333;}
@@ -74,6 +75,8 @@ pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;}
 
 /*小屏样式*/
 @media (max-width:576px ) {
+    .component.component-image{display: none}
+    .component.component-right{text-align:left!important;}
     .card-time{display: none}
     .content-left .card .media img{width:120px;margin-left:0.5rem!important;}
     .content-left .card .media .media-summary{display:none}

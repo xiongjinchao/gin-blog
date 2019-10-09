@@ -154,7 +154,7 @@
         </div>
     </div>
 
-    <div class="card-group article mt-3">
+    <div class="card-group component mt-3">
         <div class="card border-0">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item border-0">
@@ -179,7 +179,10 @@
                 </li>
             </ul>
         </div>
-        <div class="card border-0">
+        <div class="card component component-image border-0 m-auto">
+            <img src="/public/image/gin-admin.png" class="card-img-top" alt="...">
+        </div>
+        <div class="card border-0 component component-right">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item border-0">
                     <span class="d-block github-title">Golang redis</span>
@@ -218,8 +221,8 @@
     </div>
     <div class="card-group article mt-3">
         <div class="card border-0">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item border-0"><a href="#">我的 Go 语言学习之路</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
+            <ul class="list-group list-group-flush pr-lg-4">
+                <li class="list-group-item border-0 clearfix"><a href="#">我的 Go 语言学习之路</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
                 <li class="list-group-item border-0"><a href="#">Go中文翻译组成立了，期待大家的加入</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
                 <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
                 <li class="list-group-item border-0"><a href="#">架构师应该如何判断技术演进的方向？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
@@ -230,7 +233,7 @@
             </ul>
         </div>
         <div class="card border-0">
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush pl-lg-4">
                 <li class="list-group-item border-0"><a href="#">我的 Go 语言学习之路</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
                 <li class="list-group-item border-0"><a href="#">Go中文翻译组成立了，期待大家的加入</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
                 <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
