@@ -10,7 +10,7 @@ body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"�
 .navbar-toggler{font-size:.875rem}
 
 /*轮播*/
-#main-carousel {margin-top:3.12rem;}
+#main-carousel {margin-top:3.325rem;}
 #main-carousel .carousel-item {height:320px;}
 #main-carousel .carousel-caption{width:100%;height:100%;background:url("/public/image/background.png") repeat;top:0;left:0;padding:60px 15% 0 15%;z-index:1;}
 #main-carousel h1{font-size:1.75rem}
@@ -39,14 +39,17 @@ a:hover{color:#007bff}
 
 
 /**子页面**/
-.sub-container{margin-top:5rem;}
+.sub-container{margin-top:3.325rem;}
 .banner img,.media img{border-radius:.25rem;}
 
 /*文章列表*/
+.content-left,.content-right{margin-top:2rem;}
 .content-left .card.article-list .list-group-item{padding:.75rem;}
 .content-left .card.article-list .list-group-item .media-body h5{font-size:1rem;font-weight:600;}
 .content-left .card.article-list .list-group-item .media-body p{font-size:.875rem;color:#999999;}
-.content-left .card.article-list .list-group-item .media-body p span{margin-right:1rem;}
+.content-left .card.article-list .list-group-item .media-body .media-icon{float:left}
+.content-left .card.article-list .list-group-item .media-body .media-tag{float:right;}
+.content-left .card.article-list .list-group-item .media-body .media-icon span{color:#cccccc;margin-right:.5rem;}
 .content-left .card .media img{width:160px;background:#666}
 .sub-container .card li.list-group-item:hover{background:#f8f9fa;}
 
@@ -56,8 +59,9 @@ a:hover{color:#007bff}
 .content-right .card .card-title{font-size:1rem;}
 .content-right .card .card-title span{font-weight:bold;}
 .content-right .card .card-text{color:#999999;}
-.avatar{transition: all 1.0s;}
-.avatar:hover{transform: rotate(180deg);}
+.about .avatar{transition:all 1.0s;}
+.about .avatar:hover{transform:rotate(180deg);}
+.about small{color:#cccccc;}
 
 
 
