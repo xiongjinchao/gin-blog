@@ -36,7 +36,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
+                                <img src="http://www.daqianduan.com/wp-content/uploads/2017/08/git.jpg" class="ml-3">
                             </div>
                         </li>
 
@@ -56,7 +56,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
+                                <img src="http://www.daqianduan.com/wp-content/uploads/2018/11/256ad38c1b2e77dfd6004f0b129ac840-220x150.jpg" class="ml-3">
                             </div>
                         </li>
                         <li class="list-group-item">
@@ -75,7 +75,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
+                                <img src="http://www.daqianduan.com/wp-content/uploads/2014/10/aliyun.jpg" class="ml-3">
                             </div>
                         </li>
                         <li class="list-group-item">
@@ -158,7 +158,7 @@
                                         <span><i class="fa fa-heart-o"></i> 100</span>
                                     </p>
                                 </div>
-                                <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
+                                <img src="http://www.daqianduan.com/wp-content/uploads/2014/10/aliyun.jpg" class="ml-3">
                             </div>
                         </li>
                         <li class="list-group-item">
@@ -199,7 +199,7 @@
                                         <span><i class="fa fa-heart-o"></i> 100</span>
                                     </p>
                                 </div>
-                                <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
+                                <img src="http://www.daqianduan.com/wp-content/uploads/2017/08/git.jpg" class="ml-3">
                             </div>
                         </li>
                     </ul>
