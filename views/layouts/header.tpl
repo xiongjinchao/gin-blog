@@ -47,8 +47,37 @@
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="搜索..." aria-label="Search">
                     <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i> 搜索</button>
+                    <button class="btn btn-outline-info my-2 ml-2 my-sm-0 login-btn" type="button" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user-o"></i> 登录</button>
                 </form>
             </div>
         </nav>
     </div>
+
+    <!-- 登录模态框 -->
+    <div class="modal fade" id="loginModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">登录</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <p>请使用下面的方式登录</p>
+                        <p style="font-size:2rem;">
+                            <span class="d-inline-block bg-primary" style="width:3rem;height:3rem;border-radius:50%"><i class="fa fa-qq text-white"></i></span>
+                            <span class="d-inline-block bg-danger" style="width:3rem;height:3rem;border-radius:50%"><i class="fa fa-weibo text-white"></i></span>
+                            <span class="d-inline-block bg-success" style="width:3rem;height:3rem;border-radius:50%"><i class="fa fa-wechat text-white"></i></span>
+                            <span class="d-inline-block bg-info" style="width:3rem;height:3rem;border-radius:50%"><i class="fa fa-github-alt text-white"></i></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 登录模态框 -->
+
 {{ end }}
