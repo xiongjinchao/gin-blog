@@ -46,6 +46,7 @@ a:hover{color:#007bff}
 .content-left,.content-right{margin-top:2rem;}
 .content-left .card.article-list .list-group-item{padding:.75rem;}
 .content-left .card.article-list .list-group-item .media-body h5{font-size:1rem;font-weight:600;}
+.content-left .card.article-list .list-group-item .media-body .media-summary{height:3.5rem}
 .content-left .card.article-list .list-group-item .media-body p{font-size:.875rem;color:#999999;}
 .content-left .card.article-list .list-group-item .media-body p span{color:#cccccc;margin-right:.5rem;}
 .content-left .card.article-list .list-group-item .media-body .media-icon{float:left}
@@ -73,7 +74,7 @@ a:hover{color:#007bff}
 .article-title{font-size:1.75rem;margin:1rem 0;}
 .article-icon span{margin-right:1rem;color:#999999;font-size:.875rem;}
 .article-icon span a{color:#999999}
-.article-tips{font-size:.875rem;padding:1rem 0 .5rem 0;color:#999999}
+.article-tips{font-size:.875rem;padding:.5rem 0;color:#999999}
 .article-tips a{color:#999999;text-decoration:underline}
 .article-notice{padding:1rem;border:1px solid rgba(0,0,0,.125);background:#ffffff;border-radius:.25rem;font-size:.875rem;color:#999999}
 
@@ -87,8 +88,10 @@ pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;}
     .component.component-right{text-align:left!important;}
     .card-time{display: none}
     .content-left .card .media img{width:120px;margin-left:0.5rem!important;}
+    .content-left .card.article-list .list-group-item .media-body h5{height:3.75rem;}
     .content-left .card .media .media-summary{display:none}
     .content-left .card .media .media-body .media-tag{display:none}
-    .article-title{font-size:1.25rem;}
+    .article-detail{border:none;padding:0;}
+    .article-title{font-size:1.25rem;margin:0}
     .article-notice{display:none;}
 }
