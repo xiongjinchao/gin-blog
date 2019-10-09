@@ -8,15 +8,16 @@
     <div class="container sub-container">
         <div class="row">
             <div class="col-lg-9 content-left mb-4">
-                <h1 class="article-title text-center">【Golang】json自定义序列化的深入解析</h1>
-                <div class="article-icon text-center">
-                    <span><a href="#"><i class="fa fa-eye"></i> 520</a></span>
-                    <span><a href="#"><i class="fa fa-comment-o"></i> 3</a></span>
-                    <span><a href="#"><i class="fa fa-heart-o"></i> 100</a></span>
-                    <span><i class="fa fa-clock-o"></i> 2019-10-01</span>
-                </div>
-                <div id="article-content" class="article-content">
-                    <textarea style="display:none;">> golang标准库本身没有提供一个去除slice中重复元素的函数，需要自己去实现。今天读源码时发现了一个，算是比较优秀的技巧了，如果你有更好的办法，欢迎讨论！
+                <div class="article-detail">
+                    <h1 class="article-title text-center">【Golang】json自定义序列化的深入解析</h1>
+                    <div class="article-icon text-center">
+                        <span><a href="#"><i class="fa fa-eye"></i> 520</a></span>
+                        <span><a href="#"><i class="fa fa-comment-o"></i> 3</a></span>
+                        <span><a href="#"><i class="fa fa-heart-o"></i> 100</a></span>
+                        <span><i class="fa fa-clock-o"></i> 2019-10-01</span>
+                    </div>
+                    <div id="article-content" class="article-content">
+                        <textarea style="display:none;">> golang标准库本身没有提供一个去除slice中重复元素的函数，需要自己去实现。今天读源码时发现了一个，算是比较优秀的技巧了，如果你有更好的办法，欢迎讨论！
 
 另外让我们看一下空struct的作用，他之前一直没有被我重视，看来以后要多审视自己的coding了！
 
@@ -53,15 +54,15 @@ func removeDuplicateElement(addrs []string) []string {
 
 - 空struct不占内存空间，可谓巧妙。
 
-                    </textarea>
+                        </textarea>
+                    </div>
                 </div>
                 <div class="article-tips text-right">
                     <i class="fa fa-tags"></i>
                     <a href="#">Golang</a> <a href="#">Slice</a>
                 </div>
                 <div class="article-notice">
-                    <p class="mb-1">未经允许不得转载：转载以<span class="text-primary">超链接形式</span>并注明出处。</p>
-                    <p class="m-0">原文地址：<a class="text-primary" href="/article/detail/1">《【Golang】json自定义序列化的深入解析》</a></p>
+                    <p class="m-0"><i class="fa fa-info-circle"></i> 未经允许不得转载：转载以<span class="text-primary">超链接形式</span>并注明出处。原文地址：<a class="text-primary" href="/article/detail/1">《【Golang】json自定义序列化的深入解析》</a></p>
                 </div>
 
                 <div class="text-center mt-4">
@@ -107,15 +108,14 @@ func removeDuplicateElement(addrs []string) []string {
                         <p class="card-text">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a href="#">Rabin-Karp算法在go的实现</a></li>
-                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a></li>
-                        <li class="list-group-item"><a href="#">go平滑重启调研选型和项目实践</a></li>
-                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a></li>
-                        <li class="list-group-item"><a href="#">go平滑重启调研选型和项目实践</a></li>
-                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a></li>
-                        <li class="list-group-item"><a href="#">go平滑重启调研选型和项目实践</a></li>
-                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a></li>
-                        <li class="list-group-item"><a href="#">go平滑重启调研选型和项目实践</a></li>
+                        <li class="list-group-item"><a href="#">Rabin-Karp算法在go的实现</a><br/><span>阅读 120</span></li>
+                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a><br/><span>阅读 120</span></li>
+                        <li class="list-group-item"><a href="#">go平滑重启调研选型和项目实践</a><br/><span>阅读 120</span></li>
+                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a><br/><span>阅读 120</span></li>
+                        <li class="list-group-item"><a href="#">go平滑重启调研选型和项目实践</a><br/><span>阅读 120</span></li>
+                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a><br/><span>阅读 120</span></li>
+                        <li class="list-group-item"><a href="#">go平滑重启调研选型和项目实践</a><br/><span>阅读 120</span></li>
+                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a><br/><span>阅读 120</span></li>
                     </ul>
                 </div>
 

@@ -47,15 +47,16 @@ a:hover{color:#007bff}
 .content-left .card.article-list .list-group-item{padding:.75rem;}
 .content-left .card.article-list .list-group-item .media-body h5{font-size:1rem;font-weight:600;}
 .content-left .card.article-list .list-group-item .media-body p{font-size:.875rem;color:#999999;}
+.content-left .card.article-list .list-group-item .media-body p span{color:#cccccc;margin-right:.5rem;}
 .content-left .card.article-list .list-group-item .media-body .media-icon{float:left}
 .content-left .card.article-list .list-group-item .media-body .media-tag{float:right;}
-.content-left .card.article-list .list-group-item .media-body .media-icon span{color:#cccccc;margin-right:.5rem;}
 .content-left .card .media img{width:160px;background:#666}
 .sub-container .card li.list-group-item:hover{background:#f8f9fa;}
 
 .content-right .card .card-footer{font-size:.875rem;font-weight:normal;color:#666666;}
 .content-right .card .card-footer span{margin:0 .4rem;}
-.content-right .card .list-group-item{font-size:.875rem;}
+.content-right .card .list-group-item{font-size:.875rem;padding:.5rem 1rem;}
+.content-right .card .list-group-item span{color:#cccccc;}
 .content-right .card .card-title{font-size:1rem;}
 .content-right .card .card-title span{font-weight:bold;}
 .content-right .card .card-text{color:#999999;}
@@ -67,13 +68,14 @@ a:hover{color:#007bff}
 
 
 /*文章详情*/
-#article-content{padding:1rem 0 0 0}
+.article-detail{padding:.5rem 1rem 1rem 1rem;border:1px solid rgba(0,0,0,.125);border-radius:.25rem;background:#ffffff;}
+#article-content{margin-top:2rem;padding:0;}
 .article-title{font-size:1.75rem;margin:1rem 0;}
 .article-icon span{margin-right:1rem;color:#999999;font-size:.875rem;}
 .article-icon span a{color:#999999}
 .article-tips{font-size:.875rem;padding:1rem 0 .5rem 0;color:#999999}
 .article-tips a{color:#999999;text-decoration:underline}
-.article-notice{padding:1rem .5rem;border:1px solid rgba(0,0,0,.125);background:#ffffff;border-radius:.25rem;font-size:.875rem;color:#999999}
+.article-notice{padding:1rem;border:1px solid rgba(0,0,0,.125);background:#ffffff;border-radius:.25rem;font-size:.875rem;color:#999999}
 
 /*代码高亮左右滚动*/
 pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow:auto!important;background:#2d2d2d!important;}
@@ -86,5 +88,7 @@ pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;}
     .card-time{display: none}
     .content-left .card .media img{width:120px;margin-left:0.5rem!important;}
     .content-left .card .media .media-summary{display:none}
+    .content-left .card .media .media-body .media-tag{display:none}
     .article-title{font-size:1.25rem;}
+    .article-notice{display:none;}
 }
