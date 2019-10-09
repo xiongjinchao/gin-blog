@@ -192,7 +192,7 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <div class="avatar">
-                            <img class="rounded-circle mx-auto d-block" src="/public/image/avatar.jpg">
+                            <img class="rounded-circle mx-auto d-block avatar" src="/public/image/avatar.jpg">
                         </div>
                         <h5 class="card-title mt-2 mb-0">
                             <span>关于我</span>

@@ -56,6 +56,8 @@ a:hover{color:#007bff}
 .content-right .card .card-title{font-size:1rem;}
 .content-right .card .card-title span{font-weight:bold;}
 .content-right .card .card-text{color:#999999;}
+.avatar{transition: all 1.0s;}
+.avatar:hover{transform: rotate(180deg);}
 
 
 
