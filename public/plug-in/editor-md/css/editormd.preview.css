@@ -3112,7 +3112,7 @@
 
 .editormd-preview-container, .editormd-html-preview {
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   padding: 20px;
   overflow: auto;
@@ -3124,7 +3124,7 @@
   border-left: 4px solid #ddd;
   padding-left: 20px;
   margin-left: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-style: italic;
 }
 .editormd-preview-container p code, .editormd-html-preview p code {
