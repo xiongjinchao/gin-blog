@@ -1,7 +1,7 @@
 /** ==============首页样式============== **/
 body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"PingFangSC-Regular","Microsoft YaHei";color:#333333;}
 .footer{font-size:.875rem;}
-.footer a{color:rgba(255,255,255,.5);padding:0 .125rem;}
+.footer a{padding:0 .125rem;}
 
 /*导航*/
 .navbar a.navbar-brand{font-size:1.125rem}
@@ -98,7 +98,7 @@ pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;}
 @media (max-width:576px ) {
     .card.component.component-image{display: none}
     .card.component.component-right{text-align:left!important;}
-    .card.article .card-time{display: none}
+    .card-group.article .card-time{display: none}
 
     .card.article-list .media img{width:120px;margin-left:0.5rem!important;}
     .card.article-list .list-group-item .media-body h5{height:3.75rem;}

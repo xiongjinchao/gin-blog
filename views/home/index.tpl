@@ -154,8 +154,8 @@
         </div>
     </div>
 
-    <div class="card-group component mt-3">
-        <div class="card border-0">
+    <div class="card-group mt-3">
+        <div class="card border-0 component">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item border-0">
                     <span class="d-block github-title"><i class="fa fa-database"></i> Golang ORM</span>
@@ -219,7 +219,7 @@
             <small class="text-black-50">The internet event.</small>
         </div>
     </div>
-    <div class="card-group article mt-3">
+    <div class="card-group mt-3 article">
         <div class="card border-0">
             <ul class="list-group list-group-flush pr-lg-4">
                 <li class="list-group-item border-0 clearfix"><a href="#">我的 Go 语言学习之路</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
