@@ -96,6 +96,9 @@ pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;}
 
 /**==============小屏样式==============**/
 @media (max-width:576px ) {
+    .container a:not(.page-link){color:#333333;text-decoration:none;border-bottom:2px solid transparent;}
+    .container a:not(.page-link):hover{color:#007bff;text-decoration:none;}
+
     .card.component.component-image{display: none}
     .card.component.component-right{text-align:left!important;}
     .card-group.article .card-time{display: none}
