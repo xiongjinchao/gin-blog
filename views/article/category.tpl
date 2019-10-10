@@ -18,7 +18,7 @@
                     <small class="text-black-50">Stand on daniel's shoulders.</small>
                 </div>
 
-                <div class="card mt-4 article-list">
+                <div class="card border-0 mt-4 article-list">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <div class="media">
@@ -219,18 +219,18 @@
 
             </div>
             <div class="col-lg-3 content-right">
-                <div class="card about">
+                <div class="card border-0 about bg-dark">
                     <div class="card-body text-center">
                         <div class="avatar">
                             <img class="rounded-circle mx-auto d-block avatar" src="/public/image/avatar.jpg">
                         </div>
                         <h5 class="card-title mt-2 mb-0">
-                            <span>关于我</span>
+                            Ted
                         </h5>
                         <small>PHPer & Gopher</small>
                         <p class="card-text mt-4">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
                     </div>
-                    <div class="card-footer bg-transparent text-center">
+                    <div class="card-footer bg-transparent text-center" style="border-top: 1px solid rgba(0,0,0,.05)">
                         <span><a href="#"><i class="fa fa-envelope"></i> 邮箱</a></span>
                         <span><a href="#"><i class="fa fa-github"></i> github</a></span>
                         <span><a href="#"><i class="fa fa-qq"></i> QQ</a></span>
@@ -245,7 +245,7 @@
                     <small class="text-black-50">Recommend</small>
                 </div>
 
-                <div class="card mt-4">
+                <div class="card border-0 mt-4 recommend">
                     <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/next.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><a href="#">微信支付的GoLang接口封装方案</a></h5>
@@ -271,7 +271,7 @@
                     <small class="text-black-50">Recommend</small>
                 </div>
 
-                <div class="card mt-4">
+                <div class="card border-0 mt-4 tag">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><a href="#">PHP(120)</a></li>
                         <li class="list-group-item"><a href="#">Golang(800)</a></li>

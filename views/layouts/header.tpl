@@ -40,9 +40,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/collection">网址导航</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">Who is Susan?</a>
-                    </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="搜索..." aria-label="Search">
@@ -63,17 +60,17 @@
                 </div>
                 <div class="modal-body">
                     <div class="text-center">
-                        <p>请使用下面的方式登录</p>
+                        <p><a href="#"><i class="fa fa-github text-info" style="font-size:6rem;"></i></a></p>
+                        <p style="font-size:.875rem;color:#999999;">更多登录方式敬请期待</p>
                         <p style="font-size:2rem;">
-                            <span class="d-inline-block bg-primary" style="width:3rem;height:3rem;border-radius:50%"><i class="fa fa-qq text-white"></i></span>
-                            <span class="d-inline-block bg-danger" style="width:3rem;height:3rem;border-radius:50%"><i class="fa fa-weibo text-white"></i></span>
-                            <span class="d-inline-block bg-success" style="width:3rem;height:3rem;border-radius:50%"><i class="fa fa-wechat text-white"></i></span>
-                            <span class="d-inline-block bg-info" style="width:3rem;height:3rem;border-radius:50%"><i class="fa fa-github-alt text-white"></i></span>
+                            <span class="d-inline-block bg-secondary" style="width:3rem;height:3rem;border-radius:50%"><i class="fa fa-qq text-white"></i></span>
+                            <span class="d-inline-block bg-secondary" style="width:3rem;height:3rem;border-radius:50%"><i class="fa fa-weibo text-white"></i></span>
+                            <span class="d-inline-block bg-secondary" style="width:3rem;height:3rem;border-radius:50%"><i class="fa fa-wechat text-white"></i></span>
                         </p>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">关闭</button>
                 </div>
             </div>
         </div>

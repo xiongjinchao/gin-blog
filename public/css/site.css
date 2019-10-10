@@ -28,7 +28,9 @@ body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"�
 
 /*首页文章列表*/
 .component.component-right{text-align:right}
-.component .list-group-item,.article .list-group-item{padding:.5rem 0;font-size:.875rem;}
+.component .list-group-item{padding:.5rem 0;font-size:.875rem;}
+.article .list-group-item{padding:.5rem 0;}
+.article .card-time{font-size:.875rem}
 
 /*全局链接效果*/
 a{color:#333333;}
@@ -48,39 +50,42 @@ a:hover{color:#007bff}
 
 /*文章列表*/
 .content-left,.content-right{margin-top:2rem;}
-.content-left .card.article-list .list-group-item{padding:.75rem;}
-.content-left .card.article-list .list-group-item .media-body h5{font-size:1rem;font-weight:600;}
-.content-left .card.article-list .list-group-item .media-body .media-summary{height:3.5rem}
-.content-left .card.article-list .list-group-item .media-body p{font-size:.875rem;color:#999999;}
-.content-left .card.article-list .list-group-item .media-body p span{color:#cccccc;margin-right:.5rem;}
-.content-left .card.article-list .list-group-item .media-body .media-icon{float:left}
-.content-left .card.article-list .list-group-item .media-body .media-tag{float:right;}
-.content-left .card .media img{width:160px;background:#666}
+.card.article-list .list-group-item{padding:.75rem;}
+.card.article-list .list-group-item .media-body h5{font-size:1.125rem;font-weight:500;}
+.card.article-list .list-group-item .media-body .media-summary{height:3.5rem}
+.card.article-list .list-group-item .media-body p{font-size:.875rem;color:#999999;}
+.card.article-list .list-group-item .media-body p span{color:#cccccc;margin-right:.5rem;}
+.card.article-list .list-group-item .media-body .media-icon{float:left}
+.card.article-list .list-group-item .media-body .media-tag{float:right;}
+.card.article-list .media img{width:160px;background:#666}
+.sub-container .card li.list-group-item{border-top: 1px solid rgba(0,0,0,.05)}
 .sub-container .card li.list-group-item:hover{background:#f8f9fa;}
 
-.content-right .card .card-footer{font-size:.875rem;font-weight:normal;color:#666666;}
-.content-right .card .card-footer span{margin:0 .4rem;}
-.content-right .card .list-group-item{font-size:.875rem;padding:.5rem 1rem;}
-.content-right .card .list-group-item span{color:#cccccc;}
-.content-right .card .card-title{font-size:1rem;}
-.content-right .card .card-title span{font-weight:bold;}
-.content-right .card .card-text{color:#999999;}
-.about .avatar{transition:all 1.0s;}
-.about .avatar:hover{transform:rotate(180deg);}
-.about small{color:#cccccc;}
+.card.recommend .list-group-item,.card.tag .list-group-item{font-size:.875rem;padding:.5rem;}
+.card.recommend .list-group-item span{color:#cccccc;}
+.card.recommend .card-body{padding:1.25rem .5rem;}
+.card.recommend .card-title{font-size:1.125rem;font-weight:500}
+.card.recommend .card-text{color:#999999;}
+
+.card.about .avatar{transition:all 1.0s;}
+.card.about .avatar:hover{transform:rotate(360deg);}
+.card.about .card-footer span{margin:0 .4rem;}
+.card.about .card-footer{border-top: 1px solid rgba(0,0,0,.05);font-size:.875rem;}
+.card.about .card-title,.card.about .card-footer a{color:#f4f4f4}
+.card.about{color:#cccccc;}
 
 
 
 
 /*文章详情*/
-.article-detail{padding:.5rem 1rem 1rem 1rem;border:1px solid rgba(0,0,0,.125);border-radius:.25rem;background:#ffffff;}
+.article-detail{padding:.5rem 1rem 1rem 1rem;background:#ffffff;}
 #article-content{margin-top:2rem;padding:0;}
 .article-title{font-size:1.75rem;margin:1rem 0;}
 .article-icon span{margin-right:1rem;color:#999999;font-size:.875rem;}
 .article-icon span a{color:#999999}
-.article-tips{font-size:.875rem;padding:.5rem 0;color:#999999}
+.article-tips{font-size:.875rem;padding:.5rem 1rem;color:#999999}
 .article-tips a{color:#999999;text-decoration:underline}
-.article-notice{padding:1rem;border:1px solid rgba(0,0,0,.125);background:#ffffff;border-radius:.25rem;font-size:.875rem;color:#999999}
+.article-notice{padding:0 1rem;background:#ffffff;border-radius:.25rem;font-size:.875rem;color:#999999}
 
 /*代码高亮左右滚动*/
 pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow:auto!important;background:#2d2d2d!important;}
@@ -88,13 +93,15 @@ pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;}
 
 /*小屏样式*/
 @media (max-width:576px ) {
-    .component.component-image{display: none}
-    .component.component-right{text-align:left!important;}
-    .card-time{display: none}
-    .content-left .card .media img{width:120px;margin-left:0.5rem!important;}
-    .content-left .card.article-list .list-group-item .media-body h5{height:3.75rem;}
-    .content-left .card .media .media-summary{display:none}
-    .content-left .card .media .media-body .media-tag{display:none}
+    .card.component.component-image{display: none}
+    .card.component.component-right{text-align:left!important;}
+    .card.article .card-time{display: none}
+
+    .card.article-list .media img{width:120px;margin-left:0.5rem!important;}
+    .card.article-list .list-group-item .media-body h5{height:3.75rem;}
+    .card.article-list .media .media-summary{display:none}
+    .card.article-list .media .media-body .media-tag{display:none}
+
     .article-detail{border:none;padding:0;}
     .article-title{font-size:1.25rem;margin:0}
     .article-notice{display:none;}

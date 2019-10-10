@@ -57,7 +57,7 @@ func removeDuplicateElement(addrs []string) []string {
                         </textarea>
                     </div>
                 </div>
-                <div class="article-tips text-right">
+                <div class="article-tips">
                     <i class="fa fa-tags"></i>
                     <a href="#">Golang</a> <a href="#">Slice</a>
                 </div>
@@ -73,7 +73,7 @@ func removeDuplicateElement(addrs []string) []string {
                     <small class="text-black-50">Recommend</small>
                 </div>
 
-                <div class="card mt-4 article-list">
+                <div class="card border-0 mt-4 article-list">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <div class="media">
@@ -101,7 +101,7 @@ func removeDuplicateElement(addrs []string) []string {
 
             </div>
             <div class="col-lg-3 content-right">
-                <div class="card">
+                <div class="card border-0 recommend">
                     <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/next.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><a href="#">微信支付的GoLang接口封装方案</a></h5>
@@ -127,7 +127,7 @@ func removeDuplicateElement(addrs []string) []string {
                     <small class="text-black-50">Recommend</small>
                 </div>
 
-                <div class="card mt-4">
+                <div class="card border-0 mt-4 tag">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><a href="#">PHP(120)</a></li>
                         <li class="list-group-item"><a href="#">Golang(800)</a></li>
