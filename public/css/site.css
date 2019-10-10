@@ -1,5 +1,5 @@
-/** 首页样式 **/
-body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"微软雅黑";color:#333333;}
+/** ==============首页样式============== **/
+body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"PingFangSC-Regular","Microsoft YaHei";color:#333333;}
 .footer{font-size:.875rem;}
 .footer a{color:rgba(255,255,255,.5);padding:0 .125rem;}
 
@@ -16,6 +16,7 @@ body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"�
 #main-carousel h1{font-size:1.75rem}
 #main-carousel p{font-size:.875rem}
 #main-carousel .btn{font-size:.875rem;}
+#main-carousel a,#main-carousel a:hover{border:none;color:#ffffff}
 
 /*大标题*/
 .navy-title{font-size:1.75rem;font-weight:500;margin-top:1rem;}
@@ -33,9 +34,10 @@ body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"�
 .article .card-time{font-size:.875rem}
 
 /*全局链接效果*/
-a{color:#333333;}
-a:hover{color:#007bff}
-.card a{text-decoration:underline;}
+.container a{color:#333333;text-decoration:none;border-bottom:2px solid transparent;}
+.container a:hover{color:#007bff;text-decoration:none;border-bottom:2px solid #007bff;}
+.card-group.technology a:hover,.card-group.book a:hover,.card.about a:hover{border-bottom:none}
+.card.recommend a:hover,.card.tag a:hover{border-bottom:1px solid #007bff;}
 
 /*分页*/
 .page-item .page-link{margin:0 .2rem;color:#999999}
@@ -44,8 +46,10 @@ a:hover{color:#007bff}
 
 
 
-/**子页面**/
+/**==============子页样式==============**/
 .sub-container{margin-top:3.325rem;}
+.sub-container .card li.list-group-item{border-top: 1px solid rgba(0,0,0,.05)}
+.sub-container .card li.list-group-item:hover{background:#f8f9fa;}
 .banner img,.media img{border-radius:.25rem;}
 
 /*文章列表*/
@@ -58,8 +62,6 @@ a:hover{color:#007bff}
 .card.article-list .list-group-item .media-body .media-icon{float:left}
 .card.article-list .list-group-item .media-body .media-tag{float:right;}
 .card.article-list .media img{width:160px;background:#666}
-.sub-container .card li.list-group-item{border-top: 1px solid rgba(0,0,0,.05)}
-.sub-container .card li.list-group-item:hover{background:#f8f9fa;}
 
 .card.recommend .list-group-item,.card.tag .list-group-item{font-size:.875rem;padding:.5rem;}
 .card.recommend .list-group-item span{color:#cccccc;}
@@ -70,7 +72,7 @@ a:hover{color:#007bff}
 .card.about .avatar{transition:all 1.0s;}
 .card.about .avatar:hover{transform:rotate(360deg);}
 .card.about .card-footer span{margin:0 .4rem;}
-.card.about .card-footer{border-top: 1px solid rgba(0,0,0,.05);font-size:.875rem;}
+.card.about .card-footer{border-top: 1px solid rgba(0,0,0,.125);font-size:.875rem;}
 .card.about .card-title,.card.about .card-footer a{color:#f4f4f4}
 .card.about{color:#cccccc;}
 
@@ -82,7 +84,8 @@ a:hover{color:#007bff}
 #article-content{margin-top:2rem;padding:0;}
 .article-title{font-size:1.75rem;margin:1rem 0;}
 .article-icon span{margin-right:1rem;color:#999999;font-size:.875rem;}
-.article-icon span a{color:#999999}
+.article-icon span a{color:#999999;text-decoration:none;}
+.article-icon span a:hover{color:#007bff;}
 .article-tips{font-size:.875rem;padding:.5rem 1rem;color:#999999}
 .article-tips a{color:#999999;text-decoration:underline}
 .article-notice{padding:0 1rem;background:#ffffff;border-radius:.25rem;font-size:.875rem;color:#999999}
@@ -91,7 +94,7 @@ a:hover{color:#007bff}
 pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow:auto!important;background:#2d2d2d!important;}
 pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;}
 
-/*小屏样式*/
+/**==============小屏样式==============**/
 @media (max-width:576px ) {
     .card.component.component-image{display: none}
     .card.component.component-right{text-align:left!important;}

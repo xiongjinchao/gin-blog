@@ -230,7 +230,7 @@
                         <small>PHPer & Gopher</small>
                         <p class="card-text mt-4">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
                     </div>
-                    <div class="card-footer bg-transparent text-center" style="border-top: 1px solid rgba(0,0,0,.05)">
+                    <div class="card-footer bg-transparent text-center">
                         <span><a href="#"><i class="fa fa-envelope"></i> 邮箱</a></span>
                         <span><a href="#"><i class="fa fa-github"></i> github</a></span>
                         <span><a href="#"><i class="fa fa-qq"></i> QQ</a></span>

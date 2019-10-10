@@ -87,7 +87,7 @@
             <small class="text-black-50">Some technology used in Gin Blog. </small>
         </div>
     </div>
-    <div class="card-group mt-3">
+    <div class="card-group mt-3 technology">
         <div class="card border-info">
             <div class="card-header bg-transparent border-info text-center">
                 Golang
@@ -258,10 +258,10 @@
         </div>
     </div>
 
-    <div class="card-group mt-3">
+    <div class="card-group mt-3 book">
         <div class="card border-info">
             <div class="card-body border-bottom border-info text-center">
-                <img src="/public/image/gorm.png" class="card-img-top" alt="gorm中文文档">
+                <a href="#"><img src="/public/image/gorm.png" class="card-img-top" alt="gorm中文文档"></a>
             </div>
             <div class="card-body text-center">
                 <img src="/public/image/golang.jpg" class="card-img-top" alt="...">
