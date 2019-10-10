@@ -34,8 +34,8 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 .article .card-time{font-size:.875rem}
 
 /*全局链接效果*/
-.container a{color:#333333;text-decoration:none;border-bottom:2px solid transparent;}
-.container a:hover{color:#007bff;text-decoration:none;border-bottom:2px solid #007bff;}
+.container a:not(.page-link){color:#333333;text-decoration:none;border-bottom:2px solid transparent;}
+.container a:not(.page-link):hover{color:#007bff;text-decoration:none;border-bottom:2px solid #007bff;}
 .card-group.technology a:hover,.card-group.book a:hover,.card.about a:hover{border-bottom:none}
 .card.recommend a:hover,.card.tag a:hover{border-bottom:1px solid #007bff;}
 
@@ -104,6 +104,7 @@ pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;}
     .card.article-list .list-group-item .media-body h5{height:3.75rem;}
     .card.article-list .media .media-summary{display:none}
     .card.article-list .media .media-body .media-tag{display:none}
+    .card.recommend .card-title,.card.article-list .list-group-item .media-body h5{font-size:1rem;}
 
     .article-detail{border:none;padding:0;}
     .article-title{font-size:1.25rem;margin:0}
