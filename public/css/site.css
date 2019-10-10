@@ -26,14 +26,18 @@ body{font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"�
 .card-text{font-size:.875rem}
 .github-title{font-size:1rem;font-weight:200;}
 
-/*文章列表*/
+/*首页文章列表*/
 .component.component-right{text-align:right}
 .component .list-group-item,.article .list-group-item{padding:.5rem 0;font-size:.875rem;}
 
-/*链接效果*/
+/*全局链接效果*/
 a{color:#333333;}
 a:hover{color:#007bff}
 .card a{text-decoration:underline;}
+
+/*分页*/
+.page-item .page-link{margin:0 .2rem;color:#999999}
+.page-item.active .page-link{color:#007bff;border:1px solid #007bff;background:transparent;}
 
 
 
