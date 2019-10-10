@@ -1,7 +1,7 @@
 /** ==============首页样式============== **/
 body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"PingFangSC-Regular","Microsoft YaHei";color:#333333;}
 .footer{font-size:.875rem;}
-.footer a{padding:0 .125rem;}
+.footer a{padding:0 .125rem;color:#f4f4f4;text-decoration:none;}
 
 /*导航*/
 .navbar a.navbar-brand{font-size:1.125rem}
