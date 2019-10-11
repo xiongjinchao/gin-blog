@@ -1,4 +1,4 @@
 // 背景动画
-particlesJS.load('particles-js', '/public/js/particles.json', function() {
-    console.log('callback - particles.js config loaded');
+particlesJS.load('particles-js', '/public/plug-in/particles/particles.json', function() {
+    //console.log('callback - particles.js config loaded');
 });

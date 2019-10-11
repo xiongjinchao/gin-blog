@@ -381,7 +381,7 @@ Andrew->>China: I am good thanks!
     <script src="/public/plug-in/editor-md/lib/jquery.flowchart.min.js"></script>
 
     <script src="/public/plug-in/editor-md/editormd.js"></script>
-    <script src="http://www.jq22.com/demo/jQueryNicescroll20160214/js/jquery.nicescroll.js"></script>
+    <script src="/public/js/jquery.nicescroll.min.js"></script>
 
     <script type="text/javascript">
         $(function() {

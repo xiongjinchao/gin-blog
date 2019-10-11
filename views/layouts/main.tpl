@@ -21,7 +21,7 @@
     <script src="/public/js/jquery-3.3.1.slim.min.js"></script>
     <script src="/public/js/popper.min.js"></script>
     <script src="/public/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="/public/plug-in/particles/particles.min.js"></script>
     <script src="/public/js/site.js"></script>
 
     {{ template "js"}}
