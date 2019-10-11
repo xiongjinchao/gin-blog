@@ -6,7 +6,7 @@
 
     <div class="container sub-container">
         <div class="row">
-            <div class="col-lg-9 content-left mb-4">
+            <div class="col-lg-12 content-left mb-4">
                 <div class="article-detail">
                     <h1 class="article-title text-center">欢迎使用 Markdown</h1>
                     <div class="article-icon text-center">
@@ -363,41 +363,6 @@ Andrew->>China: I am good thanks!
                 </div>
 
             </div>
-            <div class="col-lg-3 content-right">
-                <div class="card border-0 recommend">
-                    <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/next.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="#">微信支付的GoLang接口封装方案</a></h5>
-                        <p class="card-text">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a href="#">Rabin-Karp算法在go的实现</a><br/><span>阅读 120</span></li>
-                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a><br/><span>阅读 120</span></li>
-                        <li class="list-group-item"><a href="#">go平滑重启调研选型和项目实践</a><br/><span>阅读 120</span></li>
-                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a><br/><span>阅读 120</span></li>
-                        <li class="list-group-item"><a href="#">go平滑重启调研选型和项目实践</a><br/><span>阅读 120</span></li>
-                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a><br/><span>阅读 120</span></li>
-                        <li class="list-group-item"><a href="#">go平滑重启调研选型和项目实践</a><br/><span>阅读 120</span></li>
-                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a><br/><span>阅读 120</span></li>
-                    </ul>
-                </div>
-
-                <div class="text-center mt-4">
-                    <div class="navy-line"></div>
-                    <h1 class="font-weight-light navy-title">
-                        热门标签
-                    </h1>
-                    <small class="text-black-50">Recommend</small>
-                </div>
-
-                <div class="card border-0 mt-4 tag">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a href="#">PHP(120)</a></li>
-                        <li class="list-group-item"><a href="#">Golang(800)</a></li>
-                        <li class="list-group-item"><a href="#">MySQL(10)</a></li>
-                    </ul>
-                </div>
-            </div>
         </div>
 
         <div class="mt-5"></div>
@@ -415,7 +380,7 @@ Andrew->>China: I am good thanks!
     <script src="/public/plug-in/editor-md/lib/flowchart.min.js"></script>
     <script src="/public/plug-in/editor-md/lib/jquery.flowchart.min.js"></script>
 
-    <script src="/public/plug-in/editor-md/editormd.min.js"></script>
+    <script src="/public/plug-in/editor-md/editormd.js"></script>
     <script src="http://www.jq22.com/demo/jQueryNicescroll20160214/js/jquery.nicescroll.js"></script>
 
     <script type="text/javascript">

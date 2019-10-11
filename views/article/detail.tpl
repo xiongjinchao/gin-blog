@@ -156,7 +156,7 @@ func removeDuplicateElement(addrs []string) []string {
     <script src="/public/plug-in/editor-md/lib/flowchart.min.js"></script>
     <script src="/public/plug-in/editor-md/lib/jquery.flowchart.min.js"></script>
 
-    <script src="/public/plug-in/editor-md/editormd.min.js"></script>
+    <script src="/public/plug-in/editor-md/editormd.js"></script>
 
     <script type="text/javascript">
         $(function() {
