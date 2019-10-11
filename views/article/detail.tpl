@@ -19,7 +19,11 @@
                     <div id="article-content" class="article-content">
                         <textarea style="display:none;">> golang标准库本身没有提供一个去除slice中重复元素的函数，需要自己去实现。今天读源码时发现了一个，算是比较优秀的技巧了，如果你有更好的办法，欢迎讨论！
 
+#### 序
+
 另外让我们看一下空struct的作用，他之前一直没有被我重视，看来以后要多审视自己的coding了！
+
+#### 代码
 
 ```go
 func main() {
@@ -44,7 +48,7 @@ func removeDuplicateElement(addrs []string) []string {
 [hello world golang ruby php java]
 ```
 
-点评
+#### 点评
 
 - 该函数总共初始化两个变量，一个长度为0的slice，一个空map。由于slice传参是按引用传递，没有创建额外的变量。
 
@@ -56,7 +60,9 @@ func removeDuplicateElement(addrs []string) []string {
 
                         </textarea>
                     </div>
+                    <div id="toc-container" class="toc-container"></div>
                 </div>
+
                 <div class="article-tips">
                     <i class="fa fa-tags"></i>
                     <a href="#">Golang</a> <a href="#">Slice</a>
@@ -163,6 +169,8 @@ func removeDuplicateElement(addrs []string) []string {
                 tex             : true,  // 默认不解析
                 flowChart       : true,  // 默认不解析
                 sequenceDiagram : true,  // 默认不解析
+                toc: true,
+                tocContainer:"#toc-container",
             });
         });
     </script>

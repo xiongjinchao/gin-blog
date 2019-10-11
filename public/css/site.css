@@ -25,6 +25,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 .navy-line{width: 60px;height: 1px;margin: 0 auto;border-bottom: 2px solid #007bff;}
 
 /*卡片*/
+.card,.list-group-item{background:transparent}
 .card-text{font-size:.875rem}
 .github-title{font-size:1rem;font-weight:200;}
 
@@ -49,7 +50,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 
 /**==============子页样式==============**/
 .sub-container{margin-top:3.325rem;}
-.sub-container .card li.list-group-item{border-top: 1px solid rgba(0,0,0,.05)}
+.sub-container .card li.list-group-item{border:none;border-top: 1px solid rgba(0,0,0,.05) !important;}
 .sub-container .card li.list-group-item:hover{background:#f8f9fa;}
 .banner img,.media img{border-radius:.25rem;}
 
@@ -62,7 +63,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 .card.article-list .list-group-item .media-body p span{color:#cccccc;margin-right:.5rem;}
 .card.article-list .list-group-item .media-body .media-icon{float:left}
 .card.article-list .list-group-item .media-body .media-tag{float:right;}
-.card.article-list .media img{width:160px;background:#666}
+.card.article-list .media img{width:160px;background:#666666;}
 
 .card.recommend .list-group-item,.card.tag .list-group-item{font-size:.875rem;padding:.5rem;}
 .card.recommend .list-group-item span{color:#cccccc;}
@@ -81,8 +82,9 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 
 
 /*文章详情*/
-.article-detail{padding:.5rem 1rem 1rem 1rem;background:#ffffff;}
-#article-content{margin-top:2rem;padding:0;}
+.article-detail{padding:.5rem 1rem 1rem 1rem;position:relative;z-index:3;}
+#article-content{margin-top:2rem;padding:0;background:transparent;}
+.toc-container{position:fixed;top:10rem;left:1rem;width:8rem;height:8rem;background:red;}
 .article-title{font-size:1.75rem;margin:1rem 0;}
 .article-icon span{margin-right:1rem;color:#999999;font-size:.875rem;}
 .article-icon span a{color:#999999;text-decoration:none;}
