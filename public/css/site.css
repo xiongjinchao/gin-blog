@@ -1,7 +1,7 @@
 /** ==============首页样式============== **/
-body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"PingFangSC-Regular","Microsoft YaHei";color:#333333;}
+body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"PingFangSC-Regular","Microsoft YaHei";color:#333333;padding-bottom:8rem;}
 .site-bg{position:fixed;width: 100%; height: 100%;left:0;right:0;top:0;z-index:0;}
-.footer{font-size:.875rem;}
+.footer{font-size:.875rem;background:#343a40;width:100%;height:8rem;margin-bottom:-8rem;position:relative;z-index:1}
 .footer a{padding:0 .125rem;color:#f4f4f4;text-decoration:none;}
 
 /*导航*/
