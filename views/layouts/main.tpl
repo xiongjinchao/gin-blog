@@ -13,7 +13,7 @@
     <title>Susan's Blog golang 技术笔记</title>
 </head>
 <body>
-    <div id="particles-js" class="site-background" style="position:fixed;width: 100%; height: 100%;left:0;right:0;top:0;z-index:0;"></div>
+    <div id="particles-js" class="site-bg"></div>
     {{ template "header" }}
     {{ template "content" .}}
     {{ template "footer" }}
