@@ -1,6 +1,5 @@
 {{ define "css" }}
-    <link rel="stylesheet" href="/public/plug-in/editor-md/css/editormd.preview.css" />
-    <link rel="stylesheet" href="/public/plug-in/editor-md/css/tomorrow-night-eighties.css">
+    <link rel="stylesheet" href="/public/plug-in/editor-md/css/editormd.min.css" />
 {{ end }}
 
 {{ define "content" }}
@@ -101,10 +100,10 @@ GFM a-tail link @pandao
 
 即缩进四个空格，也做为实现类似 `<pre>` 预格式化文本 ( Preformatted Text ) 的功能。
 
-                                <?php
+    <?php
         echo "Hello world!";
     ?>
-                                预格式化文本：
+预格式化文本：
 
     | First Header  | Second Header |
     | ------------- | ------------- |
@@ -416,7 +415,7 @@ Andrew->>China: I am good thanks!
     <script src="/public/plug-in/editor-md/lib/flowchart.min.js"></script>
     <script src="/public/plug-in/editor-md/lib/jquery.flowchart.min.js"></script>
 
-    <script src="/public/plug-in/editor-md/editormd.js"></script>
+    <script src="/public/plug-in/editor-md/editormd.min.js"></script>
     <script src="http://www.jq22.com/demo/jQueryNicescroll20160214/js/jquery.nicescroll.js"></script>
 
     <script type="text/javascript">
@@ -433,6 +432,8 @@ Andrew->>China: I am good thanks!
                 tocContainer:"#toc-container",
                 tocDropdown:true,
             });
+            $("#article-content").addClass("editormd-preview-theme-dark");
+
             //  菜单定位 显示与隐藏
             $("#toc-container").prepend('<h4><i class=fa fa-puls></i> 目录</h4>');
             var bodyWidth = $("body").width();

@@ -1,6 +1,5 @@
 {{ define "css" }}
-    <link rel="stylesheet" href="/public/plug-in/editor-md/css/editormd.preview.css" />
-    <link rel="stylesheet" href="/public/plug-in/editor-md/css/tomorrow-night-eighties.css">
+    <link rel="stylesheet" href="/public/plug-in/editor-md/css/editormd.min.css" />
 {{ end }}
 
 {{ define "content" }}
@@ -157,7 +156,7 @@ func removeDuplicateElement(addrs []string) []string {
     <script src="/public/plug-in/editor-md/lib/flowchart.min.js"></script>
     <script src="/public/plug-in/editor-md/lib/jquery.flowchart.min.js"></script>
 
-    <script src="/public/plug-in/editor-md/editormd.js"></script>
+    <script src="/public/plug-in/editor-md/editormd.min.js"></script>
 
     <script type="text/javascript">
         $(function() {
@@ -170,6 +169,7 @@ func removeDuplicateElement(addrs []string) []string {
                 flowChart       : true,  // 默认不解析
                 sequenceDiagram : true,  // 默认不解析
             });
+            $("#article-content").addClass("editormd-preview-theme-dark");
         });
     </script>
 {{ end }}
