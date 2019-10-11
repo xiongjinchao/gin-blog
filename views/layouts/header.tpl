@@ -29,7 +29,7 @@
                         <a class="nav-link" href="/article/category/talk-about">杂谈</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/book">技术手册</a>
+                        <a class="nav-link" href="/book/detail/1">技术手册</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/article/category/news">资讯</a>
