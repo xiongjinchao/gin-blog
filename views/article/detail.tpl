@@ -60,7 +60,6 @@ func removeDuplicateElement(addrs []string) []string {
 
                         </textarea>
                     </div>
-                    <div id="toc-container" class="toc-container"></div>
                 </div>
 
                 <div class="article-tips">
@@ -162,6 +161,7 @@ func removeDuplicateElement(addrs []string) []string {
 
     <script type="text/javascript">
         $(function() {
+            // markdown 转 HTML
             var editormdView = editormd.markdownToHTML("article-content", {
                 htmlDecode      : "style,script,iframe",  // you can filter tags decode
                 emoji           : true,
@@ -169,8 +169,6 @@ func removeDuplicateElement(addrs []string) []string {
                 tex             : true,  // 默认不解析
                 flowChart       : true,  // 默认不解析
                 sequenceDiagram : true,  // 默认不解析
-                toc: true,
-                tocContainer:"#toc-container",
             });
         });
     </script>
