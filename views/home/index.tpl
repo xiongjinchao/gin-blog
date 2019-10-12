@@ -23,7 +23,7 @@
                 </svg>
                 <div class="container">
                     <div class="carousel-caption text-left">
-                        <h1>Susan👸🏻 个人博客</h1>
+                        <h1>Susan👸🏻's Blog</h1>
                         <p>使用gin框架开发的个人博客。后台整合了文章，分类，菜单，权限等功能模块</p>
                         <p>欢迎来github上拍dian砖zan</p>
                         <p><a class="btn btn-lg btn-primary" href="https://github.com/xiongjinchao/gin-blog" target="_blank" role="button"><i class="fa fa-github"></i> github</a></p>
@@ -41,7 +41,7 @@
                 </svg>
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>Susan👸🏻 个人博客</h1>
+                        <h1>Susan👸🏻's Blog</h1>
                         <p>使用gin框架开发的个人博客。后台整合了文章，分类，菜单，权限等管理模块</p>
                         <p>欢迎来github上拍dian砖zan</p>
                         <p><a class="btn btn-lg btn-primary" href="https://github.com/xiongjinchao/gin-blog" target="_blank" role="button"><i class="fa fa-github"></i> github</a></p>
@@ -58,7 +58,7 @@
                 </svg>
                 <div class="container">
                     <div class="carousel-caption text-right">
-                        <h1>Susan👸🏻 个人博客</h1>
+                        <h1>Susan👸🏻's Blog</h1>
                         <p>使用gin框架开发的个人博客。后台整合了文章，分类，菜单，权限等功能模块</p>
                         <p>欢迎来github上拍dian砖zan</p>
                         <p><a class="btn btn-lg btn-primary" href="https://github.com/xiongjinchao/gin-blog" target="_blank" role="button"><i class="fa fa-github"></i> github</a></p>
