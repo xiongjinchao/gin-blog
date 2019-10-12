@@ -4,7 +4,7 @@
 
 {{ define "content" }}
 
-    <div class="container sub-container">
+    <div class="container sub-container" style="max-width:960px;">
         <div class="row">
             <div class="col-lg-12 content-left mb-4">
                 <div class="article-detail">
