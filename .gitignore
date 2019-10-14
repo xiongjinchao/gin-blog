@@ -1,5 +1,6 @@
 .idea
 logs
+config/app.ini
 
 /vendor/*
 !/vendor/vendor.json

@@ -2,7 +2,8 @@
 model = debug
 
 [domain]
-home = http://localhost:9090
+home = http://localhost:8080
+boss = http://localhost:9090
 image = http://localhost:9090
 
 # defined SessionID SessionSecret
