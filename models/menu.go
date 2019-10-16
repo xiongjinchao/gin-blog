@@ -1,26 +1,26 @@
 package models
 
 import (
+	"encoding/json"
 	"fmt"
-	db "gin-blog/database"
+	db "gin-admin/database"
 	"github.com/gin-gonic/gin"
 	"strconv"
 	"strings"
 )
 
 type Menu struct {
-	Base           `json:"base"`
-	Name           string   `json:"name" form:"name"`
-	Tag            string   `json:"tag" form:"tag"`
-	Parent         int64    `json:"parent" form:"parent"`
-	Level          int64    `json:"level" form:"-"`
-	Audit          int64    `json:"audit" form:"audit"`
-	Sort           int64    `json:"sort" form:"sort"`
-	SeoTitle       string   `json:"seo_title" form:"seo_title"`
-	SeoDescription string   `json:"seo_description" form:"seo_description"`
-	SeoKeyword     string   `json:"seo_keyword" form:"seo_keyword"`
-	Parents        []string `json:"parents" validate:"-"`
-	Space          string   `json:"space" validate:"-"`
+	Base    `json:"base"`
+	Name    string   `json:"name" form:"name"`
+	Tag     string   `json:"tag" form:"tag"`
+	Summary string   `json:"summary" form:"summary"`
+	Parent  int64    `json:"parent" form:"parent"`
+	Level   int64    `json:"level" form:"-"`
+	Audit   int64    `json:"audit" form:"audit"`
+	Sort    int64    `json:"sort" form:"sort"`
+	Keyword string   `json:"keyword" form:"keyword"`
+	Parents []string `json:"parents" validate:"-"`
+	Space   string   `json:"space" validate:"-"`
 }
 
 func (Menu) TableName() string {
@@ -90,4 +90,43 @@ func (m *Menu) UpdateChildren(parent Menu) {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 	}
 	m.UpdateChildrenLevel(&menus, parent)
+}
+
+// cache menu data in redis
+func (m *Menu) SetCache() error {
+
+	var menus, data []Menu
+	if err := db.Mysql.Model(Menu{}).Find(&menus).Error; err != nil {
+		return err
+	}
+	if len(menus) == 0 {
+		return nil
+	}
+
+	m.SetSort(&menus, 0, &data)
+	m.SetSpace(&data)
+
+	menu, err := json.Marshal(data)
+	if err != nil {
+		return err
+	}
+
+	db.Redis.Set("menu", string(menu), 0)
+
+	return nil
+}
+
+// get menu data from cache
+func (m *Menu) GetCache() (menu []Menu, err error) {
+
+	data, err := db.Redis.Get("menu").Result()
+	if err != nil {
+		return nil, err
+	}
+
+	if err := json.Unmarshal([]byte(data), &menu); err != nil {
+		return nil, err
+	}
+
+	return
 }
