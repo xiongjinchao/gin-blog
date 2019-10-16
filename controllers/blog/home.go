@@ -24,7 +24,7 @@ func (h *Home) Index(c *gin.Context) {
 	}
 
 	c.HTML(http.StatusOK, "home/index", gin.H{
-		"title": "首页",
+		"title": "Susan's Blog golang 技术笔记",
 		"menu":  data,
 	})
 }

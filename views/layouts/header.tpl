@@ -9,6 +9,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav mr-auto">
+                    {{ range $i, $v := .menu }}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">{{$v.ID}} <span class="sr-only">(current)</span></a>
+                        </li>
+                    {{ end }}
+
+                    <!--
                     <li class="nav-item active">
                         <a class="nav-link" href="/">首页 <span class="sr-only">(current)</span></a>
                     </li>
@@ -40,6 +47,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/collection">网址导航</a>
                     </li>
+                    -->
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="搜索..." aria-label="Search">
