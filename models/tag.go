@@ -1,7 +1,7 @@
 package models
 
 import (
-	db "gin-admin/database"
+	db "gin-blog/database"
 	"strings"
 )
 

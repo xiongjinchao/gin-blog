@@ -2,7 +2,7 @@ package models
 
 import (
 	"fmt"
-	db "gin-admin/database"
+	db "gin-blog/database"
 	"github.com/gin-gonic/gin"
 	"strconv"
 	"strings"
