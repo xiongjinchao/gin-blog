@@ -18,7 +18,8 @@
     {{ template "content" .}}
     {{ template "footer" .}}
     <!-- Mainly scripts -->
-    <script src="/public/js/jquery-3.3.1.slim.min.js"></script>
+    <!--<script src="/public/js/jquery-3.3.1.slim.min.js"></script>-->
+    <script src="http://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
     <script src="/public/js/popper.min.js"></script>
     <script src="/public/js/bootstrap.min.js"></script>
     <script src="/public/plug-in/particles/particles.min.js"></script>
