@@ -1,7 +1,7 @@
 /** ==============首页样式============== **/
-body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"PingFangSC-Regular","Microsoft YaHei";color:#333333;padding-bottom:8rem;}
+body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"PingFangSC-Regular","Microsoft YaHei";color:#333333;padding-bottom:7rem;}
 .site-bg{position:fixed;width: 100%; height: 100%;left:0;right:0;top:0;z-index:0;}
-.footer{font-size:.875rem;background:#343a40;width:100%;height:8rem;margin-bottom:-8rem;position:relative;z-index:1}
+.footer{font-size:.875rem;background:#343a40;width:100%;height:7rem;margin-bottom:-7rem;position:relative;z-index:1}
 .footer a{padding:0 .125rem;color:#f4f4f4;text-decoration:none;}
 
 /*导航*/
@@ -49,7 +49,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 
 
 /**==============子页样式==============**/
-.sub-container{margin-top:3.325rem;}
+.sub-container{margin-top:3.325rem;min-height:calc(100vh - 10.325rem);}
 .sub-container .card li.list-group-item{border:none;border-top: 1px solid rgba(0,0,0,.05) !important;}
 .sub-container .card li.list-group-item:hover{background:#f8f9fa;}
 .banner img,.media img{border-radius:.25rem;}
@@ -85,7 +85,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 .article-detail{padding:.5rem 1rem 1rem 1rem;position:relative;z-index:3;}
 #article-content{margin-top:2rem;padding:0;background:transparent;}
 
-.toc-container{position:fixed;top:4rem;width:auto;display:none;overflow-y:scroll}
+.toc-container{position:fixed;top:6rem;width:auto;display:none;overflow-y:scroll}
 .toc-container .markdown-toc > ul.markdown-toc-list{margin:.5rem 1rem .5rem 0;}
 .toc-container > .markdown-toc > ul.markdown-toc-list > li > a{font-weight:600;color:#666666}
 .toc-container .markdown-toc li{color:#cccccc;padding:.2rem;font-size:.875rem;}

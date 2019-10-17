@@ -3,9 +3,7 @@
 
 {{ define "content" }}
 
-    <div class="container">
-        <div style="height:50px;"></div>
-
+    <div class="container sub-container">
         <div class="card-group border-0 mt-5">
             <div class="card border-0">
                 <div class="card-body bg-transparent text-center">
@@ -13,8 +11,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="mt-5"></div>
     </div>
 
 {{ end }}
