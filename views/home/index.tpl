@@ -180,7 +180,7 @@
             </ul>
         </div>
         <div class="card component component-image border-0 m-auto">
-            <img src="/public/image/gin-admin.png" class="card-img-top" alt="...">
+            <img src="/public/image/gin-admin.min.png" class="card-img-top" alt="...">
         </div>
         <div class="card border-0 component component-right">
             <ul class="list-group list-group-flush">
