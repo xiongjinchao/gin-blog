@@ -12,7 +12,7 @@
                     <div class="article-icon text-center">
                         <span><a href="#"><i class="fa fa-eye"></i> 520</a></span>
                         <span><a href="#"><i class="fa fa-comment-o"></i> 3</a></span>
-                        <span><a href="#"><i class="fa fa-heart-o"></i> 100</a></span>
+                        <span><a href="#"><i class="fa fa-thumbs-o-up"></i> 100</a></span>
                         <span><i class="fa fa-clock-o"></i> 2019-10-01</span>
                     </div>
                     <div id="article-content" class="article-content">

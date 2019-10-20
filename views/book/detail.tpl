@@ -12,7 +12,7 @@
                     <div class="article-icon text-center">
                         <span><a href="#"><i class="fa fa-eye"></i> 520</a></span>
                         <span><a href="#"><i class="fa fa-comment-o"></i> 3</a></span>
-                        <span><a href="#"><i class="fa fa-heart-o"></i> 100</a></span>
+                        <span><a href="#"><i class="fa fa-star-o"></i> 100</a></span>
                         <span><i class="fa fa-clock-o"></i> 2019-10-01</span>
                     </div>
                     <div id="toc-container" class="toc-container"></div>
@@ -406,7 +406,7 @@ Andrew->>China: I am good thanks!
             var tocWidth = $("#toc-container").width();
             var left = (bodyWidth-containerWidth)/2 -tocWidth;
             if(left > 0 && $(".container").offset().left - $("#toc-container").offset().left - left > 0) {
-                var height = $(window).height()-$("nav.navbar").height()-35-144;
+                var height = $(window).height()-$("nav.navbar").height()-80-144;
                 $("#toc-container").css({left: left,height:height+"px"}).show();
                 $('#toc-container').niceScroll({
                     cursorcolor: "#6f42c1",

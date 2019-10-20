@@ -59,13 +59,13 @@ func Router() *gin.Engine {
 	router.GET("/book", book.Index)
 	router.GET("/book/detail/:id", book.Detail)
 
-	// 友情链接
+	// 链接分享
 	friendLink := &blog.FriendLink{}
-	router.GET("/friend-link", friendLink.Index)
+	router.GET("/link-share", friendLink.Index)
 
-	// 我的收藏
-	collection := &blog.Collection{}
-	router.GET("/collection", collection.Index)
+	// 教程
+	course := &blog.Course{}
+	router.GET("/course", course.Index)
 
 	// 其他静态页
 	page := &blog.Page{}

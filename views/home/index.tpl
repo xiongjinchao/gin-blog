@@ -180,7 +180,7 @@
             </ul>
         </div>
         <div class="card component component-image border-0 m-auto">
-            <img src="/public/image/gin-admin.png" class="card-img-top" alt="...">
+            <img src="/public/image/gin-admin.min.png" class="card-img-top" alt="...">
         </div>
         <div class="card border-0 component component-right">
             <ul class="list-group list-group-flush">
@@ -222,20 +222,20 @@
     <div class="card-group mt-3 article">
         <div class="card border-0">
             <ul class="list-group list-group-flush pr-lg-4">
-                <li class="list-group-item border-0 clearfix"><a href="#">我的 Go 语言学习之路</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="#">Go中文翻译组成立了，期待大家的加入</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="#">架构师应该如何判断技术演进的方向？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="#">我的 Go 语言学习之路</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="#">Go中文翻译组成立了，期待大家的加入</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0 clearfix"><a href="/article/detail/1">我的 Go 语言学习之路</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="/article/detail/1">Go中文翻译组成立了，期待大家的加入</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="/article/detail/1">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="/article/detail/1">架构师应该如何判断技术演进的方向？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="/article/detail/1">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="/article/detail/1">我的 Go 语言学习之路</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="/article/detail/1">Go中文翻译组成立了，期待大家的加入</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="/article/detail/1">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
             </ul>
         </div>
         <div class="card border-0">
             <ul class="list-group list-group-flush pl-lg-4">
-                <li class="list-group-item border-0"><a href="#">我的 Go 语言学习之路</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="#">Go中文翻译组成立了，期待大家的加入</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="/book/detail/1">我的 Go 语言学习之路</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
+                <li class="list-group-item border-0"><a href="/book/detail/1">Go中文翻译组成立了，期待大家的加入</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
                 <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
                 <li class="list-group-item border-0"><a href="#">架构师应该如何判断技术演进的方向？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
                 <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
@@ -261,42 +261,42 @@
     <div class="card-group mt-3 book">
         <div class="card border-info">
             <div class="card-body border-bottom border-info text-center">
-                <a href="#"><img src="/public/image/gorm.png" class="card-img-top" alt="gorm中文文档"></a>
+                <a href="/book/detail/1"><img src="/public/image/gorm.png" class="card-img-top" alt="gorm中文文档"></a>
             </div>
             <div class="card-body text-center">
-                <img src="/public/image/golang.jpg" class="card-img-top" alt="...">
+                <a href="/book/detail/1"><img src="/public/image/golang.jpg" class="card-img-top" alt="..."></a></a>
             </div>
         </div>
         <div class="card border-info">
             <div class="card-body border-bottom border-info text-center">
-                <img src="/public/image/gin.png" class="card-img-top" alt="...">
+                <a href="/book/detail/1"><img src="/public/image/gin.png" class="card-img-top" alt="..."></a>
             </div>
             <div class="card-body text-center">
-                <img src="/public/image/gin.jpg" class="card-img-top" alt="...">
+                <a href="/book/detail/1"><img src="/public/image/gin.jpg" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card border-info">
             <div class="card-body border-bottom border-info text-center">
-                <img src="/public/image/mysql.jpg" class="card-img-top" alt="...">
+                <a href="/book/detail/1"><img src="/public/image/mysql.jpg" class="card-img-top" alt="..."></a>
             </div>
             <div class="card-body text-center">
-                <img src="/public/image/redis.png" class="card-img-top" alt="...">
+                <a href="/book/detail/1"><img src="/public/image/redis.png" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card border-info">
             <div class="card-body border-bottom border-info text-center">
-                <img src="/public/image/bootstrap.jpg" class="card-img-top" alt="...">
+                <a href="/book/detail/1"><img src="/public/image/bootstrap.jpg" class="card-img-top" alt="..."></a>
             </div>
             <div class="card-body text-center">
-                <img src="/public/image/bootstrap.jpg" class="card-img-top" alt="...">
+                <a href="/book/detail/1"><img src="/public/image/bootstrap.jpg" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card border-info">
             <div class="card-body border-bottom border-info text-center">
-                <img src="/public/image/bootstrap.jpg" class="card-img-top" alt="...">
+                <a href="/book/detail/1"><img src="/public/image/bootstrap.jpg" class="card-img-top" alt="..."></a>
             </div>
             <div class="card-body text-center">
-                <img src="/public/image/bootstrap.jpg" class="card-img-top" alt="...">
+                <a href="/book/detail/1"><img src="/public/image/bootstrap.jpg" class="card-img-top" alt="..."></a>
             </div>
         </div>
     </div>

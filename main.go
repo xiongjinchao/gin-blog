@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"gin-blog/config"
 	db "gin-blog/database"
 	"gin-blog/routers"
@@ -12,7 +11,6 @@ import (
 	"io"
 	"os"
 	"strconv"
-	"strings"
 )
 
 func main() {
@@ -49,24 +47,6 @@ func main() {
 	gin.DefaultWriter = io.MultiWriter(log)
 
 	router := routers.Router()
-
-	// write all routes in redis
-	routing := make([]map[string]string, 0)
-	for _, v := range router.Routes() {
-		if strings.Contains(v.Path, "admin") && v.Path != "/admin/dashboard" {
-			item := make(map[string]string, 0)
-			item["method"] = v.Method
-			item["path"] = v.Path
-			item["handler"] = v.Handler
-			routing = append(routing, item)
-		}
-	}
-	data, err := json.Marshal(routing)
-	if err != nil {
-		panic(err)
-	}
-
-	db.Redis.Set("routers", string(data), 0)
 
 	if err := router.Run(":8080"); err != nil {
 		panic(err)

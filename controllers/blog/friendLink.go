@@ -1,15 +1,17 @@
 package blog
 
 import (
+	"gin-blog/helper"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
 type FriendLink struct{}
 
-// Index handles GET /friend-link route
+// Index handles GET /link-share route
 func (p *FriendLink) Index(c *gin.Context) {
 	c.HTML(http.StatusOK, "friend-link/index", gin.H{
-		"title": "友情链接",
+		"title": "链接分享",
+		"menu":  helper.GetMenu(),
 	})
 }

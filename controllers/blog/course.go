@@ -6,12 +6,12 @@ import (
 	"net/http"
 )
 
-type Page struct{}
+type Course struct{}
 
-// About handles GET /about route
-func (p *Page) About(c *gin.Context) {
+// Index handles GET /course route
+func (co *Course) Index(c *gin.Context) {
 	c.HTML(http.StatusOK, "page/about", gin.H{
-		"title": "关于我们",
+		"title": "教程",
 		"menu":  helper.GetMenu(),
 	})
 }
