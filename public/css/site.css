@@ -108,6 +108,12 @@ pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;padding:0 .5rem;}
     .container a:not(.page-link){color:#333333;text-decoration:none;border-bottom:none}
     .container a:not(.page-link):hover{color:#007bff;text-decoration:none;border-bottom:none}
 
+    .technology, .book{display:block;overflow:hidden}
+    .technology .card,.book .card{width:calc(50% - .5rem);float:left}
+    .container .book:nth-child(odd){margin-top:0!important;}
+    .technology .card:nth-child(odd),.book .card:nth-child(odd){margin-right:1rem;}
+    .technology .card .card-text{min-height:84px}
+
     .card.component.component-image{display: none}
     .card.component.component-right{text-align:left!important;}
     .card-group.article .card-time{display: none}
