@@ -84,7 +84,7 @@ func removeDuplicateElement(addrs []string) []string {
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="/article/detail/1">GCTT：Go中文翻译组成立了，期待大家的加入</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart-o"></i> 100</span></p>
+                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-thumbs-o-up"></i> 100</span></p>
                                 </div>
                                 <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
                             </div>
@@ -95,7 +95,7 @@ func removeDuplicateElement(addrs []string) []string {
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="#">PHP与Golang如何通信</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart-o"></i> 100</span></p>
+                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-thumbs-o-up"></i> 100</span></p>
                                 </div>
                                 <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
                             </div>
