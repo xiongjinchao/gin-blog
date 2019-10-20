@@ -110,9 +110,9 @@ pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;padding:0 .5rem;}
 
     .technology, .book{display:block;overflow:hidden}
     .technology .card,.book .card{width:calc(50% - .5rem);float:left}
-    .container .book:nth-child(odd){margin-top:0!important;}
     .technology .card:nth-child(odd),.book .card:nth-child(odd){margin-right:1rem;}
     .technology .card .card-text{min-height:84px}
+    .container .book:nth-child(odd){margin-top:0!important;}
 
     .card.component.component-image{display: none}
     .card.component.component-right{text-align:left!important;}

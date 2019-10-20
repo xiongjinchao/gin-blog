@@ -133,7 +133,7 @@
             </div>
             <img src="/public/image/bootstrap.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <p class="card-text">Bootstrap是Twitter推出的一个用于前端开发的开源工具包，是一个前端框架。</p>
+                <p class="card-text">Bootstrap是Twitter推出的一个用于前端开发的开源框架。</p>
             </div>
             <div class="card-footer bg-transparent border-info text-right">
                 <small class="text-muted">version 4.3.1</small>
