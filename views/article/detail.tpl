@@ -16,46 +16,240 @@
                         <span><i class="fa fa-clock-o"></i> 2019-10-01</span>
                     </div>
                     <div id="article-content" class="article-content">
-                        <textarea style="display:none;">> golang标准库本身没有提供一个去除slice中重复元素的函数，需要自己去实现。今天读源码时发现了一个，算是比较优秀的技巧了，如果你有更好的办法，欢迎讨论！
+                        <textarea style="display:none;">主要区分一下两个方面的内容：
 
-#### 序
+- 单纯的方法定义
+- 通过接口传递参数
 
-另外让我们看一下空struct的作用，他之前一直没有被我重视，看来以后要多审视自己的coding了！
+##### 1、 单纯的方法定义
 
-#### 代码
+> go语言内部会自动进行值和指针的转换, 代码在编译的时候不会出错；区别在于使用指针定义方法，方法操作的是该数据本身；而使用值定义方法时，方法操作的是该数据的拷贝。
+
+
+> 总结:如果使用除接口类型以外的类型作为接收者时，使用值和指针调用方法不会出现编译错误； 如果使用接口类型的变量（实现了该接口）调用方法时，使用值调用指针定义的方法时会出现编译出错。
+
+1、 使用值定义方法，使用值调用方法的情况
 
 ```go
+type user struct {
+    name string
+    email string
+}
+
+func (u user) notify() {
+    //将传入的参数复制一份，赋值给u
+    u.name = "Jack"
+    fmt.Println("Send email to", u.name, u.email)
+}
+
 func main() {
-    s := []string{"hello", "world", "hello", "golang", "hello", "ruby", "php", "java"}
-
-    fmt.Println(removeDuplicateElement(s))
+    user := user{"Andy", "1139329@163.com"}
+    user.notify()
+    fmt.Println(user)
 }
 
-func removeDuplicateElement(addrs []string) []string {
-    result := make([]string, 0, len(addrs))
-    temp := map[string]struct{}{}
-    for _, item := range addrs {
-        if _, ok := temp[item]; !ok {
-            temp[item] = struct{}{}
-            result = append(result, item)
-        }
-    }
-    return result
-}
+//输出（名子并不会改变）：
+Send email to Jack 1139329@163.com
+{Andy 1139329@163.com}
 
-//output:
-[hello world golang ruby php java]
 ```
 
-#### 点评
+2、 使用值定义方法，使用指针调用方法的情况
 
-- 该函数总共初始化两个变量，一个长度为0的slice，一个空map。由于slice传参是按引用传递，没有创建额外的变量。
+> 由于定义方法时使用的是值，在编译过程中会对调用者为指针的类型进行解引用，内部实现为 *user.notify()
 
-- 只是用了一个for循环，代码更简洁易懂。
+```go
+type user struct {
+    name string
+    email string
+}
 
-- 利用了map的多返回值特性。
+func (u user) notify() {
+    //将传入的参数复制一份，赋值给u
+    u.name = "Jack"
+    fmt.Println("Send email to", u.name, u.email)
+}
 
-- 空struct不占内存空间，可谓巧妙。
+func main() {
+    user := &user{"Andy", "1139329@163.com"}
+    user.notify()
+    fmt.Println(user)
+}
+
+//输出（名子也不会改变）：
+Send email to Jack 1139329@163.com
+{Andy 1139329@163.com}
+```
+
+3、 使用指针定义方法，使用指针调用方法的情况
+
+```go
+type user struct {
+    name string
+    email string
+}
+
+func (u *user) notify() {
+    u.name = "Jack"
+    fmt.Println("Send email to", u.name, u.email)
+}
+
+func main() {
+    user := user{"Andy", "1139329@163.com"}
+    user.notify()
+    fmt.Println(user)
+}
+
+//输出（名子会改变）：
+Send email to Jack 1139329@163.com
+{Jack 1139329@163.com}
+```
+
+4、 使用指针定义方法，使用值调用方法的情况
+
+> 内部实现为 *user.notify()
+
+```go
+type user struct {
+    name string
+    email string
+}
+
+func (u *user) notify() {
+    u.name = "Jack"
+    fmt.Println("Send email to", u.name, u.email)
+}
+
+func main() {
+    user := user{"Andy", "1139329@163.com"}
+    user.notify()
+    fmt.Println(user)
+}
+
+//输出（名子会改变）：
+Send email to Jack 1139329@163.com
+{Jack 1139329@163.com}
+```
+
+#####2、 通过接口传递参数
+
+1、 接受者receiver为值，使用值传递的情况
+
+```go
+type user struct {
+    name  string
+    email string
+}
+
+type notifyInterface interface {
+    notify()
+}
+
+func (u user) notify() {
+    fmt.Println("Send email to", u.name, u.email)
+}
+
+func sendNotification(n notifyInterface) {
+    n.notify()
+}
+
+func main() {
+    user := user{"Andy", "1139329@163.com"}
+    sendNotification(user)
+}
+
+//编译成功
+```
+
+2、 接受者receiver为值，使用指针传递的情况
+
+```go
+type user struct {
+    name  string
+    email string
+}
+
+type notifyInterface interface {
+    notify()
+}
+
+func (u user) notify() {
+    fmt.Println("Send email to", u.name, u.email)
+}
+
+func sendNotification(n notifyInterface) {
+    n.notify()
+}
+
+func main() {
+    user := &user{"Andy", "1139329@163.com"}
+    sendNotification(user)
+}
+
+//编译成功
+```
+
+3、 接受者receiver为指针，使用指针传递的情况
+
+```go
+type user struct {
+    name  string
+    email string
+}
+
+type notifyInterface interface {
+    notify()
+}
+
+func (u *user) notify() {
+    fmt.Println("Send email to", u.name, u.email)
+}
+
+func sendNotification(n notifyInterface) {
+    n.notify()
+}
+
+func main() {
+    user := &user{"Andy", "1139329@163.com"}
+    sendNotification(user)
+}
+
+//编译成功
+```
+
+4、 接受者receiver为指针，使用值传递的情况
+
+```go
+type user struct {
+    name  string
+    email string
+}
+
+type notifyInterface interface {
+    notify()
+}
+
+func (u *user) notify() {
+    fmt.Println("Send email to", u.name, u.email)
+}
+
+func sendNotification(n notifyInterface) {
+    n.notify()
+}
+
+func main() {
+    user := user{"Andy", "1139329@163.com"}
+    sendNotification(user)
+}
+
+//编译失败（使用指针接受者来实现一个接口，值类型无法实现对应的接口）
+cannot use user (type user) as type notifyInterface in argument to sendNotification:
+user does not implement notifyInterface (notify method has pointer receiver)
+```
+针对以上情况，《Go语言实战》一书中这样讲到，首先这是Go语言的一种规则，具体如下：如果使用指针接受者来实现一个接口，那么只有指向那个类型的指针才能够实现对应的接口。如果使用值接受者来实现一个接口，那么那个类型的值和指针都能够实现对应的接口。
+
+为什么会有这样的限制呢：作者解释为go编译器并不总能自动获得一个值得地址！
+
 
                         </textarea>
                     </div>
