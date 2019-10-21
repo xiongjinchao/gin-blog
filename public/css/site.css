@@ -35,6 +35,10 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 .article .list-group-item{padding:.5rem 0;}
 .article .card-time{font-size:.875rem}
 
+/*首页书籍*/
+.container .book.card-group:nth-child(even) .card{border-bottom:none;border-bottom-left-radius:0; border-bottom-right-radius:0}
+.container .book.card-group:nth-child(odd) .card{border-top-left-radius:0; border-top-right-radius:0}
+
 /*全局链接效果*/
 .container a:not(.page-link){color:#333333;text-decoration:none;border-bottom:2px solid transparent;}
 .container a:not(.page-link):hover{color:#007bff;text-decoration:none;border-bottom:2px solid #007bff;}
@@ -102,9 +106,6 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 /*代码高亮左右滚动*/
 pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow:auto!important;background:#2d2d2d!important;}
 pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;padding:0 .5rem;}
-
-.container .book.card-group:nth-child(even) .card{border-bottom:none;border-bottom-left-radius:0; border-bottom-right-radius:0}
-.container .book.card-group:nth-child(odd) .card{border-top-left-radius:0; border-top-right-radius:0}
 
 /**==============小屏样式==============**/
 @media (max-width:576px ) {
