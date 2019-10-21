@@ -148,7 +148,7 @@
         <div class="col-lg-12 text-center">
             <div class="navy-line"></div>
             <h1 class="font-weight-light  navy-title">
-                站在大牛🐮的肩膀上
+                优秀🐮资源
             </h1>
             <small class="text-black-50">Stand on daniel's shoulders.</small>
         </div>
@@ -214,7 +214,7 @@
         <div class="col-lg-12 text-center">
             <div class="navy-line"></div>
             <h1 class="font-weight-light navy-title">
-                互联网🕸️那点事
+                笔记🕸️杂谈
             </h1>
             <small class="text-black-50">The internet event.</small>
         </div>
@@ -222,26 +222,16 @@
     <div class="card-group mt-3 article">
         <div class="card border-0">
             <ul class="list-group list-group-flush pr-lg-4">
-                <li class="list-group-item border-0 clearfix"><a href="/article/detail/1">我的 Go 语言学习之路</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="/article/detail/1">Go中文翻译组成立了，期待大家的加入</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="/article/detail/1">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="/article/detail/1">架构师应该如何判断技术演进的方向？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="/article/detail/1">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="/article/detail/1">我的 Go 语言学习之路</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="/article/detail/1">Go中文翻译组成立了，期待大家的加入</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="/article/detail/1">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
+                {{ range $v := .note }}
+                    <li class="list-group-item border-0 clearfix"><a href="/article/detail/1">{{ $v.Title }}</a><span class="card-time float-right text-black-50">{{ $v.CreatedAt.Format "2006/01/02" }}</span></li>
+                {{ end }}
             </ul>
         </div>
         <div class="card border-0">
             <ul class="list-group list-group-flush pl-lg-4">
-                <li class="list-group-item border-0"><a href="/book/detail/1">我的 Go 语言学习之路</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="/book/detail/1">Go中文翻译组成立了，期待大家的加入</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="#">架构师应该如何判断技术演进的方向？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="#">我的 Go 语言学习之路</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="#">Go中文翻译组成立了，期待大家的加入</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
-                <li class="list-group-item border-0"><a href="#">为什么80%的码农都做不了架构师？</a><span class="card-time float-right text-black-50">2019/10/01</span></li>
+                {{ range $v := .article }}
+                    <li class="list-group-item border-0"><a href="/book/detail/1">{{ $v.Title }}</a><span class="card-time float-right text-black-50">{{ $v.CreatedAt.Format "2006/01/02" }}</span></li>
+                {{ end }}
             </ul>
         </div>
     </div>
