@@ -103,6 +103,9 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow:auto!important;background:#2d2d2d!important;}
 pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;padding:0 .5rem;}
 
+.container .book.card-group:nth-child(even) .card{border-bottom:none;border-bottom-left-radius:0; border-bottom-right-radius:0}
+.container .book.card-group:nth-child(odd) .card{border-top-left-radius:0; border-top-right-radius:0}
+
 /**==============小屏样式==============**/
 @media (max-width:576px ) {
     .container a:not(.page-link){color:#333333;text-decoration:none;border-bottom:none}
@@ -112,7 +115,8 @@ pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;padding:0 .5rem;}
     .technology .card,.book .card{width:calc(50% - .5rem);float:left}
     .technology .card:nth-child(odd),.book .card:nth-child(odd){margin-right:1rem;}
     .technology .card .card-text{min-height:84px}
-    .container .book:nth-child(odd){margin-top:0!important;}
+    .container .book.card-group:nth-child(even) .card{border-bottom:1px solid rgba(0,0,0,.125);border-bottom-left-radius:.25rem; border-bottom-right-radius:.25rem}
+    .container .book.card-group:nth-child(odd) .card{border-top-left-radius:.25rem; border-top-right-radius:.25rem}
 
     .card.component.component-image{display: none}
     .card.component.component-right{text-align:left!important;}

@@ -269,8 +269,18 @@
                 <a href="/book/detail/1"><img src="/public/image/bootstrap.jpg" class="card-img-top" alt="..."></a>
             </div>
         </div>
+        <div class="card">
+            <div class="card-body text-center">
+                <a href="/book/detail/1"><img src="/public/image/mysql.jpg" class="card-img-top" alt="..."></a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body text-center">
+                <a href="/book/detail/1"><img src="/public/image/bootstrap.jpg" class="card-img-top" alt="..."></a>
+            </div>
+        </div>
     </div>
-    <div class="card-group mt-3 book">
+    <div class="card-group book">
         <div class="card">
             <div class="card-body text-center">
                 <a href="/book/detail/1"><img src="/public/image/golang.jpg" class="card-img-top" alt="..."></a></a>
@@ -279,6 +289,16 @@
         <div class="card">
             <div class="card-body text-center">
                 <a href="/book/detail/1"><img src="/public/image/gin.jpg" class="card-img-top" alt="..."></a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body text-center">
+                <a href="/book/detail/1"><img src="/public/image/redis.png" class="card-img-top" alt="..."></a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body text-center">
+                <a href="/book/detail/1"><img src="/public/image/bootstrap.jpg" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card">
