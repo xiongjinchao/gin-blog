@@ -2,6 +2,7 @@ package blog
 
 import (
 	"fmt"
+	"gin-blog/config"
 	"gin-blog/helper"
 	"gin-blog/models"
 	"github.com/gin-gonic/gin"
@@ -28,7 +29,7 @@ func (h *Home) Index(c *gin.Context) {
 	}
 
 	c.HTML(http.StatusOK, "home/index", gin.H{
-		"title":   "Susan's Blog golang 技术笔记",
+		"title":   config.Setting["app"]["title"],
 		"menu":    helper.GetMenu(),
 		"note":    note,
 		"article": article,

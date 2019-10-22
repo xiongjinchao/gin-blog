@@ -88,6 +88,8 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 /*文章详情*/
 .article-detail{padding:.5rem 1rem 1rem 1rem;position:relative;z-index:3;}
 #article-content{margin-top:2rem;padding:0;background:transparent;}
+#article-content > p{text-indent:28px;}
+#article-content > ul{margin-left:18px;}
 
 .toc-container{position:fixed;top:6rem;width:auto;display:none;overflow-y:scroll}
 .toc-container .markdown-toc > ul.markdown-toc-list{margin:.5rem 1rem .5rem 0;}

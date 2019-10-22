@@ -223,14 +223,14 @@
         <div class="card border-0">
             <ul class="list-group list-group-flush pr-lg-4">
                 {{ range $v := .note }}
-                    <li class="list-group-item border-0 clearfix"><a href="/article/detail/1">{{ $v.Title }}</a><span class="card-time float-right text-black-50">{{ $v.CreatedAt.Format "2006/01/02" }}</span></li>
+                    <li class="list-group-item border-0 clearfix"><a href="/article/detail/{{ $v.ID}}">{{ $v.Title }}</a><span class="card-time float-right text-black-50">{{ $v.CreatedAt.Format "2006/01/02" }}</span></li>
                 {{ end }}
             </ul>
         </div>
         <div class="card border-0">
             <ul class="list-group list-group-flush pl-lg-4">
                 {{ range $v := .article }}
-                    <li class="list-group-item border-0"><a href="/book/detail/1">{{ $v.Title }}</a><span class="card-time float-right text-black-50">{{ $v.CreatedAt.Format "2006/01/02" }}</span></li>
+                    <li class="list-group-item border-0"><a href="/article/detail/{{ $v.ID}}">{{ $v.Title }}</a><span class="card-time float-right text-black-50">{{ $v.CreatedAt.Format "2006/01/02" }}</span></li>
                 {{ end }}
             </ul>
         </div>
