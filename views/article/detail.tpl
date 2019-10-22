@@ -49,6 +49,16 @@
                                         <h5 class="mt-0 mb-1"><a href="/article/detail/{{ $v.ID}}">{{ $v.Title }}</a></h5>
                                         <p class="mb-1 media-summary">{{ $v.Summary }}</p>
                                         <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> {{ $v.Hit }}</span> <span><i class="fa fa-comment"></i> {{ $v.Comment }}</span> <span><i class="fa fa-thumbs-o-up"></i> {{ $v.Favorite }}</span></p>
+                                        {{if gt (len $v.Tags) 0}}
+                                        <p class="mb-1 media-tag">
+                                            <span>
+                                                <i class="fa fa-tags"></i>
+                                                {{ range $t := $v.Tags }}
+                                                    <a href="#">{{ $t.Tag }}</a>
+                                                {{ end }}
+                                            </span>
+                                        </p>
+                                        {{ end }}
                                     </div>
                                     {{ if $v.File.Path }}
                                         <img src="{{ .image }}{{ $v.File.Path }}" class="ml-3">

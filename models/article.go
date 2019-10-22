@@ -27,10 +27,21 @@ type Article struct {
 	ArticleCategory ArticleCategory `json:"article_category" validate:"-" gorm:"foreignKey:CategoryID;AssociationForeignKey:ID"`
 	User            User            `json:"user" validate:"-" gorm:"foreignKey:UserID"`
 	File            File            `json:"file" validate:"-" gorm:"foreignKey:Cover;AssociationForeignKey:ID"`
+	Tags            []Tag           `json:"tags" form:"-"`
 }
 
 func (Article) TableName() string {
 	return "article"
+}
+
+// set tags data to article
+func (a *Article) SetTags(articles *[]Article) {
+
+	for i, v := range *articles {
+		if err := db.Mysql.Model(&Tag{}).Select("id,tag").Where("model = ? and model_id = ?", "article", v.ID).Find(&(*articles)[i].Tags).Error; err != nil {
+			v.Tags = nil
+		}
+	}
 }
 
 // get the newest article from cache
@@ -142,6 +153,7 @@ func (a *Article) SetRelatedArticle(ID, categoryID int64) (articles []Article, e
 	if len(articles) == 0 {
 		return
 	}
+	a.SetTags(&articles)
 
 	article, err := json.Marshal(articles)
 	if err != nil {

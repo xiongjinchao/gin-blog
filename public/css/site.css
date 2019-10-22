@@ -67,6 +67,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 .card.article-list .list-group-item .media-body p span{color:#cccccc;margin-right:.5rem;}
 .card.article-list .list-group-item .media-body .media-icon{float:left}
 .card.article-list .list-group-item .media-body .media-tag{float:right;}
+.card.article-list .list-group-item .media-body .media-tag a{color:#999999!important;margin-left:.5rem}
 .card.article-list .media img{width:160px;background:#666666;}
 
 .card.recommend .list-group-item,.card.tag .list-group-item{font-size:.875rem;padding:.5rem;}
@@ -102,7 +103,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 .article-icon span a{color:#999999;text-decoration:none;}
 .article-icon span a:hover{color:#007bff;}
 .article-tips{font-size:.875rem;padding:.5rem 1rem;color:#999999}
-.article-tips a{color:#999999!important;}
+.article-tips a{color:#999999!important;margin-right:.5rem;}
 .article-notice{padding:0 1rem;background:#ffffff;border-radius:.25rem;font-size:1rem;color:#999999}
 
 /*代码高亮左右滚动*/
