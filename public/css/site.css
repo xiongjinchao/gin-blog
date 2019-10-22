@@ -87,7 +87,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 
 /*文章详情*/
 .article-detail{padding:.5rem 1rem 1rem 1rem;position:relative;z-index:3;}
-#article-content{margin-top:2rem;padding:0;background:transparent;}
+#article-content{margin-top:2rem;padding:0;background:transparent;font-size:1rem;color:#333333;}
 #article-content > p{text-indent:28px;}
 #article-content > ul{margin-left:18px;}
 
@@ -103,7 +103,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 .article-icon span a:hover{color:#007bff;}
 .article-tips{font-size:.875rem;padding:.5rem 1rem;color:#999999}
 .article-tips a{color:#999999;text-decoration:underline}
-.article-notice{padding:0 1rem;background:#ffffff;border-radius:.25rem;font-size:.875rem;color:#999999}
+.article-notice{padding:0 1rem;background:#ffffff;border-radius:.25rem;font-size:1rem;color:#999999}
 
 /*代码高亮左右滚动*/
 pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow:auto!important;background:#2d2d2d!important;}
