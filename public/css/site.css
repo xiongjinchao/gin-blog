@@ -106,7 +106,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 .article-notice{padding:0 1rem;background:#ffffff;border-radius:.25rem;font-size:1rem;color:#999999}
 
 /*代码高亮左右滚动*/
-pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow:auto!important;background:#2d2d2d!important;}
+pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow:auto!important;background:#2d2d2d!important;border:none!important;border-radius: .25rem!important;}
 pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;padding:0 .5rem;}
 
 /**==============小屏样式==============**/
