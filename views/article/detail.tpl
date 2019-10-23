@@ -42,6 +42,7 @@
 
                 <div class="card border-0 mt-4 article-list">
                     <ul class="list-group list-group-flush">
+                        {{ $image := .image }}
                         {{ range $v := .related }}
                             <li class="list-group-item">
                                 <div class="media">
@@ -61,7 +62,7 @@
                                         {{ end }}
                                     </div>
                                     {{ if $v.File.Path }}
-                                        <img src="{{ .image }}{{ $v.File.Path }}" class="ml-3">
+                                        <img src="{{ $image }}{{ $v.File.Path }}" class="ml-3">
                                     {{ end }}
                                 </div>
                             </li>
