@@ -13,209 +13,56 @@
                 <div class="text-center mt-4">
                     <div class="navy-line"></div>
                     <h1 class="font-weight-light navy-title">
-                        首页 / 笔记 / <span class="active">杂谈</span>
+                        首页 / 笔记 / <span class="active">{{ .category.Name }}</span>
                     </h1>
-                    <small class="text-black-50">Stand on daniel's shoulders.</small>
+                    <small class="text-black-50">{{ .category.Tag }}</small>
                 </div>
 
                 <div class="card border-0 mt-4 article-list">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="/article/detail/1">GCTT：Go中文翻译组成立了，期待大家的加入</a></h5>
-                                    <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <div class="clearfix">
-                                        <p class="mb-1 media-icon">
-                                            <span><i class="fa fa-eye"></i> 520</span>
-                                            <span><i class="fa fa-comment-o"></i> 3</span>
-                                            <span><i class="fa fa-thumbs-o-up"></i> 100</span>
-                                        </p>
-                                        <p class="mb-1 media-tag">
-                                            <span><i class="fa fa-tags"></i> 杂谈 PHP Golang</span>
-                                        </p>
+                        {{ $image := .image }}
+                        {{ range $v := .articles }}
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h5 class="mt-0 mb-1"><a href="/article/detail/{{ $v.ID }}">{{ $v.Title }}</a></h5>
+                                        <p class="mb-1 media-summary">{{ $v.Summary }}</p>
+                                        <div class="clearfix">
+                                            <p class="mb-1 media-icon">
+                                                <span><i class="fa fa-eye"></i> {{ $v.Hit }}</span>
+                                                <span><i class="fa fa-comment-o"></i> {{ $v.Comment }}</span>
+                                                <span><i class="fa fa-thumbs-o-up"></i> {{ $v.Favorite }}</span>
+                                            </p>
+                                            {{if gt (len $v.Tags) 0}}
+                                                <p class="mb-1 media-tag">
+                                                    <span>
+                                                        <i class="fa fa-tags"></i>
+                                                        {{ range $t := $v.Tags }}
+                                                            <a href="#">{{ $t.Tag }}</a>
+                                                        {{ end }}
+                                                    </span>
+                                                </p>
+                                            {{ end }}
+                                        </div>
                                     </div>
+                                    {{ if $v.File.Path }}
+                                        <img src="{{ $image }}{{ $v.File.Path }}" class="ml-3">
+                                    {{ end }}
                                 </div>
-                                <img src="http://www.daqianduan.com/wp-content/uploads/2017/08/git.jpg" class="ml-3">
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="#">PHP与Golang如何通信</a></h5>
-                                    <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <div class="clearfix">
-                                        <p class="mb-1 media-icon">
-                                            <span><i class="fa fa-eye"></i> 520</span>
-                                            <span><i class="fa fa-comment-o"></i> 3</span>
-                                            <span><i class="fa fa-thumbs-o-up"></i> 100</span>
-                                        </p>
-                                        <p class="mb-1 media-tag">
-                                            <span><i class="fa fa-tags"></i> 杂谈 PHP Golang</span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <img src="http://www.daqianduan.com/wp-content/uploads/2018/11/256ad38c1b2e77dfd6004f0b129ac840-220x150.jpg" class="ml-3">
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="#">Rabin-Karp算法在go的实现</a></h5>
-                                    <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <div class="clearfix">
-                                        <p class="mb-1 media-icon">
-                                            <span><i class="fa fa-eye"></i> 520</span>
-                                            <span><i class="fa fa-comment-o"></i> 3</span>
-                                            <span><i class="fa fa-thumbs-o-up"></i> 100</span>
-                                        </p>
-                                        <p class="mb-1 media-tag">
-                                            <span><i class="fa fa-tags"></i> 杂谈 PHP Golang</span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <img src="http://www.daqianduan.com/wp-content/uploads/2014/10/aliyun.jpg" class="ml-3">
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="#">你离告别GOPATH只差一步</a></h5>
-                                    <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <div class="clearfix">
-                                        <p class="mb-1 media-icon">
-                                            <span><i class="fa fa-eye"></i> 520</span>
-                                            <span><i class="fa fa-comment-o"></i> 3</span>
-                                            <span><i class="fa fa-thumbs-o-up"></i> 100</span>
-                                        </p>
-                                        <p class="mb-1 media-tag">
-                                            <span><i class="fa fa-tags"></i> 杂谈 PHP Golang</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="#">如何使用 Golang 日志监控你的应用程序</a></h5>
-                                    <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <div class="clearfix">
-                                        <p class="mb-1 media-icon">
-                                            <span><i class="fa fa-eye"></i> 520</span>
-                                            <span><i class="fa fa-comment-o"></i> 3</span>
-                                            <span><i class="fa fa-thumbs-o-up"></i> 100</span>
-                                        </p>
-                                        <p class="mb-1 media-tag">
-                                            <span><i class="fa fa-tags"></i> 杂谈 PHP Golang</span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="#">Rabin-Karp算法在go的实现</a></h5>
-                                    <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <div class="clearfix">
-                                        <p class="mb-1 media-icon">
-                                            <span><i class="fa fa-eye"></i> 520</span>
-                                            <span><i class="fa fa-comment-o"></i> 3</span>
-                                            <span><i class="fa fa-thumbs-o-up"></i> 100</span>
-                                        </p>
-                                        <p class="mb-1 media-tag">
-                                            <span><i class="fa fa-tags"></i> 杂谈 PHP Golang</span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="#">你离告别GOPATH只差一步</a></h5>
-                                    <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon">
-                                        <span><i class="fa fa-eye"></i> 520</span>
-                                        <span><i class="fa fa-comment-o"></i> 3</span>
-                                        <span><i class="fa fa-thumbs-o-up"></i> 100</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="#">如何使用 Golang 日志监控你的应用程序</a></h5>
-                                    <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon">
-                                        <span><i class="fa fa-eye"></i> 520</span>
-                                        <span><i class="fa fa-comment-o"></i> 3</span>
-                                        <span><i class="fa fa-thumbs-o-up"></i> 100</span>
-                                    </p>
-                                </div>
-                                <img src="http://www.daqianduan.com/wp-content/uploads/2014/10/aliyun.jpg" class="ml-3">
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="#">Rabin-Karp算法在go的实现</a></h5>
-                                    <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon">
-                                        <span><i class="fa fa-eye"></i> 520</span>
-                                        <span><i class="fa fa-comment-o"></i> 3</span>
-                                        <span><i class="fa fa-thumbs-o-up"></i> 100</span>
-                                    </p>
-                                </div>
-                                <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="#">你离告别GOPATH只差一步</a></h5>
-                                    <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon">
-                                        <span><i class="fa fa-eye"></i> 520</span>
-                                        <span><i class="fa fa-comment-o"></i> 3</span>
-                                        <span><i class="fa fa-thumbs-o-up"></i> 100</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="#">如何使用 Golang 日志监控你的应用程序</a></h5>
-                                    <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon">
-                                        <span><i class="fa fa-eye"></i> 520</span>
-                                        <span><i class="fa fa-comment-o"></i> 3</span>
-                                        <span><i class="fa fa-thumbs-o-up"></i> 100</span>
-                                    </p>
-                                </div>
-                                <img src="http://www.daqianduan.com/wp-content/uploads/2017/08/git.jpg" class="ml-3">
-                            </div>
-                        </li>
+                            </li>
+                        {{ end }}
                     </ul>
                 </div>
 
-                <div class="row justify-content-center mt-4">
-                    <ul class="pagination pagination-sm">
-                        <li class="page-item disabled"><a class="page-link" href="#">«</a></li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item"><a class="page-link" href="#">»</a></li>
-                    </ul>
-                </div>
+                {{ if gt (len .pagination) 0}}
+                    <div class="row justify-content-center mt-4">
+                        <ul class="pagination pagination-sm">
+                            {{ range $v := .pagination }}
+                                <li class="page-item {{ if $v.Active }}active{{ end }} {{ if $v.Disabled }}disabled{{ end }}"><a class="page-link" href="{{ $v.Url }}">{{ $v.Label }}</a></li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                {{ end }}
 
             </div>
             <div class="col-lg-3 content-right">
