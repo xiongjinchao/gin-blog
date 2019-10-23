@@ -77,16 +77,19 @@ func (a *Article) Detail(c *gin.Context) {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 	}
 
-	related, err := (&models.Article{}).GetRelatedArticle(article.ID, article.CategoryID)
+	related, err := helper.GetRelatedArticle(article.ID, article.CategoryID)
 	if err != nil {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
-		related = nil
 	}
 
-	recommend, err := (&models.Article{}).GetRelatedArticle(article.ID, article.CategoryID)
+	hot, err := helper.GetHotArticle(article.ID, article.CategoryID)
 	if err != nil {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
-		recommend = nil
+	}
+
+	recommend, err := helper.GetRecommendArticle(article.ID, article.CategoryID)
+	if err != nil {
+		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 	}
 
 	c.HTML(http.StatusOK, "article/detail", gin.H{
@@ -95,6 +98,7 @@ func (a *Article) Detail(c *gin.Context) {
 		"article":   article,
 		"tags":      tags,
 		"related":   related,
+		"hot":       hot,
 		"recommend": recommend,
 		"image":     config.Setting["domain"]["image"],
 	})

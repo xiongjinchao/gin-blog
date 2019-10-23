@@ -43,29 +43,60 @@
                 <div class="card border-0 mt-4 article-list">
                     <ul class="list-group list-group-flush">
                         {{ $image := .image }}
-                        {{ range $v := .related }}
-                            <li class="list-group-item">
-                                <div class="media">
-                                    <div class="media-body">
-                                        <h5 class="mt-0 mb-1"><a href="/article/detail/{{ $v.ID}}">{{ $v.Title }}</a></h5>
-                                        <p class="mb-1 media-summary">{{ $v.Summary }}</p>
-                                        <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> {{ $v.Hit }}</span> <span><i class="fa fa-comment"></i> {{ $v.Comment }}</span> <span><i class="fa fa-thumbs-o-up"></i> {{ $v.Favorite }}</span></p>
-                                        {{if gt (len $v.Tags) 0}}
-                                        <p class="mb-1 media-tag">
-                                            <span>
-                                                <i class="fa fa-tags"></i>
-                                                {{ range $t := $v.Tags }}
-                                                    <a href="#">{{ $t.Tag }}</a>
-                                                {{ end }}
-                                            </span>
-                                        </p>
-                                        {{ end }}
-                                    </div>
-                                    {{ if $v.File.Path }}
-                                        <img src="{{ $image }}{{ $v.File.Path }}" class="ml-3">
+                        {{ if gt .related.Prev.ID 0 }}
+                        <li class="list-group-item">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="/article/detail/{{ .related.Prev.ID}}">{{ .related.Prev.Title }}</a></h5>
+                                    <p class="mb-1 media-summary">{{ .related.Prev.Summary }}</p>
+                                    <p class="mb-1 media-icon">
+                                        <span><i class="fa fa-eye"></i> {{ .related.Prev.Hit }}</span>
+                                        <span><i class="fa fa-comment"></i> {{ .related.Prev.Comment }}</span>
+                                        <span><i class="fa fa-thumbs-o-up"></i> {{ .related.Prev.Favorite }}</span></p>
+                                    {{if gt (len .related.Prev.Tags) 0}}
+                                    <p class="mb-1 media-tag">
+                                        <span>
+                                            <i class="fa fa-tags"></i>
+                                            {{ range $t := .related.Prev.Tags }}
+                                                <a href="#">{{ $t.Tag }}</a>
+                                            {{ end }}
+                                        </span>
+                                    </p>
                                     {{ end }}
                                 </div>
-                            </li>
+                                {{ if .related.Prev.File.Path }}
+                                    <img src="{{ $image }}{{ .related.Prev.File.Path }}" class="ml-3">
+                                {{ end }}
+                            </div>
+                        </li>
+                        {{ end }}
+
+                        {{ if gt .related.Next.ID 0 }}
+                        <li class="list-group-item">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1"><a href="/article/detail/{{ .related.Next.ID}}">{{ .related.Next.Title }}</a></h5>
+                                    <p class="mb-1 media-summary">{{ .related.Next.Summary }}</p>
+                                    <p class="mb-1 media-icon">
+                                        <span><i class="fa fa-eye"></i> {{ .related.Next.Hit }}</span>
+                                        <span><i class="fa fa-comment"></i> {{ .related.Next.Comment }}</span>
+                                        <span><i class="fa fa-thumbs-o-up"></i> {{ .related.Next.Favorite }}</span></p>
+                                    {{if gt (len .related.Next.Tags) 0}}
+                                        <p class="mb-1 media-tag">
+                                        <span>
+                                            <i class="fa fa-tags"></i>
+                                            {{ range $t := .related.Next.Tags }}
+                                                <a href="#">{{ $t.Tag }}</a>
+                                            {{ end }}
+                                        </span>
+                                        </p>
+                                    {{ end }}
+                                </div>
+                                {{ if .related.Next.File.Path }}
+                                    <img src="{{ $image }}{{ .related.Next.File.Path }}" class="ml-3">
+                                {{ end }}
+                            </div>
+                        </li>
                         {{ end }}
                     </ul>
                 </div>
@@ -73,11 +104,13 @@
             </div>
             <div class="col-lg-3 content-right">
                 <div class="card border-0 recommend">
-                    <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/next.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="#">微信支付的GoLang接口封装方案</a></h5>
-                        <p class="card-text">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                    </div>
+                    {{ if gt .hot.ID 0}}
+                        <img src="{{ $image }}{{ .hot.File.Path }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="#">{{ .hot.Title }}</a></h5>
+                            <p class="card-text">{{ .hot.Summary }}</p>
+                        </div>
+                    {{ end }}
                     <ul class="list-group list-group-flush">
                         {{ range $v := .recommend }}
                             <li class="list-group-item"><a href="/article/detail/{{ $v.ID}}">{{ $v.Title }}</a><br/><span>阅读 {{ $v.Hit }}</span></li>
