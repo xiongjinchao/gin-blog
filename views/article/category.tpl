@@ -13,7 +13,7 @@
                 <div class="text-center mt-4">
                     <div class="navy-line"></div>
                     <h1 class="font-weight-light navy-title">
-                        首页 / 笔记 / <span class="active">{{ .category.Name }}</span>
+                        首页 / {{ .category.Father.Name }} / <span class="active">{{ .category.Name }}</span>
                     </h1>
                     <small class="text-black-50">{{ .category.Tag }}</small>
                 </div>
@@ -93,20 +93,17 @@
                 </div>
 
                 <div class="card border-0 mt-4 recommend">
-                    <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/next.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="#">微信支付的GoLang接口封装方案</a></h5>
-                        <p class="card-text">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                    </div>
+                    {{ if gt .hot.ID 0}}
+                        <img src="{{ $image }}{{ .hot.File.Path }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="#">{{ .hot.Title }}</a></h5>
+                            <p class="card-text">{{ .hot.Summary }}</p>
+                        </div>
+                    {{ end }}
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a href="#">Rabin-Karp算法在go的实现</a><br/><span>阅读 120</span></li>
-                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a><br/><span>阅读 1200</span></li>
-                        <li class="list-group-item"><a href="#">go平滑重启调研选型和项目实践</a><br/><span>阅读 120</span></li>
-                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a><br/><span>阅读 120</span></li>
-                        <li class="list-group-item"><a href="#">go平滑重启调研选型和项目实践</a><br/><span>阅读 120</span></li>
-                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a><br/><span>阅读 120</span></li>
-                        <li class="list-group-item"><a href="#">go平滑重启调研选型和项目实践</a><br/><span>阅读 120</span></li>
-                        <li class="list-group-item"><a href="#">你离告别GOPATH只差一步</a><br/><span>阅读 120</span></li>
+                        {{ range $v := .recommend }}
+                            <li class="list-group-item"><a href="/article/detail/{{ $v.ID}}">{{ $v.Title }}</a><br/><span>阅读 {{ $v.Hit }}</span></li>
+                        {{ end }}
                     </ul>
                 </div>
 

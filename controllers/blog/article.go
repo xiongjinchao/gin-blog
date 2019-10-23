@@ -24,9 +24,19 @@ func (a *Article) Index(c *gin.Context) {
 // Category handles GET /article/category/:tag route
 func (a *Article) Category(c *gin.Context) {
 
-	category := models.ArticleCategory{}
+	var category, father models.ArticleCategory
 	if err := db.Mysql.Where("tag = ?", c.Param("tag")).First(&category).Error; err != nil {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
+	}
+	if category.Parent > 0 {
+		if err := db.Mysql.Where("id = ?", category.Parent).First(&father).Error; err != nil {
+			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
+		}
+		category.Father = models.Category{
+			ID:   father.ID,
+			Name: father.Name,
+			Tag:  father.Tag,
+		}
 	}
 
 	total, size, page := 0, 10, 1
@@ -49,12 +59,24 @@ func (a *Article) Category(c *gin.Context) {
 		Order("id desc").Offset((page - 1) * size).Limit(size).Find(&articles)
 	(&models.Article{}).SetTags(&articles)
 
+	hot, err := helper.GetHotArticle(0, category.ID)
+	if err != nil {
+		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
+	}
+
+	recommend, err := helper.GetRecommendArticle(0, category.ID)
+	if err != nil {
+		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
+	}
+
 	c.HTML(http.StatusOK, "article/category", gin.H{
 		"title":      category.Name + "-" + config.Setting["app"]["title"],
 		"menu":       helper.GetMenu(),
 		"category":   category,
 		"articles":   articles,
 		"pagination": (&helper.Pagination{}).Generate(total, size, page, "/article/category/"+c.Param("tag")),
+		"hot":        hot,
+		"recommend":  recommend,
 		"image":      config.Setting["domain"]["image"],
 	})
 }
