@@ -19,10 +19,12 @@ func Router() *gin.Engine {
 
 	// SESSION with cookie
 	store := sessions.NewCookieStore([]byte(config.Setting["session"]["secret"]))
-	store.Options(sessions.Options{
-		Domain: "." + config.Setting["app"]["domain"],
-		MaxAge: 15 * 24 * 3600,
-	})
+	/*
+		store.Options(sessions.Options{
+			Domain: "." + config.Setting["app"]["domain"],
+			MaxAge: 15 * 24 * 3600,
+		})
+	*/
 	// SESSION with redis
 	// store, _ := sessions.NewRedisStore(10, "tcp", "localhost:6379", "", []byte(config.Setting["session"]["secret"]))
 	router.Use(sessions.Sessions(config.Setting["session"]["id"], store))

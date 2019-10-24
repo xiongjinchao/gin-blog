@@ -117,7 +117,13 @@ func (o *Oauth) Callback(c *gin.Context) {
 		// login success
 		session := sessions.Default(c)
 		session.Set("token", string(data))
-		_ = session.Save()
+		if err := session.Save(); err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"code":    403,
+				"message": err.Error(),
+			})
+			return
+		}
 
 		c.Redirect(http.StatusFound, "/")
 		return
