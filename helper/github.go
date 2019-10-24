@@ -31,17 +31,17 @@ type Github struct {
 	EventsUrl         string `json:"events_url"`
 	ReceivedEventsUrl string `json:"received_events_url"`
 	Type              string `json:"type"`
-	SiteAdmin         string `json:"site_admin"`
+	SiteAdmin         bool   `json:"site_admin"`
 	Name              string `json:"name"`
 	Blog              string `json:"blog"`
 	Location          string `json:"location"`
 	Email             string `json:"email"`
 	Hireable          string `json:"hireable"`
 	Bio               string `json:"bio"`
-	PublicRepos       string `json:"public_repos"`
-	PublicGists       string `json:"public_gists"`
-	Followers         string `json:"followers"`
-	Following         string `json:"following"`
+	PublicRepos       int64  `json:"public_repos"`
+	PublicGists       int64  `json:"public_gists"`
+	Followers         int64  `json:"followers"`
+	Following         int64  `json:"following"`
 	CreatedAt         string `json:"created_at"`
 	UpdatedAt         string `json:"updated_at"`
 }
