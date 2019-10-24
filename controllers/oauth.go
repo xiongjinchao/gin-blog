@@ -37,7 +37,10 @@ func (o *Oauth) Callback(c *gin.Context) {
 		if err != nil {
 			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 		}
-		user := helper.Github{}.GetUser(accessToken)
+		user, err := helper.Github{}.GetUser(accessToken)
+		if err != nil {
+			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
+		}
 		fmt.Println(user)
 
 		c.JSON(http.StatusCreated, gin.H{
