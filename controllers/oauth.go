@@ -29,12 +29,18 @@ func (o *Oauth) Callback(c *gin.Context) {
 	code := c.Query("code")
 	state := c.Query("state")
 
-	if code != "" && c.Param("type") == "github" {
+	if c.Param("type") == "github" {
 		accessToken, err := helper.Github{}.GetAccessToken(code, state)
 		if err != nil {
 			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 		}
 		fmt.Println(accessToken)
+
+		c.JSON(http.StatusCreated, gin.H{
+			"code":        200,
+			"message":     "oauth github",
+			"accessToken": accessToken,
+		})
 	}
 
 	c.JSON(http.StatusCreated, gin.H{
