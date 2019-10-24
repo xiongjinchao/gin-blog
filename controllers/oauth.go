@@ -51,23 +51,13 @@ func (o *Oauth) Callback(c *gin.Context) {
 		}
 
 		userAuth := models.UserAuth{}
-		if err := db.Mysql.Where("openid = ?", github.ID).First(&userAuth).Error; err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{
-				"code":    403,
-				"message": err.Error(),
-			})
-			return
-		}
 		user := models.User{}
+
+		db.Mysql.Where("openid = ?", github.ID).First(&userAuth)
 		if userAuth.UserID > 0 {
-			if err := db.Mysql.First(&user, userAuth.UserID).Error; err != nil {
-				c.JSON(http.StatusBadRequest, gin.H{
-					"code":    403,
-					"message": err.Error(),
-				})
-				return
-			}
+			db.Mysql.First(&user, userAuth.UserID)
 		}
+
 		user.Name = github.Name
 		user.Email = github.Email
 		if user.Name == "" {
