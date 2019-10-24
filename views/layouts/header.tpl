@@ -36,6 +36,9 @@
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="搜索..." aria-label="Search">
                     <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i> 搜索</button>
+                    <span class="text-white ml-2 has-login" style="font-size:1rem;display:none">
+                        <a href=""><i class="fa fa-user-o"></i><span> Ted</span></a>
+                    </span>
                     <button class="btn btn-outline-info my-2 ml-2 my-sm-0 login-btn" type="button" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user-o"></i> 登录</button>
                 </form>
             </div>
@@ -52,7 +55,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="text-center">
-                        <p><a href="/oauth/login/github"><i class="fa fa-github text-info" style="font-size:6rem;"></i></a></p>
+                        <p><a href="/auth/login/github"><i class="fa fa-github text-info" style="font-size:6rem;"></i></a></p>
                         <p style="font-size:.875rem;color:#999999;">更多登录方式敬请期待</p>
                         <p style="font-size:2rem;">
                             <span class="d-inline-block bg-secondary" style="width:3rem;height:3rem;border-radius:50%"><i class="fa fa-qq text-white"></i></span>

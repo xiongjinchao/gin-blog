@@ -2,3 +2,18 @@
 particlesJS.load('particles-js', '/public/plug-in/particles/particles.json', function() {
     //console.log('callback - particles.js config loaded');
 });
+
+// 登录信息
+$(function(){
+    $.get("/auth/user",function(result){
+        console.log(result);
+        if(result.data.base.id > 0){
+            $(".has-login > a > span").text(result.data.name);
+            $(".has-login").show();
+            $(".login-btn").hide();
+        }else{
+            $(".has-login").hide();
+            $(".login-btn").show();
+        }
+    })
+});

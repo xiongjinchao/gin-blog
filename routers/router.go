@@ -80,9 +80,12 @@ func Router() *gin.Engine {
 	router.GET("/about", page.About)
 
 	// 第三方登录
-	oauth := &controllers.Oauth{}
-	router.GET("/oauth/login/:type", oauth.Login)
-	router.GET("/oauth/callback/:type", oauth.Callback)
+	auth := &controllers.Auth{}
+	router.GET("/auth/login/:type", auth.Login)
+	router.GET("/auth/callback/:type", auth.Callback)
+
+	// 获取当前用户信息
+	router.GET("/auth/user", auth.User)
 
 	return router
 }

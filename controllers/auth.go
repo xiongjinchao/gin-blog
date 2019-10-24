@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
+	"fmt"
 	db "gin-blog/database"
 	"gin-blog/helper"
 	"gin-blog/models"
@@ -11,10 +12,10 @@ import (
 	"strconv"
 )
 
-type Oauth struct{}
+type Auth struct{}
 
 // Login handles GET /oauth/login/:type route
-func (o *Oauth) Login(c *gin.Context) {
+func (a *Auth) Login(c *gin.Context) {
 
 	if c.Param("type") == "github" {
 		url := helper.Github{}.GenerateUrl()
@@ -23,13 +24,13 @@ func (o *Oauth) Login(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusBadRequest, gin.H{
-		"code":    403,
+		"code":    401,
 		"message": "oauth forbidden",
 	})
 }
 
 // Callback handles GET /oauth/callback/:type route
-func (o *Oauth) Callback(c *gin.Context) {
+func (a *Auth) Callback(c *gin.Context) {
 
 	code := c.Query("code")
 	state := c.Query("state")
@@ -37,7 +38,7 @@ func (o *Oauth) Callback(c *gin.Context) {
 		github, err := helper.Github{}.GetAccessToken(code, state)
 		if err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
-				"code":    403,
+				"code":    401,
 				"message": err.Error(),
 			})
 			return
@@ -45,7 +46,7 @@ func (o *Oauth) Callback(c *gin.Context) {
 		github, err = helper.Github{}.GetUser(github.AccessToken)
 		if err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
-				"code":    403,
+				"code":    401,
 				"message": err.Error(),
 			})
 			return
@@ -69,7 +70,7 @@ func (o *Oauth) Callback(c *gin.Context) {
 		}
 		if err := db.Mysql.Model(&models.User{}).Save(&user).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
-				"code":    403,
+				"code":    401,
 				"message": err.Error(),
 			})
 			return
@@ -77,7 +78,7 @@ func (o *Oauth) Callback(c *gin.Context) {
 
 		if user.AccessToken, user.ResetKey, err = user.GenerateToken(user.ID); err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
-				"code":    403,
+				"code":    401,
 				"message": err.Error(),
 			})
 			return
@@ -85,7 +86,7 @@ func (o *Oauth) Callback(c *gin.Context) {
 
 		if err := db.Mysql.Save(&user).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
-				"code":    403,
+				"code":    401,
 				"message": err.Error(),
 			})
 			return
@@ -99,7 +100,7 @@ func (o *Oauth) Callback(c *gin.Context) {
 		userAuth.Avatar = github.AvatarUrl
 		if err := db.Mysql.Model(&models.UserAuth{}).Save(&userAuth).Error; err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
-				"code":    403,
+				"code":    401,
 				"message": err.Error(),
 			})
 			return
@@ -108,7 +109,7 @@ func (o *Oauth) Callback(c *gin.Context) {
 		data, err := json.Marshal(user)
 		if err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
-				"code":    403,
+				"code":    401,
 				"message": err.Error(),
 			})
 			return
@@ -116,10 +117,10 @@ func (o *Oauth) Callback(c *gin.Context) {
 
 		// login success
 		session := sessions.Default(c)
-		session.Set("token", string(data))
+		session.Set("passport", string(data))
 		if err := session.Save(); err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
-				"code":    403,
+				"code":    401,
 				"message": err.Error(),
 			})
 			return
@@ -130,7 +131,27 @@ func (o *Oauth) Callback(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusBadRequest, gin.H{
-		"code":    403,
+		"code":    401,
 		"message": "oauth forbidden",
 	})
+}
+
+func (a *Auth) User(c *gin.Context) {
+
+	session := sessions.Default(c)
+	auth := session.Get("auth")
+	user := models.User{}
+	if auth != nil {
+		if err := json.Unmarshal([]byte(auth.(string)), &user); err != nil {
+			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
+			return
+		}
+	}
+
+	c.JSON(http.StatusCreated, gin.H{
+		"code":    200,
+		"message": "",
+		"data":    user,
+	})
+
 }
