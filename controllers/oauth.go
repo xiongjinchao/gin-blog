@@ -1,8 +1,11 @@
 package controllers
 
 import (
-	"fmt"
+	"encoding/json"
+	db "gin-blog/database"
 	"gin-blog/helper"
+	"gin-blog/models"
+	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -18,7 +21,7 @@ func (o *Oauth) Login(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusCreated, gin.H{
+	c.JSON(http.StatusBadRequest, gin.H{
 		"code":    403,
 		"message": "oauth forbidden",
 	})
@@ -26,32 +29,123 @@ func (o *Oauth) Login(c *gin.Context) {
 
 // Callback handles GET /oauth/callback/:type route
 func (o *Oauth) Callback(c *gin.Context) {
+
 	code := c.Query("code")
 	state := c.Query("state")
-	fmt.Println(code)
-	fmt.Println(state)
-	fmt.Println(c.Param("type"))
-
 	if code != "" && c.Param("type") == "github" {
-		accessToken, err := helper.Github{}.GetAccessToken(code, state)
+		github, err := helper.Github{}.GetAccessToken(code, state)
 		if err != nil {
-			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
+			c.JSON(http.StatusBadRequest, gin.H{
+				"code":    403,
+				"message": err.Error(),
+			})
+			return
 		}
-		user, err := helper.Github{}.GetUser(accessToken)
+		github, err = helper.Github{}.GetUser(github.AccessToken)
 		if err != nil {
-			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
+			c.JSON(http.StatusBadRequest, gin.H{
+				"code":    403,
+				"message": err.Error(),
+			})
+			return
 		}
-		fmt.Println(user)
+
+		userAuth := models.UserAuth{}
+		if err := db.Mysql.Where("openid = ?", github.ID).First(&userAuth).Error; err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"code":    403,
+				"message": err.Error(),
+			})
+			return
+		}
+		user := models.User{}
+		if userAuth.UserID > 0 {
+			if err := db.Mysql.First(&user, userAuth.UserID).Error; err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{
+					"code":    403,
+					"message": err.Error(),
+				})
+				return
+			}
+		}
+		user.Name = github.Name
+		user.Email = github.Email
+		if user.Name == "" {
+			user.Name = github.Login
+		}
+		if userAuth.UserID > 0 {
+			user.ID = userAuth.UserID
+		}
+		if err := db.Mysql.Model(&models.User{}).Save(&user).Error; err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"code":    403,
+				"message": err.Error(),
+			})
+			return
+		}
+
+		if user.AccessToken, user.ResetKey, err = user.GenerateToken(user.ID); err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"code":    403,
+				"message": err.Error(),
+			})
+			return
+		}
+
+		if err := db.Mysql.Save(&user).Error; err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"code":    403,
+				"message": err.Error(),
+			})
+			return
+		}
+
+		userAuth.UserID = user.ID
+		userAuth.Type = "github"
+		userAuth.AccessToken = github.AccessToken
+		userAuth.OpenID = string(github.ID)
+		userAuth.Nickname = user.Name
+		userAuth.Avatar = github.AvatarUrl
+		if err := db.Mysql.Model(&models.UserAuth{}).Save(&userAuth).Error; err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"code":    403,
+				"message": err.Error(),
+			})
+			return
+		}
+
+		data, err := json.Marshal(user)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"code":    403,
+				"message": err.Error(),
+			})
+			return
+		}
+
+		// login success
+		session := sessions.Default(c)
+		session.Set("token", string(data))
+		if err := session.Save(); err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"code":    403,
+				"message": err.Error(),
+			})
+			return
+		}
 
 		c.JSON(http.StatusCreated, gin.H{
-			"code":        200,
-			"message":     "oauth github",
-			"accessToken": accessToken,
+			"code":    200,
+			"message": "oauth github",
+			"data": gin.H{
+				"id":   user.ID,
+				"name": user.Name,
+			},
 		})
 		return
 	}
 
-	c.JSON(http.StatusCreated, gin.H{
+	c.JSON(http.StatusBadRequest, gin.H{
 		"code":    403,
 		"message": "oauth forbidden",
 	})
