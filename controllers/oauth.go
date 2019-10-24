@@ -126,7 +126,7 @@ func (o *Oauth) Callback(c *gin.Context) {
 
 		c.JSON(http.StatusCreated, gin.H{
 			"code":    200,
-			"message": "oauth github",
+			"message": "github oauth success",
 			"data": gin.H{
 				"id":   user.ID,
 				"name": user.Name,
