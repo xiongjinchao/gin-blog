@@ -8,6 +8,7 @@ import (
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"strconv"
 )
 
 type Oauth struct{}
@@ -93,7 +94,7 @@ func (o *Oauth) Callback(c *gin.Context) {
 		userAuth.UserID = user.ID
 		userAuth.Type = "github"
 		userAuth.AccessToken = github.AccessToken
-		userAuth.OpenID = string(github.ID)
+		userAuth.OpenID = strconv.FormatInt(github.ID, 10)
 		userAuth.Nickname = user.Name
 		userAuth.Avatar = github.AvatarUrl
 		if err := db.Mysql.Model(&models.UserAuth{}).Save(&userAuth).Error; err != nil {
