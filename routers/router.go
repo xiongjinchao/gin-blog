@@ -21,7 +21,7 @@ func Router() *gin.Engine {
 	store := sessions.NewCookieStore([]byte(config.Setting["session"]["secret"]))
 	store.Options(sessions.Options{
 		"/",
-		".susan.org.cn",
+		config.Setting["app"]["domain"],
 		15 * 24 * 3600,
 		false,
 		true,
