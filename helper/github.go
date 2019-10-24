@@ -3,6 +3,7 @@ package helper
 import (
 	"crypto/sha1"
 	"encoding/hex"
+	"encoding/json"
 	"gin-blog/config"
 	"io/ioutil"
 	"net/http"
@@ -24,7 +25,7 @@ func (g Github) GenerateUrl() (url string) {
 
 }
 
-func (g Github) GetAccessToken(code, state string) (result string, err error) {
+func (g Github) GetAccessToken(code, state string) (accessToken string, err error) {
 
 	client := &http.Client{}
 	url := "https://github.com/login/oauth/access_token"
@@ -48,6 +49,16 @@ func (g Github) GetAccessToken(code, state string) (result string, err error) {
 		return
 	}
 
-	result = string(body)
-	return result, nil
+	type AccessTokenBody struct {
+		AccessToken string
+		Scope       string
+		TokenType   string
+	}
+	result := AccessTokenBody{}
+
+	if err := json.Unmarshal(body, &result); err != nil {
+		return
+	}
+
+	return result.AccessToken, nil
 }

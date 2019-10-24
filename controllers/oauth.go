@@ -41,6 +41,7 @@ func (o *Oauth) Callback(c *gin.Context) {
 			"message":     "oauth github",
 			"accessToken": accessToken,
 		})
+		return
 	}
 
 	c.JSON(http.StatusCreated, gin.H{
