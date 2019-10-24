@@ -27,6 +27,13 @@ func (g Github) GenerateUrl() (url string) {
 
 func (g Github) GetAccessToken(code, state string) (accessToken string, err error) {
 
+	type AccessTokenBody struct {
+		AccessToken string
+		Scope       string
+		TokenType   string
+	}
+	result := AccessTokenBody{}
+
 	client := &http.Client{}
 	url := "https://github.com/login/oauth/access_token"
 	clientID := config.Setting["github"]["id"]
@@ -39,6 +46,9 @@ func (g Github) GetAccessToken(code, state string) (accessToken string, err erro
 	req.Header.Set("Accept", "application/json")
 
 	resp, err := client.Do(req)
+	if err != nil {
+		return
+	}
 
 	defer func() {
 		_ = resp.Body.Close()
@@ -49,14 +59,7 @@ func (g Github) GetAccessToken(code, state string) (accessToken string, err erro
 		return
 	}
 
-	type AccessTokenBody struct {
-		AccessToken string
-		Scope       string
-		TokenType   string
-	}
-	result := AccessTokenBody{}
-
-	if err := json.Unmarshal(body, &result); err != nil {
+	if err = json.Unmarshal(body, &result); err != nil {
 		return
 	}
 
