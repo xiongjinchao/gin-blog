@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
+	"gin-blog/config"
 	db "gin-blog/database"
 	"gin-blog/helper"
 	"gin-blog/models"
@@ -116,6 +117,10 @@ func (o *Oauth) Callback(c *gin.Context) {
 
 		// login success
 		session := sessions.Default(c)
+		session.Options(sessions.Options{
+			Domain: "." + config.Setting["app"]["domain"],
+			MaxAge: 15 * 24 * 3600,
+		})
 		session.Set("token", string(data))
 		if err := session.Save(); err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
