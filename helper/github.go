@@ -4,6 +4,7 @@ import (
 	"crypto/sha1"
 	"encoding/hex"
 	"encoding/json"
+	"fmt"
 	"gin-blog/config"
 	"io/ioutil"
 	"net/http"
@@ -58,6 +59,7 @@ func (g Github) GetAccessToken(code, state string) (accessToken string, err erro
 	if err != nil {
 		return
 	}
+	fmt.Println(string(body))
 
 	if err = json.Unmarshal(body, &result); err != nil {
 		return

@@ -28,8 +28,11 @@ func (o *Oauth) Login(c *gin.Context) {
 func (o *Oauth) Callback(c *gin.Context) {
 	code := c.Query("code")
 	state := c.Query("state")
+	fmt.Println(code)
+	fmt.Println(state)
+	fmt.Println(c.Param("type"))
 
-	if c.Param("type") == "github" {
+	if code != "" && c.Param("type") == "github" {
 		accessToken, err := helper.Github{}.GetAccessToken(code, state)
 		if err != nil {
 			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
