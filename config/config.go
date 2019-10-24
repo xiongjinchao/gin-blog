@@ -16,4 +16,5 @@ func init() {
 	Setting["jwt"] = config.Section("jwt").KeysHash()
 	Setting["mysql"] = config.Section("mysql").KeysHash()
 	Setting["redis"] = config.Section("redis").KeysHash()
+	Setting["github"] = config.Section("github").KeysHash()
 }

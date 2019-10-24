@@ -52,7 +52,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="text-center">
-                        <p><a href="#"><i class="fa fa-github text-info" style="font-size:6rem;"></i></a></p>
+                        <p><a href="/oauth/login/github"><i class="fa fa-github text-info" style="font-size:6rem;"></i></a></p>
                         <p style="font-size:.875rem;color:#999999;">更多登录方式敬请期待</p>
                         <p style="font-size:2rem;">
                             <span class="d-inline-block bg-secondary" style="width:3rem;height:3rem;border-radius:50%"><i class="fa fa-qq text-white"></i></span>

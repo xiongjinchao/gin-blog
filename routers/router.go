@@ -2,6 +2,7 @@ package routers
 
 import (
 	"gin-blog/config"
+	"gin-blog/controllers"
 	"gin-blog/controllers/blog"
 	"gin-blog/helper"
 	"github.com/foolin/gin-template"
@@ -70,6 +71,11 @@ func Router() *gin.Engine {
 	// 其他静态页
 	page := &blog.Page{}
 	router.GET("/about", page.About)
+
+	// 第三方登录
+	oauth := &controllers.Oauth{}
+	router.GET("/oauth/login/:type", oauth.Login)
+	router.GET("/oauth/callback/:type", oauth.Callback)
 
 	return router
 }
