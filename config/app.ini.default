@@ -1,5 +1,6 @@
 [app]
 model = debug
+domain = localhost
 title = Susan's Blog - golang 技术笔记
 
 [domain]
@@ -30,6 +31,6 @@ port = 6379
 password =
 database = 1
 
-#github oauth
+#defined github clientID clientSecret
 id = 446fd409f1e287a9d5d7
 secret = 5e1b9646ad9b8823fd1d267a26981436121e5f91
