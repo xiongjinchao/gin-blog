@@ -4,7 +4,6 @@ import (
 	"crypto/sha1"
 	"encoding/hex"
 	"encoding/json"
-	"fmt"
 	"gin-blog/config"
 	"io/ioutil"
 	"net/http"
@@ -29,9 +28,9 @@ func (g Github) GenerateUrl() (url string) {
 func (g Github) GetAccessToken(code, state string) (accessToken string, err error) {
 
 	type AccessTokenBody struct {
-		AccessToken string
-		Scope       string
-		TokenType   string
+		AccessToken string `json:"access_token"`
+		TokenType   string `json:"token_type"`
+		Scope       string `json:"scope"`
 	}
 	result := AccessTokenBody{}
 
@@ -59,11 +58,38 @@ func (g Github) GetAccessToken(code, state string) (accessToken string, err erro
 	if err != nil {
 		return
 	}
-	fmt.Println(string(body))
 
 	if err = json.Unmarshal(body, &result); err != nil {
 		return
 	}
 
 	return result.AccessToken, nil
+}
+
+func (g Github) GetUser(accessToken string) (user string, err error) {
+
+	client := &http.Client{}
+	url := "https://api.github.com/user"
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return
+	}
+	req.Header.Set("Authorization", "token "+accessToken)
+	req.Header.Set("Accept", "application/json")
+
+	resp, err := client.Do(req)
+	if err != nil {
+		return
+	}
+
+	defer func() {
+		_ = resp.Body.Close()
+	}()
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return
+	}
+	return string(body), nil
+
 }

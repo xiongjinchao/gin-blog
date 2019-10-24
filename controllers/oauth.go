@@ -37,7 +37,8 @@ func (o *Oauth) Callback(c *gin.Context) {
 		if err != nil {
 			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 		}
-		fmt.Println(accessToken)
+		user := helper.Github{}.GetUser(accessToken)
+		fmt.Println(user)
 
 		c.JSON(http.StatusCreated, gin.H{
 			"code":        200,
