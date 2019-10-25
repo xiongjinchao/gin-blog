@@ -2,7 +2,7 @@
 body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"PingFangSC-Regular","Microsoft YaHei";color:#333333;padding-bottom:7rem;}
 .site-bg{position:fixed;width: 100%; height: 100%;left:0;right:0;top:0;z-index:0;}
 .footer{font-size:.875rem;background:#343a40;width:100%;height:7rem;margin-bottom:-7rem;position:relative;z-index:1}
-.footer a{padding:0 .125rem;color:#f8f9fa;text-decoration:none;}
+.footer a{padding:0 .125rem;color:#f8f9fa;}
 
 /*导航*/
 .navbar a.navbar-brand{font-size:1.125rem}
@@ -42,8 +42,9 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 .container .book.card-group:nth-child(odd) .card{border-top-left-radius:0; border-top-right-radius:0}
 
 /*全局链接效果*/
-.container a:not(.page-link){color:#333333;text-decoration:none;border-bottom:2px solid transparent;}
-.container a:not(.page-link):hover{color:#007bff;text-decoration:none;border-bottom:2px solid #007bff;}
+a, a:hover{text-decoration:none;}
+.container a:not(.page-link){color:#333333;border-bottom:2px solid transparent;}
+.container a:not(.page-link):hover{color:#007bff;border-bottom:2px solid #007bff;}
 .card-group.technology a:hover,.card-group.book a:hover,.card.about a:hover{border-bottom:none}
 .card.recommend a:hover,.card.tag a:hover{border-bottom:1px solid #007bff;}
 
@@ -102,7 +103,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 
 .article-title{font-size:1.75rem;margin:1rem 0;}
 .article-icon span{margin-right:1rem;color:#999999;font-size:.875rem;}
-.article-icon span a{color:#999999;text-decoration:none;}
+.article-icon span a{color:#999999;}
 .article-icon span a:hover{color:#007bff;}
 .article-tips{font-size:.875rem;padding:.5rem 1rem;color:#999999}
 .article-tips a{color:#999999!important;margin-right:.5rem;}
@@ -114,8 +115,8 @@ pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;padding:0 .5rem;}
 
 /**==============小屏样式==============**/
 @media (max-width:576px ) {
-    .container a:not(.page-link){color:#333333;text-decoration:none;border-bottom:none}
-    .container a:not(.page-link):hover{color:#007bff;text-decoration:none;border-bottom:none}
+    .container a:not(.page-link){color:#333333;border-bottom:none}
+    .container a:not(.page-link):hover{color:#007bff;border-bottom:none}
 
     .technology, .book{display:block;overflow:hidden}
     .technology .card,.book .card{width:calc(50% - .5rem);float:left}
