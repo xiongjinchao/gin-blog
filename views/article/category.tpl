@@ -68,7 +68,7 @@
             <div class="col-lg-3 content-right">
                 <div class="card border-0 about bg-dark">
                     <div class="card-body text-center">
-                        <div class="avatar">
+                        <div>
                             <img class="rounded-circle mx-auto d-block avatar" src="/public/image/avatar.jpg">
                         </div>
                         <h5 class="card-title mt-2 mb-0">

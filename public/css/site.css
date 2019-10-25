@@ -2,13 +2,15 @@
 body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"PingFangSC-Regular","Microsoft YaHei";color:#333333;padding-bottom:7rem;}
 .site-bg{position:fixed;width: 100%; height: 100%;left:0;right:0;top:0;z-index:0;}
 .footer{font-size:.875rem;background:#343a40;width:100%;height:7rem;margin-bottom:-7rem;position:relative;z-index:1}
-.footer a{padding:0 .125rem;color:#f4f4f4;text-decoration:none;}
+.footer a{padding:0 .125rem;color:#f8f9fa;text-decoration:none;}
 
 /*导航*/
 .navbar a.navbar-brand{font-size:1.125rem}
 .navbar a {font-size:.875rem;}
 .navbar .form-control,.navbar .btn {font-size:.875rem;}
 .navbar-toggler{font-size:.875rem}
+.navbar .has-login{display:none}
+.navbar img.avatar{height:35px;background:#f4f4f4}
 
 /*轮播*/
 #main-carousel {margin-top:3.325rem;z-index:1;}
