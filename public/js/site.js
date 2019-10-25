@@ -5,7 +5,7 @@ particlesJS.load('particles-js', '/public/plug-in/particles/particles.json', fun
 
 // 登录信息
 $(function(){
-    $.get("/auth/user",function(result){
+    $.get("/auth/passport",function(result){
         console.log(result);
         if(result.data.base.id > 0){
             $(".has-login > a > span").text(result.data.user.name);

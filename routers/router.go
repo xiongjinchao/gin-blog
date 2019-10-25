@@ -85,7 +85,7 @@ func Router() *gin.Engine {
 	router.GET("/auth/callback/:type", auth.Callback)
 
 	// 获取当前用户信息
-	router.GET("/auth/user", auth.User)
+	router.GET("/auth/user", auth.Passport)
 
 	return router
 }
