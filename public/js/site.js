@@ -7,7 +7,7 @@ particlesJS.load('particles-js', '/public/plug-in/particles/particles.json', fun
 $(function(){
     $.get("/auth/passport",function(result){
         console.log(result);
-        if(result.data.base.id > 0){
+        if(result.data.user.base.id > 0){
             $(".has-login > a > span").text(result.data.user.name);
             $(".has-login").show();
             $(".login-btn").hide();
