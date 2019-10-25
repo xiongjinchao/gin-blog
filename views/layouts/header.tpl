@@ -36,7 +36,7 @@
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="搜索..." aria-label="Search">
                     <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i> 搜索</button>
-                    <span class="m-auto has-login">
+                    <span class="has-login">
                         <img class="rounded-circle ml-2 avatar" src="/public/image/logo.png" style="height:35px">
                         <a href="">Susan</a>
                     </span>
