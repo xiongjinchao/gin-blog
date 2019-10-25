@@ -12,7 +12,10 @@ import (
 	"strconv"
 )
 
-type Auth struct{}
+type Auth struct {
+	User     models.User     `json:"user"`
+	UserAuth models.UserAuth `json:"user_auth"`
+}
 
 // Login handles GET /oauth/login/:type route
 func (a *Auth) Login(c *gin.Context) {
@@ -106,7 +109,10 @@ func (a *Auth) Callback(c *gin.Context) {
 			return
 		}
 
-		data, err := json.Marshal(user)
+		passport, err := json.Marshal(Auth{
+			user,
+			userAuth,
+		})
 		if err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
 				"code":    401,
@@ -117,7 +123,7 @@ func (a *Auth) Callback(c *gin.Context) {
 
 		// login success
 		session := sessions.Default(c)
-		session.Set("passport", string(data))
+		session.Set("passport", string(passport))
 		if err := session.Save(); err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
 				"code":    401,
@@ -136,13 +142,13 @@ func (a *Auth) Callback(c *gin.Context) {
 	})
 }
 
-func (a *Auth) User(c *gin.Context) {
+func (a *Auth) Passport(c *gin.Context) {
 
 	session := sessions.Default(c)
-	auth := session.Get("auth")
-	user := models.User{}
-	if auth != nil {
-		if err := json.Unmarshal([]byte(auth.(string)), &user); err != nil {
+	passport := session.Get("passport")
+	auth := Auth{}
+	if passport != nil {
+		if err := json.Unmarshal([]byte(passport.(string)), &auth); err != nil {
 			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 			return
 		}
@@ -151,7 +157,7 @@ func (a *Auth) User(c *gin.Context) {
 	c.JSON(http.StatusCreated, gin.H{
 		"code":    200,
 		"message": "",
-		"data":    user,
+		"data":    auth,
 	})
 
 }

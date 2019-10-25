@@ -8,7 +8,7 @@ $(function(){
     $.get("/auth/user",function(result){
         console.log(result);
         if(result.data.base.id > 0){
-            $(".has-login > a > span").text(result.data.name);
+            $(".has-login > a > span").text(result.data.user.name);
             $(".has-login").show();
             $(".login-btn").hide();
         }else{
