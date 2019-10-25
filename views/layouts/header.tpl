@@ -40,7 +40,7 @@
                         <img class="rounded-circle ml-2 avatar" src="/public/image/logo.png" style="height:35px">
                         <a href="">Susan</a>
                     </span>
-                    <button class="btn btn-outline-info my-2 ml-2 my-sm-0 login-btn" type="button" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user-o"></i> 登录</button>
+                    <button style="display:none" class="btn btn-outline-info my-2 ml-2 my-sm-0 login-btn" type="button" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user-o"></i> 登录</button>
                 </form>
             </div>
         </nav>
