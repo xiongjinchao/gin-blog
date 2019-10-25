@@ -11,6 +11,8 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 .navbar-toggler{font-size:.875rem}
 .navbar .has-login{display:none}
 .navbar img.avatar{height:35px;background:#f4f4f4}
+.navbar .has-login a{color:#ffffff}
+.navbar .has-login a:hover{color:#f4f4f4}
 
 /*轮播*/
 #main-carousel {margin-top:3.325rem;z-index:1;}
