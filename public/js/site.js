@@ -9,7 +9,7 @@ $(function(){
         console.log(result);
         if(result.data.user.base.id > 0){
             $(".has-login a").text(result.data.user.name);
-            $(".has-login img").src(result.data.user_auth.avatar);
+            $(".has-login img").attr("src",result.data.user_auth.avatar);
             $(".has-login").show();
             $(".login-btn").hide();
         }else{
