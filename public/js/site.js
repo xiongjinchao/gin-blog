@@ -18,7 +18,5 @@ $(function(){
             $(".has-login").hide();
             $(".login-btn").show();
         }
-        $(".has-login").show();
-        $(".login-btn").hide();
     })
 });
