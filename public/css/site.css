@@ -13,7 +13,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 .navbar img.avatar{height:35px;background:#f4f4f4}
 .navbar .has-login > a{color:rgba(255,255,255,.5)}
 .navbar .has-login > a:hover{color:#ffffff}
-.navbar .has-login .dropdown-menu{right:0}
+.navbar .has-login .dropdown-menu{left:auto;right:0}
 
     /*轮播*/
 #main-carousel {margin-top:3.325rem;z-index:1;}
