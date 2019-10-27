@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/public/css/bootstrap.min.css">
     <link href="/public/plug-in/fontawesome-pro-5.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     {{ template "css"}}
     <link rel="stylesheet" href="/public/css/site.css">
     <title>{{.title}}</title>

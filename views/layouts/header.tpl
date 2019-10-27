@@ -64,10 +64,19 @@
                     <div class="text-center">
                         <p><a href="/auth/login/github"><i class="fab fa-github text-info" style="font-size:6rem;"></i></a></p>
                         <p style="font-size:.875rem;color:#999999;">更多登录方式敬请期待</p>
-                        <p style="font-size:2rem;">
-                            <span class="d-inline-block bg-secondary" style="width:3rem;height:3rem;border-radius:50%"><i class="fab fa-qq text-white"></i></span>
-                            <span class="d-inline-block bg-secondary" style="width:3rem;height:3rem;border-radius:50%"><i class="fal fa-weibo text-white"></i></span>
-                            <span class="d-inline-block bg-secondary" style="width:3rem;height:3rem;border-radius:50%"><i class="fal fa-weixin text-white"></i></span>
+                        <p style="font-size:1.4rem;color:#6c757d">
+                            <span class="fa-stack">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
+                            </span>
+                            <span class="fa-stack">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                            <span class="fa-stack">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
+                            </span>
                         </p>
                     </div>
                 </div>
