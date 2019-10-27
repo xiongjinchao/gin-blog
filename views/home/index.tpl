@@ -26,7 +26,7 @@
                         <h1>Susan👸🏻's Blog</h1>
                         <p>使用gin框架开发的个人博客。后台整合了文章，分类，菜单，权限等功能模块</p>
                         <p>欢迎来github上拍dian砖zan</p>
-                        <p><a class="btn btn-lg btn-primary" href="https://github.com/xiongjinchao/gin-blog" target="_blank" role="button"><i class="fa fa-github"></i> github</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="https://github.com/xiongjinchao/gin-blog" target="_blank" role="button"><i class="fab fa-github"></i> github</a></p>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                         <h1>Susan👸🏻's Blog</h1>
                         <p>使用gin框架开发的个人博客。后台整合了文章，分类，菜单，权限等管理模块</p>
                         <p>欢迎来github上拍dian砖zan</p>
-                        <p><a class="btn btn-lg btn-primary" href="https://github.com/xiongjinchao/gin-blog" target="_blank" role="button"><i class="fa fa-github"></i> github</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="https://github.com/xiongjinchao/gin-blog" target="_blank" role="button"><i class="fab fa-github"></i> github</a></p>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                         <h1>Susan👸🏻's Blog</h1>
                         <p>使用gin框架开发的个人博客。后台整合了文章，分类，菜单，权限等功能模块</p>
                         <p>欢迎来github上拍dian砖zan</p>
-                        <p><a class="btn btn-lg btn-primary" href="https://github.com/xiongjinchao/gin-blog" target="_blank" role="button"><i class="fa fa-github"></i> github</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="https://github.com/xiongjinchao/gin-blog" target="_blank" role="button"><i class="fab fa-github"></i> github</a></p>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
             </div>
             <div class="card-footer bg-transparent border-info text-right">
                 <small class="text-muted">version 1.13.1</small>
-                <a href="https://golang.google.cn/dl/" target="_blank"><i class="fa fa-link"></i></a>
+                <a href="https://golang.google.cn/dl/" target="_blank"><i class="fal fa-link"></i></a>
             </div>
         </div>
         <div class="card border-info">
@@ -111,7 +111,7 @@
             </div>
             <div class="card-footer bg-transparent border-info text-right">
                 <small class="text-muted">version 1.4.0</small>
-                <a href="https://gin-gonic.com/" target="_blank"><i class="fa fa-link"></i></a>
+                <a href="https://gin-gonic.com/" target="_blank"><i class="fal fa-link"></i></a>
             </div>
         </div>
         <div class="card border-info">
@@ -124,7 +124,7 @@
             </div>
             <div class="card-footer bg-transparent border-info text-right">
                 <small class="text-muted">version 5.7</small>
-                <a href="https://www.mysql.com/downloads/"><i class="fa fa-link"></i></a>
+                <a href="https://www.mysql.com/downloads/"><i class="fal fa-link"></i></a>
             </div>
         </div>
         <div class="card border-info">
@@ -137,7 +137,7 @@
             </div>
             <div class="card-footer bg-transparent border-info text-right">
                 <small class="text-muted">version 4.3.1</small>
-                <a href="https://getbootstrap.com/"><i class="fa fa-link"></i></a>
+                <a href="https://getbootstrap.com/"><i class="fal fa-link"></i></a>
             </div>
         </div>
     </div>
@@ -158,24 +158,24 @@
         <div class="card border-0 component">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item border-0">
-                    <span class="d-block github-title"><i class="fa fa-database"></i> Golang ORM</span>
-                    <span><a href="https://github.com/jinzhu/gorm" target="_blank"><i class="fa fa-link"></i> https://github.com/jinzhu/gorm</a></span>
+                    <span class="d-block github-title"><i class="fal fa-database"></i> Golang ORM</span>
+                    <span><a href="https://github.com/jinzhu/gorm" target="_blank"><i class="fal fa-link"></i> https://github.com/jinzhu/gorm</a></span>
                 </li>
                 <li class="list-group-item border-0">
-                    <span class="d-block github-title"><i class="fa fa-id-card-o"></i> Golang ACL RBAC ABAC</span>
-                    <span><a href="https://github.com/casbin/casbin" target="_blank"><i class="fa fa-link"></i> https://github.com/casbin/casbin</a></span>
+                    <span class="d-block github-title"><i class="fal fa-address-card"></i> Golang ACL RBAC ABAC</span>
+                    <span><a href="https://github.com/casbin/casbin" target="_blank"><i class="fal fa-link"></i> https://github.com/casbin/casbin</a></span>
                 </li>
                 <li class="list-group-item border-0">
-                    <span class="d-block github-title"><i class="fa fa-id-card-o"></i> Golang uuid</span>
+                    <span class="d-block github-title"><i class="fal fa-address-card"></i> Golang uuid</span>
                     <span><a href="https://github.com/satori/go.uuid" target="_blank">https://github.com/satori/go.uuid</a></span>
                 </li>
                 <li class="list-group-item border-0">
-                    <span class="d-block github-title"><i class="fa fa-user-o"></i> Golang JWT</span>
-                    <span><a href="https://github.com/dgrijalva/jwt-go" target="_blank"><i class="fa fa-link"></i> https://github.com/dgrijalva/jwt-go</a></span>
+                    <span class="d-block github-title"><i class="fal fa-user"></i> Golang JWT</span>
+                    <span><a href="https://github.com/dgrijalva/jwt-go" target="_blank"><i class="fal fa-link"></i> https://github.com/dgrijalva/jwt-go</a></span>
                 </li>
                 <li class="list-group-item border-0">
-                    <span class="d-block github-title"><i class="fa fa-file-text-o"></i> Gin Template</span>
-                    <span><a href="https://github.com/foolin/gin-template" target="_blank"><i class="fa fa-link"></i> https://github.com/foolin/gin-template</a></span>
+                    <span class="d-block github-title"><i class="fal fa-file-alt"></i> Gin Template</span>
+                    <span><a href="https://github.com/foolin/gin-template" target="_blank"><i class="fal fa-link"></i> https://github.com/foolin/gin-template</a></span>
                 </li>
             </ul>
         </div>
@@ -185,23 +185,23 @@
         <div class="card border-0 component component-right">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item border-0">
-                    <span class="d-block github-title"><i class="fa fa-database"></i> Golang redis</span>
+                    <span class="d-block github-title"><i class="fal fa-database"></i> Golang redis</span>
                     <span><a href="https://github.com/boj/redistore" target="_blank">https://github.com/boj/redistore</a></span>
                 </li>
                 <li class="list-group-item border-0">
-                    <span class="d-block github-title"><i class="fa fa-user-o"></i> Golang session</span>
+                    <span class="d-block github-title"><i class="fal fa-user"></i> Golang session</span>
                     <span><a href="https://github.com/gorilla/sessions" target="_blank">https://github.com/gorilla/sessions</a></span>
                 </li>
                 <li class="list-group-item border-0">
-                    <span class="d-block github-title"><i class="fa fa-gears"></i> Golang ini config</span>
+                    <span class="d-block github-title"><i class="fal fa-cogs"></i> Golang ini config</span>
                     <span><a href="http://github.com/go-ini/ini" target="_blank">http://github.com/go-ini/ini</a></span>
                 </li>
                 <li class="list-group-item border-0">
-                    <span class="d-block github-title"><i class="fa fa-paper-plane"></i> govendor</span>
+                    <span class="d-block github-title"><i class="fal fa-paper-plane"></i> govendor</span>
                     <span><a href="https://github.com/kardianos/govendor" target="_blank">https://github.com/kardianos/govendor</a></span>
                 </li>
                 <li class="list-group-item border-0">
-                    <span class="d-block github-title"><i class="fa fa-heartbeat"></i> validator</span>
+                    <span class="d-block github-title"><i class="fal fa-heartbeat"></i> validator</span>
                     <span><a href="https://gopkg.in/go-playground/validator.v9" target="_blank">https://gopkg.in/go-playground/validator.v9</a></span>
                 </li>
             </ul>

@@ -10,10 +10,10 @@
                 <div class="article-detail">
                     <h1 class="article-title text-center">{{ .article.Title}}</h1>
                     <div class="article-icon text-center">
-                        <span><a href="#"><i class="fa fa-eye"></i> {{ .article.Hit}}</a></span>
-                        <span><a href="#"><i class="fa fa-comment-o"></i> {{ .article.Comment}}</a></span>
-                        <span><a href="#"><i class="fa fa-thumbs-o-up"></i> {{ .article.Favorite}}</a></span>
-                        <span><i class="fa fa-clock-o"></i> {{ .article.CreatedAt.Format "2006/01/02"}}</span>
+                        <span><a href="#"><i class="fal fa-eye"></i> {{ .article.Hit}}</a></span>
+                        <span><a href="#"><i class="fal fa-comments"></i> {{ .article.Comment}}</a></span>
+                        <span><a href="#"><i class="fal fa-thumbs-up"></i> {{ .article.Favorite}}</a></span>
+                        <span><i class="fal fa-calendar-alt"></i> {{ .article.CreatedAt.Format "2006/01/02"}}</span>
                     </div>
                     <div id="article-content" class="article-content">
                         <textarea style="display:none;">{{ .article.Content}}</textarea>
@@ -22,14 +22,14 @@
 
                 {{if .tags}}
                     <div class="article-tips">
-                        <i class="fa fa-tags"></i>
+                        <i class="fal fa-tags"></i>
                         {{ range $v := .tags }}
                             <a href="#">{{ $v.Tag }}</a>
                         {{ end }}
                     </div>
                 {{ end }}
                 <div class="article-notice">
-                    <p class="m-0"><i class="fa fa-info-circle"></i> 未经允许不得转载：转载以<span class="text-primary">超链接形式</span>并注明出处。原文地址：<a class="text-primary" href="/article/detail/{{ .article.ID}}">《{{ .article.Title}}》</a></p>
+                    <p class="m-0"><i class="fal fa-info-circle-circle"></i> 未经允许不得转载：转载以<span class="text-primary">超链接形式</span>并注明出处。原文地址：<a class="text-primary" href="/article/detail/{{ .article.ID}}">《{{ .article.Title}}》</a></p>
                 </div>
 
                 <div class="text-center mt-4">
@@ -50,13 +50,13 @@
                                     <h5 class="mt-0 mb-1"><a href="/article/detail/{{ .related.Prev.ID}}">{{ .related.Prev.Title }}</a></h5>
                                     <p class="mb-1 media-summary">{{ .related.Prev.Summary }}</p>
                                     <p class="mb-1 media-icon">
-                                        <span><i class="fa fa-eye"></i> {{ .related.Prev.Hit }}</span>
-                                        <span><i class="fa fa-comment"></i> {{ .related.Prev.Comment }}</span>
-                                        <span><i class="fa fa-thumbs-o-up"></i> {{ .related.Prev.Favorite }}</span></p>
+                                        <span><i class="fal fa-eye"></i> {{ .related.Prev.Hit }}</span>
+                                        <span><i class="fal fa-comments"></i> {{ .related.Prev.Comment }}</span>
+                                        <span><i class="fal fa-thumbs-up"></i> {{ .related.Prev.Favorite }}</span></p>
                                     {{if gt (len .related.Prev.Tags) 0}}
                                     <p class="mb-1 media-tag">
                                         <span>
-                                            <i class="fa fa-tags"></i>
+                                            <i class="fal fa-tags"></i>
                                             {{ range $t := .related.Prev.Tags }}
                                                 <a href="#">{{ $t.Tag }}</a>
                                             {{ end }}
@@ -78,13 +78,13 @@
                                     <h5 class="mt-0 mb-1"><a href="/article/detail/{{ .related.Next.ID}}">{{ .related.Next.Title }}</a></h5>
                                     <p class="mb-1 media-summary">{{ .related.Next.Summary }}</p>
                                     <p class="mb-1 media-icon">
-                                        <span><i class="fa fa-eye"></i> {{ .related.Next.Hit }}</span>
-                                        <span><i class="fa fa-comment"></i> {{ .related.Next.Comment }}</span>
-                                        <span><i class="fa fa-thumbs-o-up"></i> {{ .related.Next.Favorite }}</span></p>
+                                        <span><i class="fal fa-eye"></i> {{ .related.Next.Hit }}</span>
+                                        <span><i class="fal fa-comments"></i> {{ .related.Next.Comment }}</span>
+                                        <span><i class="fal fa-thumbs-up"></i> {{ .related.Next.Favorite }}</span></p>
                                     {{if gt (len .related.Next.Tags) 0}}
                                         <p class="mb-1 media-tag">
                                         <span>
-                                            <i class="fa fa-tags"></i>
+                                            <i class="fal fa-tags"></i>
                                             {{ range $t := .related.Next.Tags }}
                                                 <a href="#">{{ $t.Tag }}</a>
                                             {{ end }}

@@ -10,10 +10,10 @@
                 <div class="article-detail">
                     <h1 class="article-title text-center">欢迎使用 Markdown</h1>
                     <div class="article-icon text-center">
-                        <span><a href="#"><i class="fa fa-eye"></i> 520</a></span>
-                        <span><a href="#"><i class="fa fa-comment-o"></i> 3</a></span>
-                        <span><a href="#"><i class="fa fa-star-o"></i> 100</a></span>
-                        <span><i class="fa fa-clock-o"></i> 2019-10-01</span>
+                        <span><a href="#"><i class="fal fa-eye"></i> 520</a></span>
+                        <span><a href="#"><i class="fal fa-comments"></i> 3</a></span>
+                        <span><a href="#"><i class="fal fa-star-o"></i> 100</a></span>
+                        <span><i class="fal fa-calendar-alt"></i> 2019-10-01</span>
                     </div>
                     <div id="toc-container" class="toc-container"></div>
                     <div id="article-content" class="article-content">
@@ -321,11 +321,11 @@ Andrew->>China: I am good thanks!
                 </div>
 
                 <div class="article-tips">
-                    <i class="fa fa-tags"></i>
+                    <i class="fal fa-tags"></i>
                     <a href="#">Golang</a> <a href="#">Slice</a>
                 </div>
                 <div class="article-notice">
-                    <p class="m-0"><i class="fa fa-info-circle"></i> 未经允许不得转载：转载以<span class="text-primary">超链接形式</span>并注明出处。原文地址：<a class="text-primary" href="/article/detail/1">《【Golang】json自定义序列化的深入解析》</a></p>
+                    <p class="m-0"><i class="fal fa-info-circle-circle"></i> 未经允许不得转载：转载以<span class="text-primary">超链接形式</span>并注明出处。原文地址：<a class="text-primary" href="/article/detail/1">《【Golang】json自定义序列化的深入解析》</a></p>
                 </div>
 
                 <div class="text-center mt-4">
@@ -343,7 +343,7 @@ Andrew->>China: I am good thanks!
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="/article/detail/1">GCTT：Go中文翻译组成立了，期待大家的加入</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart"></i> 100</span></p>
+                                    <p class="mb-1 media-icon"><span><i class="fal fa-eye"></i> 520</span> <span><i class="fal fa-comments"></i> 3</span> <span><i class="fal fa-heart"></i> 100</span></p>
                                 </div>
                                 <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
                             </div>
@@ -354,7 +354,7 @@ Andrew->>China: I am good thanks!
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1"><a href="#">PHP与Golang如何通信</a></h5>
                                     <p class="mb-1 media-summary">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
-                                    <p class="mb-1 media-icon"><span><i class="fa fa-eye"></i> 520</span> <span><i class="fa fa-comment"></i> 3</span> <span><i class="fa fa-heart"></i> 100</span></p>
+                                    <p class="mb-1 media-icon"><span><i class="fal fa-eye"></i> 520</span> <span><i class="fal fa-comments"></i> 3</span> <span><i class="fal fa-heart"></i> 100</span></p>
                                 </div>
                                 <img src="http://www.daqianduan.com/wp-content/uploads/2019/07/kaike.jpg" class="ml-3">
                             </div>
@@ -400,7 +400,7 @@ Andrew->>China: I am good thanks!
             $("#article-content").addClass("editormd-preview-theme-dark");
 
             //  菜单定位 显示与隐藏
-            $("#toc-container").prepend('<h4><i class=fa fa-puls></i> 目录</h4>');
+            $("#toc-container").prepend('<h4><i class=fal fa-bars></i> 目录</h4>');
             var bodyWidth = $("body").width();
             var containerWidth = $(".container").width() + 30;
             var tocWidth = $("#toc-container").width();

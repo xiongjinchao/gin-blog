@@ -29,14 +29,14 @@
                                         <p class="mb-1 media-summary">{{ $v.Summary }}</p>
                                         <div class="clearfix">
                                             <p class="mb-1 media-icon">
-                                                <span><i class="fa fa-eye"></i> {{ $v.Hit }}</span>
-                                                <span><i class="fa fa-comment-o"></i> {{ $v.Comment }}</span>
-                                                <span><i class="fa fa-thumbs-o-up"></i> {{ $v.Favorite }}</span>
+                                                <span><i class="fal fa-eye"></i> {{ $v.Hit }}</span>
+                                                <span><i class="fal fa-comments"></i> {{ $v.Comment }}</span>
+                                                <span><i class="fal fa-thumbs-up"></i> {{ $v.Favorite }}</span>
                                             </p>
                                             {{if gt (len $v.Tags) 0}}
                                                 <p class="mb-1 media-tag">
                                                     <span>
-                                                        <i class="fa fa-tags"></i>
+                                                        <i class="fal fa-tags"></i>
                                                         {{ range $t := $v.Tags }}
                                                             <a href="#">{{ $t.Tag }}</a>
                                                         {{ end }}
@@ -78,9 +78,9 @@
                         <p class="card-text mt-4">又到了茶余饭后的时间，想想写点什么，掐指一算，噢呦，快到3月份了，职场的金三银四跳槽季又来了。</p>
                     </div>
                     <div class="card-footer bg-transparent text-center">
-                        <span><a href="#"><i class="fa fa-envelope"></i> 邮箱</a></span>
-                        <span><a href="#"><i class="fa fa-github"></i> github</a></span>
-                        <span><a href="#"><i class="fa fa-qq"></i> QQ</a></span>
+                        <span><a href="#"><i class="fal fa-envelope"></i> 邮箱</a></span>
+                        <span><a href="#"><i class="fab fa-github"></i> github</a></span>
+                        <span><a href="#"><i class="fab fa-qq"></i> QQ</a></span>
                     </div>
                 </div>
 
