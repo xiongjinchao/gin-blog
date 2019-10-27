@@ -40,10 +40,10 @@
                         <img class="rounded-circle ml-2 avatar" src="/public/image/logo.png" style="height:35px">
                         <a class="dropdown-toggle" href="" id="memberDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Susan</a>
                         <div class="dropdown-menu" aria-labelledby="memberDropdown">
-                            <a class="dropdown-item" href="">我的主页</a>
-                            <a class="dropdown-item" href="">喜欢的文章</a>
-                            <a class="dropdown-item" href="">设置</a>
-                            <a class="dropdown-item" href="">退出</a>
+                            <a class="dropdown-item" href=""><i class="fal fa-home"></i> 我的主页</a>
+                            <a class="dropdown-item" href=""><i class="fal fa-heart"></i> 喜欢的文章</a>
+                            <a class="dropdown-item" href=""><i class="fal fa-cog"></i> 设置</a>
+                            <a class="dropdown-item" href=""><i class="fal fa-sign-out"></i> 退出</a>
                         </div>
                     </span>
                     <button style="display:none" class="btn btn-outline-info my-2 ml-2 my-sm-0 login-btn" type="button" data-toggle="modal" data-target="#loginModal"><i class="fal fa-user"></i> 登录</button>
