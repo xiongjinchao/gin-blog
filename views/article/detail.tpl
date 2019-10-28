@@ -125,6 +125,23 @@
                     </ul>
                 </div>
 
+                <div class="text-center mt-4">
+                    <div class="navy-line"></div>
+                    <h1 class="font-weight-light navy-title">
+                        全部评论
+                    </h1>
+                    <small class="text-black-50">Recommend</small>
+                </div>
+
+                <div class="mt-3" style="overflow:hidden">
+                    <div class="media">
+                        <img src="/public/image/logo.png" width="60px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
+                        <div class="media-body">
+                            <textarea rows="4" style="width:100%;border:1px solid #e4e4e4"></textarea>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="col-lg-3 content-right">
                 <div class="card border-0 recommend">
