@@ -97,6 +97,7 @@ a, a:hover{text-decoration:none;}
 #article-content{margin-top:2rem;padding:0;background:transparent;font-size:1rem;color:#333333;}
 #article-content > p{text-indent:28px;}
 #article-content > ul{margin-left:18px;}
+#article-content img{text-align: center;}
 
 .toc-container{position:fixed;top:6rem;width:auto;display:none;overflow-y:scroll}
 .toc-container .markdown-toc > ul.markdown-toc-list{margin:.5rem 1rem .5rem 0;}
