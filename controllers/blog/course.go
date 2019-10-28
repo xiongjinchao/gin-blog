@@ -10,7 +10,7 @@ type Course struct{}
 
 // Index handles GET /course route
 func (co *Course) Index(c *gin.Context) {
-	c.HTML(http.StatusOK, "page/about", gin.H{
+	c.HTML(http.StatusOK, "course/detail", gin.H{
 		"title": "教程",
 		"menu":  helper.GetMenu(),
 	})
