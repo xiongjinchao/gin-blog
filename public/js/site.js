@@ -19,9 +19,5 @@ $(function(){
             $(".login-btn").show();
         }
     });
-
-    // 文章内容图片居中
-    $("#article-content img").each(function(i,item){
-        $("item").wrap("div align='center'></div>")
-    });
+    
 });

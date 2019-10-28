@@ -165,6 +165,11 @@
                 sequenceDiagram : true,  // 默认不解析
             });
             $("#article-content").addClass("editormd-preview-theme-dark");
+
+            // 文章内容图片居中
+            $("#article-content img").each(function(i,item){
+                $("item").closest("p").css({"text-indent":0,"text-align":"center"})
+            });
         });
     </script>
 {{ end }}
