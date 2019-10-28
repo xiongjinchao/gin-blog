@@ -168,7 +168,7 @@
 
             // 文章内容图片居中
             $("#article-content img").each(function(i,item){
-                $("item").closest("p").css({"text-indent":0,"text-align":"center"})
+                $(item).closest("p").css({"text-indent":0,"text-align":"center"})
             });
         });
     </script>

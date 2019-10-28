@@ -407,7 +407,7 @@ Andrew->>China: I am good thanks!
             var left = (bodyWidth-containerWidth)/2 -tocWidth;
             if(left > 0 && $(".container").offset().left - $("#toc-container").offset().left - left > 0) {
                 var height = $(window).height()-$("nav.navbar").height()-80-144;
-                $("#toc-container").css({left: left,height:height+"px"}).show();
+                $("#toc-container").css({"left": left,"height":height+"px"}).show();
                 $('#toc-container').niceScroll({
                     cursorcolor: "#6f42c1",
                     cursoropacitymax: 1,
@@ -418,7 +418,7 @@ Andrew->>China: I am good thanks!
                     autohidemode: false
                 });
             }else{
-                $("#toc-container").css({position:"static","overflow-y":"auto",display:"block","border-left":"4px solid #6f42c1"});
+                $("#toc-container").css({"position":"static","overflow-y":"auto","display":"block","border-left":"4px solid #6f42c1"});
             }
         });
     </script>
