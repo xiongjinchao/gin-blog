@@ -13,7 +13,7 @@ import (
 
 type Auth struct{}
 
-// Login handles GET /oauth/login/:type route
+// Login handles GET /auth/login/:type route
 func (a *Auth) Login(c *gin.Context) {
 
 	if c.Param("type") == "github" {
@@ -28,7 +28,7 @@ func (a *Auth) Login(c *gin.Context) {
 	})
 }
 
-// Callback handles GET /oauth/callback/:type route
+// Callback handles GET /auth/callback/:type route
 func (a *Auth) Callback(c *gin.Context) {
 
 	code := c.Query("code")
@@ -136,4 +136,13 @@ func (a *Auth) Callback(c *gin.Context) {
 		"code":    401,
 		"message": "oauth forbidden",
 	})
+}
+
+// Logout handles GET /auth/logout route
+func (a *Auth) Logout(c *gin.Context) {
+	session := sessions.Default(c)
+	session.Delete("passport")
+	session.Clear()
+	_ = session.Save()
+	c.Redirect(http.StatusFound, "/")
 }

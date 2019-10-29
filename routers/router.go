@@ -79,10 +79,11 @@ func Router() *gin.Engine {
 	page := &blog.Page{}
 	router.GET("/about", page.About)
 
-	// 第三方登录
+	// 登录 退出
 	auth := &controllers.Auth{}
 	router.GET("/auth/login/:type", auth.Login)
 	router.GET("/auth/callback/:type", auth.Callback)
+	router.GET("/auth/logout", auth.Logout)
 
 	return router
 }
