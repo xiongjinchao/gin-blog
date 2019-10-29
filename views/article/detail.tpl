@@ -338,7 +338,7 @@ func main() {
             var containerWidth = $(".container").width();
             var actionWidth = $(".action").width();
             var left = (bodyWidth-containerWidth)/2 -actionWidth;
-            $(".action").css({"left":left});
+            $(".action-bar").css({"left":left});
 
             // 父亲评论
             $(".comments >.media").each(function(i,item){
