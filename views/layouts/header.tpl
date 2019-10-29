@@ -44,7 +44,7 @@
                                 <a class="dropdown-item" href=""><i class="fal fa-home"></i> 我的主页</a>
                                 <a class="dropdown-item" href=""><i class="fal fa-heart"></i> 喜欢的文章</a>
                                 <a class="dropdown-item" href=""><i class="fal fa-cog"></i> 设置</a>
-                                <a class="dropdown-item" href=""><i class="fal fa-sign-out"></i> 退出</a>
+                                <a class="dropdown-item" href="/auth/logout"><i class="fal fa-sign-out"></i> 退出</a>
                             </div>
                         </span>
                     {{ else }}
