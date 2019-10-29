@@ -32,7 +32,7 @@
                     <p class="m-0"><i class="fal fa-info-circle-circle"></i> 未经允许不得转载：转载以<span class="text-primary">超链接形式</span>并注明出处。原文地址：<a class="text-primary" href="/article/detail/{{ .article.ID}}">《{{ .article.Title}}》</a></p>
                 </div>
 
-                <div class="action" style="width:5rem;position:fixed;top:300px;left:100px;">
+                <div class="action" style="width:6rem;position:fixed;top:300px;left:100px;">
                     <div style="margin-top:.4rem">
                         <span class="fa-stack" style="color:#666666;font-size:1.4rem;">
                           <i class="fa fa-circle fa-stack-2x"></i>
@@ -53,6 +53,20 @@
                           <i class="fal fa-star fa-stack-1x fa-inverse"></i>
                         </span>
                         <b style="font-size:.875rem;">35</b>
+                    </div>
+                    <div style="margin-top:.4rem">
+                        <span class="fa-stack" style="color:#666666;font-size:1.4rem;">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fal fa-chevron-left fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span style="font-size:.875rem;">上一篇</span>
+                    </div>
+                    <div style="margin-top:.4rem">
+                        <span class="fa-stack" style="color:#666666;font-size:1.4rem;">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fal fa-chevron-right fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <span style="font-size:.875rem;">下一篇</span>
                     </div>
                 </div>
 
