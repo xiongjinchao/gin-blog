@@ -336,7 +336,7 @@ func main() {
             // 操作条定位
             var bodyWidth = $("body").width();
             var containerWidth = $(".container").width();
-            var actionWidth = $(".action").width();
+            var actionWidth = $(".action-bar").width();
             var left = (bodyWidth-containerWidth)/2 -actionWidth;
             $(".action-bar").css({"left":left});
 
