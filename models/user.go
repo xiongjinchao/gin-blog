@@ -46,6 +46,6 @@ func (u *User) GenerateToken(id int64) (accessToken, resetKey string, err error)
 }
 
 type Auth struct {
-	Mobile   string `label:"手机号码" json:"mobile" form:"mobile" validate:"required,numeric,len=11"`
-	Password string `label:"密码" json:"password" form:"password" validate:"required,gte=6,lte=18"`
+	User     User     `json:"user"`
+	UserAuth UserAuth `json:"user_auth"`
 }

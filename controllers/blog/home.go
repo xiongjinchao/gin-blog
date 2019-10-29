@@ -29,6 +29,7 @@ func (h *Home) Index(c *gin.Context) {
 
 	c.HTML(http.StatusOK, "home/index", gin.H{
 		"title":   config.Setting["app"]["title"],
+		"user":    helper.GetUser(c),
 		"menu":    helper.GetMenu(),
 		"note":    note,
 		"article": article,

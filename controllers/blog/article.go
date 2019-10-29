@@ -17,6 +17,7 @@ type Article struct{}
 func (a *Article) Index(c *gin.Context) {
 	c.HTML(http.StatusOK, "article/index", gin.H{
 		"title": "文章首页",
+		"user":  helper.GetUser(c),
 		"menu":  helper.GetMenu(),
 	})
 }
@@ -71,6 +72,7 @@ func (a *Article) Category(c *gin.Context) {
 
 	c.HTML(http.StatusOK, "article/category", gin.H{
 		"title":      category.Name + "-" + config.Setting["app"]["title"],
+		"user":       helper.GetUser(c),
 		"menu":       helper.GetMenu(),
 		"category":   category,
 		"articles":   articles,
@@ -116,6 +118,7 @@ func (a *Article) Detail(c *gin.Context) {
 
 	c.HTML(http.StatusOK, "article/detail", gin.H{
 		"title":     article.Title + "-" + config.Setting["app"]["title"],
+		"user":      helper.GetUser(c),
 		"menu":      helper.GetMenu(),
 		"article":   article,
 		"tags":      tags,

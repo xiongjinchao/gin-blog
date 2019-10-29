@@ -12,6 +12,7 @@ type Book struct{}
 func (a *Book) Index(c *gin.Context) {
 	c.HTML(http.StatusOK, "book/index", gin.H{
 		"title": "书籍首页",
+		"user":  helper.GetUser(c),
 		"menu":  helper.GetMenu(),
 	})
 }
@@ -20,6 +21,7 @@ func (a *Book) Index(c *gin.Context) {
 func (a *Book) Detail(c *gin.Context) {
 	c.HTML(http.StatusOK, "book/detail", gin.H{
 		"title": "书籍详情页",
+		"user":  helper.GetUser(c),
 		"menu":  helper.GetMenu(),
 	})
 }

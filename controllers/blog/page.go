@@ -12,6 +12,7 @@ type Page struct{}
 func (p *Page) About(c *gin.Context) {
 	c.HTML(http.StatusOK, "page/about", gin.H{
 		"title": "关于我们",
+		"user":  helper.GetUser(c),
 		"menu":  helper.GetMenu(),
 	})
 }

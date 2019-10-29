@@ -12,6 +12,7 @@ type Course struct{}
 func (co *Course) Index(c *gin.Context) {
 	c.HTML(http.StatusOK, "course/detail", gin.H{
 		"title": "教程",
+		"user":  helper.GetUser(c),
 		"menu":  helper.GetMenu(),
 	})
 }

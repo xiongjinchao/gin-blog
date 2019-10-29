@@ -5,9 +5,23 @@ import (
 	"fmt"
 	db "gin-blog/database"
 	"gin-blog/models"
+	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"strconv"
 )
+
+// get user from session
+func GetUser(c *gin.Context) (auth models.Auth) {
+	session := sessions.Default(c)
+	passport := session.Get("passport")
+	if passport != nil {
+		if err := json.Unmarshal([]byte(passport.(string)), &auth); err != nil {
+			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
+			return
+		}
+	}
+	return
+}
 
 // main menu
 func GetMenu() []models.Menu {
