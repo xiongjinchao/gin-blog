@@ -10,9 +10,6 @@
                 <div class="article-detail">
                     <h1 class="article-title text-center">{{ .article.Title}}</h1>
                     <div class="article-icon text-center">
-                        <span><a href="#"><i class="fal fa-eye"></i> 浏览量 {{ .article.Hit}}</a></span>
-                        <span><a href="#"><i class="fal fa-comments"></i> 评论数 {{ .article.Comment}}</a></span>
-                        <span><a href="#"><i class="fal fa-star"></i> 收藏数 {{ .article.Favorite}}</a></span>
                         <span><i class="fal fa-calendar-alt"></i> 发布时间 {{ .article.CreatedAt.Format "2006/01/02"}}</span>
                     </div>
                     <div id="article-content" class="article-content">
@@ -32,41 +29,39 @@
                     <p class="m-0"><i class="fal fa-info-circle-circle"></i> 未经允许不得转载：转载以<span class="text-primary">超链接形式</span>并注明出处。原文地址：<a class="text-primary" href="/article/detail/{{ .article.ID}}">《{{ .article.Title}}》</a></p>
                 </div>
 
-                <div class="action" style="width:6rem;position:fixed;top:300px;left:100px;">
-                    <div style="margin-top:.4rem">
-                        <span class="fa-stack" style="color:#666666;font-size:1.4rem;">
+                <div class="action-bar">
+                    <div class="action-icon">
+                        <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-thumbs-up fa-stack-1x fa-inverse"></i>
                         </span>
-                        <b style="font-size:.875rem;">99+</b>
+                        <b>99+</b>
                     </div>
-                    <div style="margin-top:.4rem">
-                        <span class="fa-stack" style="color:#666666;font-size:1.4rem;">
+                    <div class="action-icon">
+                        <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-comments fa-stack-1x fa-inverse"></i>
                         </span>
-                        <b style="font-size:.875rem;">99+</b>
+                        <b>99+</b>
                     </div>
-                    <div style="margin-top:.4rem">
-                        <span class="fa-stack" style="color:#666666;font-size:1.4rem;">
+                    <div class="action-icon">
+                        <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-star fa-stack-1x fa-inverse"></i>
                         </span>
-                        <b style="font-size:.875rem;">35</b>
+                        <b>35</b>
                     </div>
-                    <div style="margin-top:.4rem">
-                        <span class="fa-stack" style="color:#666666;font-size:1.4rem;">
+                    <div class="action-icon">
+                        <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-chevron-left fa-stack-1x fa-inverse"></i>
                         </span>
-                        <span style="font-size:.875rem;">上一篇</span>
                     </div>
-                    <div style="margin-top:.4rem">
-                        <span class="fa-stack" style="color:#666666;font-size:1.4rem;">
+                    <div class="action-icon">
+                        <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-chevron-right fa-stack-1x fa-inverse"></i>
                         </span>
-                        <span style="font-size:.875rem;">下一篇</span>
                     </div>
                 </div>
 
@@ -85,7 +80,7 @@
                         <li class="list-group-item">
                             <div class="media">
                                 <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="/article/detail/{{ .related.Prev.ID}}">{{ .related.Prev.Title }}</a></h5>
+                                    <h5 class="mt-0 mb-2"><a href="/article/detail/{{ .related.Prev.ID}}">{{ .related.Prev.Title }}</a></h5>
                                     <p class="mb-1 media-summary">{{ .related.Prev.Summary }}</p>
                                     <p class="mb-1 media-icon">
                                         <span><i class="fal fa-eye"></i> {{ .related.Prev.Hit }}</span>
@@ -113,7 +108,7 @@
                         <li class="list-group-item">
                             <div class="media">
                                 <div class="media-body">
-                                    <h5 class="mt-0 mb-1"><a href="/article/detail/{{ .related.Next.ID}}">{{ .related.Next.Title }}</a></h5>
+                                    <h5 class="mt-0 mb-2"><a href="/article/detail/{{ .related.Next.ID}}">{{ .related.Next.Title }}</a></h5>
                                     <p class="mb-1 media-summary">{{ .related.Next.Summary }}</p>
                                     <p class="mb-1 media-icon">
                                         <span><i class="fal fa-eye"></i> {{ .related.Next.Hit }}</span>
@@ -151,8 +146,11 @@
                     <div class="media">
                         <img src="/public/image/logo.png" width="52px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
                         <div class="media-body">
-                            <textarea id="comment-textarea" rows="2" style="width:100%;border:1px solid #e4e4e4;border-radius:.25rem"></textarea>
-                            <button class="btn btn-sm btn-info pull-right"><i class="fal fa-paper-plane"></i> 发表</button>
+                            <div id="comment-textarea">
+                                <textarea rows="2" placeholder="请文明发言"></textarea>
+                            </div>
+                            <span class="pull-left badge badge-dark">Markdown</span>
+                            <button class="btn btn-sm btn-primary pull-right"><i class="fal fa-paper-plane"></i> 发表</button>
                         </div>
                     </div>
                 </div>
@@ -365,6 +363,29 @@ func main() {
                     });
                     $("#comment-"+i+"-"+j).addClass("editormd-preview-theme-dark");
                 });
+            });
+
+            //发表评论
+            let editor = editormd("comment-textarea", {
+                width:"100%",
+                height:"200",
+                codeFold : true,
+                htmlDecode : true,
+                tex : true,
+                taskList : true,
+                emoji : true,
+                flowChart : true,
+                sequenceDiagram : true,
+                path:"/public/plug-in/editor-md/lib/",
+                placeholder:"请文明，理性发言",
+                toolbarIcons : function() {
+                    // Or return editormd.toolbarModes[name]; // full, simple, mini
+                    // Using "||" set icons align right.
+                    return ["undo", "redo", "|",
+                        "bold", "quote", "hr", "h5", "h6", "|",
+                        "list-ul", "list-ol","link", "code", "table",
+                        "||", "watch", "preview"]
+                },
             });
         });
     </script>

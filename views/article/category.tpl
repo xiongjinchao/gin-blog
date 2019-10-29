@@ -25,7 +25,7 @@
                             <li class="list-group-item">
                                 <div class="media">
                                     <div class="media-body">
-                                        <h5 class="mt-0 mb-1"><a href="/article/detail/{{ $v.ID }}">{{ $v.Title }}</a></h5>
+                                        <h5 class="mt-0 mb-2"><a href="/article/detail/{{ $v.ID }}">{{ $v.Title }}</a></h5>
                                         <p class="mb-1 media-summary">{{ $v.Summary }}</p>
                                         <div class="clearfix">
                                             <p class="mb-1 media-icon">

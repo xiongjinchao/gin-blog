@@ -67,7 +67,7 @@ a, a:hover{text-decoration:none;}
 .content-left,.content-right{margin-top:2rem;}
 .card.article-list .list-group-item{padding:.75rem;}
 .card.article-list .list-group-item .media-body h5{font-size:1.125rem;font-weight:500;}
-.card.article-list .list-group-item .media-body .media-summary{height:3.5rem}
+.card.article-list .list-group-item .media-body .media-summary{height:3rem}
 .card.article-list .list-group-item .media-body p{font-size:.875rem;color:#999999;}
 .card.article-list .list-group-item .media-body p span{color:#cccccc;margin-right:.5rem;}
 .card.article-list .list-group-item .media-body .media-icon{float:left}
@@ -105,16 +105,24 @@ a, a:hover{text-decoration:none;}
 
 .article-title{font-size:1.75rem;margin:1rem 0;}
 .article-icon span{margin-right:1rem;color:#999999;font-size:.875rem;}
-.article-icon span a{color:#999999;}
-.article-icon span a:hover{color:#007bff;}
 .article-tips{font-size:.875rem;padding:.5rem 1rem;color:#999999}
 .article-tips a{color:#999999!important;margin-right:.5rem;}
 .article-notice{padding:0 1rem;background:#ffffff;border-radius:.25rem;font-size:1rem;color:#999999}
 
+/*操作条*/
+.action-bar{width:6rem;position:fixed;top:300px;left:100px;}
+.action-bar .action-icon{margin-top:.4rem;}
+.action-bar .action-icon>span{color:#666666;font-size:1.4rem;}
+.action-bar .action-icon b{font-size:.875rem;color:#999999;}
+
+
 /*评论*/
+#comment-textarea{border-radius:.25rem;}
+#comment-textarea textarea{width:100%;font-size:.875rem;border:1px solid #e4e4e4;border-radius:.25rem;}
 .comments{display: block;}
 .comments .comment-body{margin-top:1rem;padding:0!important;font-size:.875rem;background:transparent;}
 .comments .media-body{overflow: hidden!important;}
+.comment-tags{margin-top:.5rem;}
 
 /*代码高亮左右滚动*/
 pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow-x:auto!important;background:#2d2d2d!important;border:none!important;border-radius: .25rem!important;}
