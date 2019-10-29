@@ -38,7 +38,7 @@
                     <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fal fa-search"></i> 搜索</button>
                     {{if gt .user.User.ID 0}}
                         <span class="dropdown has-login">
-                            <img class="rounded-circle ml-2 avatar" src="{{ if ne .user.UerAuth.Avatar "" }}{{ .user.UerAuth.Avatar }}{{ else }}/public/image/logo.png{{ end }}" style="height:35px">
+                            <img class="rounded-circle ml-2 avatar" src="{{ if .user.UserAuth.Avatar }}{{ .user.UserAuth.Avatar }}{{ else }}/public/image/logo.png{{ end }}" style="height:35px">
                             <a class="dropdown-toggle" href="" id="memberDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ .user.User.Name }}</a>
                             <div class="dropdown-menu" aria-labelledby="memberDropdown">
                                 <a class="dropdown-item" href=""><i class="fal fa-home"></i> 我的主页</a>
