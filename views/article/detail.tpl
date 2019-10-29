@@ -377,6 +377,7 @@ func main() {
                 flowChart : true,
                 sequenceDiagram : true,
                 path:"/public/plug-in/editor-md/lib/",
+                autoFocus:false,
                 placeholder:"请文明，理性发言",
                 toolbarIcons : function() {
                     // Or return editormd.toolbarModes[name]; // full, simple, mini
