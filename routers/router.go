@@ -82,8 +82,9 @@ func Router() *gin.Engine {
 	// 登录 退出
 	auth := &controllers.Auth{}
 	router.GET("/auth/login/:type", auth.Login)
-	router.GET("/auth/callback/:type", auth.Callback)
 	router.GET("/auth/logout", auth.Logout)
+	router.GET("/auth/callback/:type", auth.Callback)
+	router.GET("/auth/user", auth.User)
 
 	return router
 }

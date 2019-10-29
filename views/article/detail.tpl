@@ -10,10 +10,10 @@
                 <div class="article-detail">
                     <h1 class="article-title text-center">{{ .article.Title}}</h1>
                     <div class="article-icon text-center">
-                        <span><a href="#"><i class="fal fa-eye"></i> {{ .article.Hit}}</a></span>
-                        <span><a href="#"><i class="fal fa-comments"></i> {{ .article.Comment}}</a></span>
-                        <span><a href="#"><i class="fal fa-thumbs-up"></i> {{ .article.Favorite}}</a></span>
-                        <span><i class="fal fa-calendar-alt"></i> {{ .article.CreatedAt.Format "2006/01/02"}}</span>
+                        <span><a href="#"><i class="fal fa-eye"></i> 浏览量 {{ .article.Hit}}</a></span>
+                        <span><a href="#"><i class="fal fa-comments"></i> 评论数 {{ .article.Comment}}</a></span>
+                        <span><a href="#"><i class="fal fa-star"></i> 收藏数 {{ .article.Favorite}}</a></span>
+                        <span><i class="fal fa-calendar-alt"></i> 发布时间 {{ .article.CreatedAt.Format "2006/01/02"}}</span>
                     </div>
                     <div id="article-content" class="article-content">
                         <textarea style="display:none;">{{ .article.Content}}</textarea>
@@ -147,11 +147,120 @@
                     <small class="text-black-50">Recommend</small>
                 </div>
 
-                <div class="mt-3" style="overflow:hidden">
+                <div class="mt-3">
                     <div class="media">
-                        <img src="/public/image/logo.png" width="60px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
+                        <img src="/public/image/logo.png" width="52px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
                         <div class="media-body">
-                            <textarea rows="4" style="width:100%;border:1px solid #e4e4e4"></textarea>
+                            <textarea id="comment-textarea" rows="2" style="width:100%;border:1px solid #e4e4e4;border-radius:.25rem"></textarea>
+                            <button class="btn btn-sm btn-info pull-right"><i class="fal fa-paper-plane"></i> 发表</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comments">
+                    <div class="media mt-5">
+                        <img src="/public/image/avatar.jpg" width="52px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
+                        <div class="media-body">
+                            <a href="#">刘德华</a>
+                            <small class="text-muted pull-right"><i class="fal fa-clock"></i> 3小数前</small>
+                            <div id="comment-0" class="comment-body">
+                                <textarea style="display:none;">但是正常的做法应该是这样的，同样的 ExecuteTemplate() 中输入的 name 也必须和模板中相同。
+
+```go
+func (*Template) Execute
+
+func (t *Template) Execute(wr io.Writer, data interface{}) error
+
+```
+                                </textarea>
+                            </div>
+                            <div class="comment-tags text-muted" style="font-size:.875rem">
+                                <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
+                                <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
+                                <i class="fal fa-comment"></i> <a href="#">回复</a>
+                            </div>
+
+                            <div class="comments-detail mt-5" style="color:#999999">
+                                <div class="media mt-2">
+                                    <img src="/public/image/avatar.jpg" width="42px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
+                                    <div class="media-body">
+                                        <a href="#">谢霆锋</a>
+                                        <small class="text-muted pull-right"><i class="fal fa-clock"></i>  刚刚</small>
+                                        <div id="comment-0-0" class="comment-body">
+                                            <textarea style="display:none;">```go
+func main() {
+    s := []string{"hello", "world", "hello", "golang", "hello", "ruby", "php", "java"}
+    fmt.Println(removeDuplicateElement(s))
+}
+```
+                                            </textarea>
+                                        </div>
+                                        <div class="comment-tags text-muted" style="font-size:.875rem">
+                                            <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
+                                            <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
+                                            <i class="fal fa-comment"></i> <a href="#">回复</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="media mt-2">
+                                    <img src="/public/image/avatar.jpg" width="42px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
+                                    <div class="media-body">
+                                        <a href="#">小刚</a>
+                                        <small class="text-muted pull-right"><i class="fal fa-clock"></i>  5小数前</small>
+                                        <div id="comment-0-1" class="comment-body">
+                                            <textarea style="display:none;">在编写模板的时候，我们常常将公用的模板进行整合，比如每一个页面都有导航栏和页脚，我们常常将其编写为一个单独的模块，让所有的页面进行导入，这样就不用重复的编写了。</textarea>
+                                        </div>
+                                        <div class="comment-tags text-muted" style="font-size:.875rem">
+                                            <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
+                                            <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
+                                            <i class="fal fa-comment"></i> <a href="#">回复</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media mt-5">
+                        <img src="/public/image/avatar.jpg" width="52px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
+                        <div class="media-body">
+                            <a href="#">张学友</a>
+                            <small class="text-muted pull-right"><i class="fal fa-clock"></i>  2天前</small>
+                            <div id="comment-1" class="comment-body">
+                                <textarea style="display:none;">在编写模板的时候，我们常常将公用的模板进行整合，比如每一个页面都有导航栏和页脚，我们常常将其编写为一个单独的模块，让所有的页面进行导入，这样就不用重复的编写了。</textarea>
+                            </div>
+                            <div class="comment-tags text-muted" style="font-size:.875rem">
+                                <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
+                                <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
+                                <i class="fal fa-comment"></i> <a href="#">回复</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="media mt-5">
+                        <img src="/public/image/avatar.jpg" width="52px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
+                        <div class="media-body">
+                            <a href="#">程序员</a>
+                            <small class="text-muted pull-right"><i class="fal fa-clock"></i>  2天前</small>
+                            <div id="comment-2" class="comment-body">
+                                <textarea style="display:none;">&gt; 其实这都是一些基础问题，但是自己总是忘记，在这里做个记录。
+
+```go
+func main() {
+    s := []string{"hello", "world", "hello", "golang", "hello", "ruby", "php", "java"}
+    fmt.Println(removeDuplicateElement(s))
+}
+
+// output: 0xc4200160a0 0xc4200160a0
+```
+
+很明显了，就不解释了</textarea>
+                            </div>
+                            <div class="comment-tags text-muted" style="font-size:.875rem">
+                                <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
+                                <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
+                                <i class="fal fa-comment"></i> <a href="#">回复</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -211,7 +320,7 @@
     <script type="text/javascript">
         $(function() {
             // markdown 转 HTML
-            var editormdView = editormd.markdownToHTML("article-content", {
+            var articleView = editormd.markdownToHTML("article-content", {
                 htmlDecode      : "style,script,iframe",  // you can filter tags decode
                 emoji           : true,
                 taskList        : true,
@@ -232,6 +341,31 @@
             var actionWidth = $(".action").width();
             var left = (bodyWidth-containerWidth)/2 -actionWidth;
             $(".action").css({"left":left});
+
+            // 父亲评论
+            $(".comments >.media").each(function(i,item){
+                var commentView = editormd.markdownToHTML("comment-"+i, {
+                    htmlDecode      : "style,script,iframe",  // you can filter tags decode
+                    emoji           : true,
+                    taskList        : true,
+                    tex             : true,  // 默认不解析
+                    flowChart       : true,  // 默认不解析
+                    sequenceDiagram : true,  // 默认不解析
+                });
+                $("#comment-"+i).addClass("editormd-preview-theme-dark");
+                //子评论
+                $(item).find(".comment-body").each(function(j,sub){
+                    var subView = editormd.markdownToHTML("comment-"+i+"-"+j, {
+                        htmlDecode      : "style,script,iframe",  // you can filter tags decode
+                        emoji           : true,
+                        taskList        : true,
+                        tex             : true,  // 默认不解析
+                        flowChart       : true,  // 默认不解析
+                        sequenceDiagram : true,  // 默认不解析
+                    });
+                    $("#comment-"+i+"-"+j).addClass("editormd-preview-theme-dark");
+                });
+            });
         });
     </script>
 {{ end }}

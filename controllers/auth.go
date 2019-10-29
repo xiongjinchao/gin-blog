@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
+	"fmt"
 	db "gin-blog/database"
 	"gin-blog/helper"
 	"gin-blog/models"
@@ -135,6 +136,26 @@ func (a *Auth) Callback(c *gin.Context) {
 	c.JSON(http.StatusBadRequest, gin.H{
 		"code":    401,
 		"message": "oauth forbidden",
+	})
+}
+
+// User handles GET /auth/user route
+func (a *Auth) User(c *gin.Context) {
+
+	session := sessions.Default(c)
+	passport := session.Get("passport")
+	auth := models.Auth{}
+	if passport != nil {
+		if err := json.Unmarshal([]byte(passport.(string)), &auth); err != nil {
+			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
+			return
+		}
+	}
+
+	c.JSON(http.StatusCreated, gin.H{
+		"code":    200,
+		"message": "",
+		"data":    auth,
 	})
 }
 
