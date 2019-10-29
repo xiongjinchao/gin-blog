@@ -9,7 +9,6 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 .navbar a {font-size:.875rem;}
 .navbar .form-control,.navbar .btn {font-size:.875rem;}
 .navbar-toggler{font-size:.875rem}
-.navbar .has-login{display:none}
 .navbar img.avatar{height:35px;background:#f4f4f4}
 .navbar .has-login > a{color:rgba(255,255,255,.5)}
 .navbar .has-login > a:hover{color:#ffffff}
