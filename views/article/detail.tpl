@@ -33,7 +33,7 @@
                     <div class="action-icon">
                         <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fal fa-thumbs-up fa-stack-1x fa-inverse"></i>
+                          <i class="fal fa-chevron-up fa-stack-1x fa-inverse"></i>
                         </span>
                         <b>99+</b>
                     </div>
@@ -85,7 +85,7 @@
                                     <p class="mb-1 media-icon">
                                         <span><i class="fal fa-eye"></i> {{ .related.Prev.Hit }}</span>
                                         <span><i class="fal fa-comments-alt"></i> {{ .related.Prev.Comment }}</span>
-                                        <span><i class="fal fa-thumbs-up"></i> {{ .related.Prev.Favorite }}</span></p>
+                                        <span><i class="fal fa-chevron-up"></i> {{ .related.Prev.Favorite }}</span></p>
                                     {{if gt (len .related.Prev.Tags) 0}}
                                     <p class="mb-1 media-tag">
                                         <span>
@@ -113,7 +113,7 @@
                                     <p class="mb-1 media-icon">
                                         <span><i class="fal fa-eye"></i> {{ .related.Next.Hit }}</span>
                                         <span><i class="fal fa-comments-alt"></i> {{ .related.Next.Comment }}</span>
-                                        <span><i class="fal fa-thumbs-up"></i> {{ .related.Next.Favorite }}</span></p>
+                                        <span><i class="fal fa-chevron-up"></i> {{ .related.Next.Favorite }}</span></p>
                                     {{if gt (len .related.Next.Tags) 0}}
                                         <p class="mb-1 media-tag">
                                         <span>
@@ -173,8 +173,8 @@ func (t *Template) Execute(wr io.Writer, data interface{}) error
                                 </textarea>
                             </div>
                             <div class="comment-tags text-muted" style="font-size:.875rem">
-                                <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
-                                <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
+                                <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
+                                <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
                                 <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
                             </div>
 
@@ -194,8 +194,8 @@ func main() {
                                             </textarea>
                                         </div>
                                         <div class="comment-tags text-muted" style="font-size:.875rem">
-                                            <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
-                                            <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
+                                            <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
+                                            <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
                                             <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
                                         </div>
                                     </div>
@@ -210,8 +210,8 @@ func main() {
                                             <textarea style="display:none;">在编写模板的时候，我们常常将公用的模板进行整合，比如每一个页面都有导航栏和页脚，我们常常将其编写为一个单独的模块，让所有的页面进行导入，这样就不用重复的编写了。</textarea>
                                         </div>
                                         <div class="comment-tags text-muted" style="font-size:.875rem">
-                                            <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
-                                            <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
+                                            <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
+                                            <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
                                             <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
                                         </div>
                                     </div>
@@ -229,8 +229,8 @@ func main() {
                                 <textarea style="display:none;">在编写模板的时候，我们常常将公用的模板进行整合，比如每一个页面都有导航栏和页脚，我们常常将其编写为一个单独的模块，让所有的页面进行导入，这样就不用重复的编写了。</textarea>
                             </div>
                             <div class="comment-tags text-muted" style="font-size:.875rem">
-                                <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
-                                <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
+                                <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
+                                <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
                                 <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
                             </div>
                         </div>
@@ -255,8 +255,8 @@ func main() {
 很明显了，就不解释了</textarea>
                             </div>
                             <div class="comment-tags text-muted" style="font-size:.875rem">
-                                <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
-                                <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
+                                <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
+                                <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
                                 <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
                             </div>
                         </div>
