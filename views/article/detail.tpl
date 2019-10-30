@@ -40,7 +40,7 @@
                     <div class="action-icon">
                         <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fal fa-comments fa-stack-1x fa-inverse"></i>
+                          <i class="fal fa-comments-alt fa-stack-1x fa-inverse"></i>
                         </span>
                         <b>99+</b>
                     </div>
@@ -84,7 +84,7 @@
                                     <p class="mb-1 media-summary">{{ .related.Prev.Summary }}</p>
                                     <p class="mb-1 media-icon">
                                         <span><i class="fal fa-eye"></i> {{ .related.Prev.Hit }}</span>
-                                        <span><i class="fal fa-comments"></i> {{ .related.Prev.Comment }}</span>
+                                        <span><i class="fal fa-comments-alt"></i> {{ .related.Prev.Comment }}</span>
                                         <span><i class="fal fa-thumbs-up"></i> {{ .related.Prev.Favorite }}</span></p>
                                     {{if gt (len .related.Prev.Tags) 0}}
                                     <p class="mb-1 media-tag">
@@ -112,7 +112,7 @@
                                     <p class="mb-1 media-summary">{{ .related.Next.Summary }}</p>
                                     <p class="mb-1 media-icon">
                                         <span><i class="fal fa-eye"></i> {{ .related.Next.Hit }}</span>
-                                        <span><i class="fal fa-comments"></i> {{ .related.Next.Comment }}</span>
+                                        <span><i class="fal fa-comments-alt"></i> {{ .related.Next.Comment }}</span>
                                         <span><i class="fal fa-thumbs-up"></i> {{ .related.Next.Favorite }}</span></p>
                                     {{if gt (len .related.Next.Tags) 0}}
                                         <p class="mb-1 media-tag">
@@ -175,7 +175,7 @@ func (t *Template) Execute(wr io.Writer, data interface{}) error
                             <div class="comment-tags text-muted" style="font-size:.875rem">
                                 <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
                                 <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
-                                <i class="fal fa-comment"></i> <a href="#">回复</a>
+                                <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
                             </div>
 
                             <div class="comments-detail mt-5" style="color:#999999">
@@ -196,7 +196,7 @@ func main() {
                                         <div class="comment-tags text-muted" style="font-size:.875rem">
                                             <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
                                             <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
-                                            <i class="fal fa-comment"></i> <a href="#">回复</a>
+                                            <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
                                         </div>
                                     </div>
                                 </div>
@@ -212,7 +212,7 @@ func main() {
                                         <div class="comment-tags text-muted" style="font-size:.875rem">
                                             <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
                                             <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
-                                            <i class="fal fa-comment"></i> <a href="#">回复</a>
+                                            <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
                                         </div>
                                     </div>
                                 </div>
@@ -231,7 +231,7 @@ func main() {
                             <div class="comment-tags text-muted" style="font-size:.875rem">
                                 <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
                                 <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
-                                <i class="fal fa-comment"></i> <a href="#">回复</a>
+                                <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
                             </div>
                         </div>
                     </div>
@@ -257,7 +257,7 @@ func main() {
                             <div class="comment-tags text-muted" style="font-size:.875rem">
                                 <i class="fal fa-thumbs-up"></i> <a href="#">赞 (32)</a>
                                 <i class="fal fa-thumbs-down"></i> <a href="#">踩 (2)</a>
-                                <i class="fal fa-comment"></i> <a href="#">回复</a>
+                                <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
                             </div>
                         </div>
                     </div>

@@ -30,7 +30,7 @@
                                         <div class="clearfix">
                                             <p class="mb-1 media-icon">
                                                 <span><i class="fal fa-eye"></i> {{ $v.Hit }}</span>
-                                                <span><i class="fal fa-comments"></i> {{ $v.Comment }}</span>
+                                                <span><i class="fal fa-comments-alt"></i> {{ $v.Comment }}</span>
                                                 <span><i class="fal fa-thumbs-up"></i> {{ $v.Favorite }}</span>
                                             </p>
                                             {{if gt (len $v.Tags) 0}}
