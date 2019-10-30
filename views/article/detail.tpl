@@ -33,7 +33,7 @@
                     <div class="action-icon">
                         <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fal fa-chevron-up fa-stack-1x fa-inverse"></i>
+                          <i class="fal fa-thumbs-up fa-stack-1x fa-inverse"></i>
                         </span>
                         <b>99+</b>
                     </div>

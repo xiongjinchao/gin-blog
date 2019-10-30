@@ -123,6 +123,7 @@ a, a:hover{text-decoration:none;}
 .comments .comment-body{margin-top:.5rem;padding:0!important;font-size:.875rem;background:transparent;}
 .comments .media-body{overflow: hidden!important;}
 .comment-tags{margin-top:.5rem;}
+.comment-tags a{margin-right:.5rem}
 
 /*代码高亮左右滚动*/
 pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow-x:auto!important;background:#2d2d2d!important;border:none!important;border-radius: .25rem!important;}
