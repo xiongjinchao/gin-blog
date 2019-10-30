@@ -30,37 +30,50 @@
                 </div>
 
                 <div class="action-bar">
-                    <div class="action-icon">
+                    <div class="action-icon" title="有用">
                         <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-thumbs-up fa-stack-1x fa-inverse"></i>
                         </span>
-                        <b>99+</b>
+                        <b>{{if gt .article.Favorite 0}}{{ .article.Favorite}}{{ else if gt .article.Favorite 99}}99+{{ end }}</b>
                     </div>
-                    <div class="action-icon">
+                    <div class="action-icon" title="评论">
                         <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-comments-alt fa-stack-1x fa-inverse"></i>
                         </span>
-                        <b>99+</b>
+                        <b>{{if gt .article.Comment 0}}{{ .article.Comment}}{{ else if gt .article.Comment 99}}99+{{ end }}</b>
                     </div>
-                    <div class="action-icon">
+                    <div class="action-icon" title="收藏">
                         <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-star fa-stack-1x fa-inverse"></i>
                         </span>
-                        <b>35</b>
+                        <b>{{if gt .article.Favorite 0}}{{ .article.Favorite}}{{ else if gt .article.Favorite 99}}99+{{ end }}</b>
                     </div>
+                    {{ if gt .related.Prev.ID 0 }}
+                        <div class="action-icon" title="上一篇">
+                            <a href="/article/detail/{{ .related.Prev.ID}}">
+                                <span class="fa-stack">
+                                  <i class="fa fa-circle fa-stack-2x"></i>
+                                  <i class="fal fa-chevron-left fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </div>
+                    {{ end }}
+                    {{ if gt .related.Next.ID 0 }}
+                        <div class="action-icon" title="下一篇">
+                            <a href="/article/detail/{{ .related.Next.ID}}">
+                                <span class="fa-stack">
+                                  <i class="fa fa-circle fa-stack-2x"></i>
+                                  <i class="fal fa-chevron-right fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </div>
+                    {{ end }}
                     <div class="action-icon">
-                        <span class="fa-stack">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fal fa-chevron-left fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </div>
-                    <div class="action-icon">
-                        <span class="fa-stack">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fal fa-chevron-right fa-stack-1x fa-inverse"></i>
+                        <span class="fa-stack back-to-top">
+                          <i class="fal fa-rocket fa-stack-1x"></i>
                         </span>
                     </div>
                 </div>
@@ -341,7 +354,7 @@ func main() {
             let containerWidth = $(".container").width();
             let actionWidth = $(".action-bar").width();
             let left = (bodyWidth-containerWidth)/2 -actionWidth;
-            $(".action-bar").css({"left":left});
+            $(".action-bar").css({"left":left}).fadeIn();
 
             // 父亲评论
             $(".comments >.media").each(function(i,item){
@@ -389,7 +402,6 @@ func main() {
                         "||", "watch", "preview"]
                 },
             });
-            editor.unwatch();
 
             // 美化滚动条
             $("pre.prettyprint ol").niceScroll({

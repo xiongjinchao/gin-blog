@@ -11,3 +11,10 @@ $("#comment-textarea").on("click",function(){
         }
     });
 });
+
+// 回到顶部
+$(".back-to-top").on("click",function(){
+    $('body,html').animate({
+        scrollTop: 0
+    },500);
+});
