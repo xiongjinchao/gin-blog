@@ -385,9 +385,9 @@ Andrew->>China: I am good thanks!
 
     <script type="text/javascript">
         $(function() {
-            // markdown 转 HTML
-            var editormdView = editormd.markdownToHTML("article-content", {
-                htmlDecode      : "style,script,iframe",  // you can filter tags decode
+            // 书籍内容
+            let bookView = editormd.markdownToHTML("article-content", {
+                htmlDecode      : "style,script,iframe",
                 emoji           : true,
                 taskList        : true,
                 tex             : true,  // 默认不解析
@@ -401,12 +401,12 @@ Andrew->>China: I am good thanks!
 
             //  菜单定位 显示与隐藏
             $("#toc-container").prepend('<h4><i class=fal fa-bars></i> 目录</h4>');
-            var bodyWidth = $("body").width();
-            var containerWidth = $(".container").width() + 30;
-            var tocWidth = $("#toc-container").width();
-            var left = (bodyWidth-containerWidth)/2 -tocWidth;
+            let bodyWidth = $("body").width();
+            let containerWidth = $(".container").width() + 30;
+            let tocWidth = $("#toc-container").width();
+            let left = (bodyWidth-containerWidth)/2 -tocWidth;
             if(left > 0 && $(".container").offset().left - $("#toc-container").offset().left - left > 0) {
-                var height = $(window).height()-$("nav.navbar").height()-80-144;
+                let height = $(window).height()-$("nav.navbar").height()-80-144;
                 $("#toc-container").css({"left": left,"height":height+"px"}).show();
                 $('#toc-container').niceScroll({
                     cursorcolor: "#6f42c1",

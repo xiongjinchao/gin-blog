@@ -142,22 +142,24 @@
                     <small class="text-black-50">Recommend</small>
                 </div>
 
-                <div class="mt-3">
-                    <div class="media">
-                        <img src="/public/image/logo.png" width="52px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
-                        <div class="media-body">
-                            <div id="comment-textarea">
-                                <textarea rows="2" placeholder="请文明发言"></textarea>
+                <div class="comments">
+
+                    <div class="mt-3">
+                        <div class="media">
+                            <img class="avatar" src="/public/image/logo.png" width="52px">
+                            <div class="media-body">
+                                <div id="comment-textarea">
+                                    <textarea rows="2" placeholder="请文明发言"></textarea>
+                                </div>
+                                <span class="pull-left badge badge-dark mr-1">Markdown</span>
+                                <span class="pull-left badge badge-dark">Code</span>
+                                <button class="btn btn-sm btn-primary pull-right"><i class="fal fa-paper-plane"></i> 发表</button>
                             </div>
-                            <span class="pull-left badge badge-dark">Markdown</span>
-                            <button class="btn btn-sm btn-primary pull-right"><i class="fal fa-paper-plane"></i> 发表</button>
                         </div>
                     </div>
-                </div>
 
-                <div class="comments">
                     <div class="media mt-5">
-                        <img src="/public/image/avatar.jpg" width="52px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
+                        <img class="avatar" src="/public/image/avatar.jpg" width="52px">
                         <div class="media-body">
                             <a href="#">刘德华</a>
                             <small class="text-muted pull-right"><i class="fal fa-clock"></i> 3小数前</small>
@@ -180,7 +182,7 @@ func (t *Template) Execute(wr io.Writer, data interface{}) error
 
                             <div class="comments-detail mt-5" style="color:#999999">
                                 <div class="media mt-2">
-                                    <img src="/public/image/avatar.jpg" width="42px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
+                                    <img class="avatar" src="/public/image/avatar.jpg" width="42px">
                                     <div class="media-body">
                                         <a href="#">谢霆锋</a>
                                         <small class="text-muted pull-right"><i class="fal fa-clock"></i>  刚刚</small>
@@ -202,7 +204,7 @@ func main() {
                                 </div>
 
                                 <div class="media mt-2">
-                                    <img src="/public/image/avatar.jpg" width="42px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
+                                    <img class="avatar" src="/public/image/avatar.jpg" width="42px">
                                     <div class="media-body">
                                         <a href="#">小刚</a>
                                         <small class="text-muted pull-right"><i class="fal fa-clock"></i>  5小数前</small>
@@ -221,7 +223,7 @@ func main() {
                     </div>
 
                     <div class="media mt-5">
-                        <img src="/public/image/avatar.jpg" width="52px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
+                        <img class="avatar" src="/public/image/avatar.jpg" width="52px">
                         <div class="media-body">
                             <a href="#">张学友</a>
                             <small class="text-muted pull-right"><i class="fal fa-clock"></i>  2天前</small>
@@ -236,7 +238,7 @@ func main() {
                         </div>
                     </div>
                     <div class="media mt-5">
-                        <img src="/public/image/avatar.jpg" width="52px" style="border-radius:50%;border:1px solid #e4e4e4;margin-right:20px;">
+                        <img class="avatar" src="/public/image/avatar.jpg" width="52px">
                         <div class="media-body">
                             <a href="#">程序员</a>
                             <small class="text-muted pull-right"><i class="fal fa-clock"></i>  2天前</small>
@@ -314,12 +316,13 @@ func main() {
     <script src="/public/plug-in/editor-md/lib/jquery.flowchart.min.js"></script>
 
     <script src="/public/plug-in/editor-md/editormd.js"></script>
+    <script src="/public/js/jquery.nicescroll.min.js"></script>
 
     <script type="text/javascript">
         $(function() {
-            // markdown 转 HTML
-            var articleView = editormd.markdownToHTML("article-content", {
-                htmlDecode      : "style,script,iframe",  // you can filter tags decode
+            // 文章内容
+            let articleView = editormd.markdownToHTML("article-content", {
+                htmlDecode      : "style,script,iframe",
                 emoji           : true,
                 taskList        : true,
                 tex             : true,  // 默认不解析
@@ -334,16 +337,16 @@ func main() {
             });
 
             // 操作条定位
-            var bodyWidth = $("body").width();
-            var containerWidth = $(".container").width();
-            var actionWidth = $(".action-bar").width();
-            var left = (bodyWidth-containerWidth)/2 -actionWidth;
+            let bodyWidth = $("body").width();
+            let containerWidth = $(".container").width();
+            let actionWidth = $(".action-bar").width();
+            let left = (bodyWidth-containerWidth)/2 -actionWidth;
             $(".action-bar").css({"left":left});
 
             // 父亲评论
             $(".comments >.media").each(function(i,item){
-                var commentView = editormd.markdownToHTML("comment-"+i, {
-                    htmlDecode      : "style,script,iframe",  // you can filter tags decode
+                let commentView = editormd.markdownToHTML("comment-"+i, {
+                    htmlDecode      : "style,script,iframe",
                     emoji           : true,
                     taskList        : true,
                     tex             : true,  // 默认不解析
@@ -353,8 +356,8 @@ func main() {
                 $("#comment-"+i).addClass("editormd-preview-theme-dark");
                 //子评论
                 $(item).find(".comment-body").each(function(j,sub){
-                    var subView = editormd.markdownToHTML("comment-"+i+"-"+j, {
-                        htmlDecode      : "style,script,iframe",  // you can filter tags decode
+                    let subView = editormd.markdownToHTML("comment-"+i+"-"+j, {
+                        htmlDecode      : "style,script,iframe",
                         emoji           : true,
                         taskList        : true,
                         tex             : true,  // 默认不解析
@@ -378,15 +381,25 @@ func main() {
                 sequenceDiagram : true,
                 path:"/public/plug-in/editor-md/lib/",
                 autoFocus:false,
-                placeholder:"请文明，理性发言",
+                placeholder:"是时候展现真正的技术了！",
                 toolbarIcons : function() {
-                    // Or return editormd.toolbarModes[name]; // full, simple, mini
-                    // Using "||" set icons align right.
                     return ["undo", "redo", "|",
                         "bold", "quote", "hr", "h5", "h6", "|",
                         "list-ul", "list-ol","link", "code", "table",
                         "||", "watch", "preview"]
                 },
+            });
+            editor.unwatch();
+
+            // 美化滚动条
+            $("pre.prettyprint ol").niceScroll({
+                cursorcolor: "#6c757d",
+                cursoropacitymax: 1,
+                touchbehavior: false,
+                cursorwidth: "4px",
+                cursorborder: "0",
+                cursorborderradius: "4px",
+                autohidemode: false
             });
         });
     </script>
