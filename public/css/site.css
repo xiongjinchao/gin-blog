@@ -14,7 +14,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 .navbar .has-login > a:hover{color:#ffffff}
 .navbar .has-login .dropdown-menu{left:auto;right:0}
 
-    /*轮播*/
+/*轮播*/
 #main-carousel {margin-top:3.325rem;z-index:1;}
 #main-carousel .carousel-item {height:320px;}
 #main-carousel .carousel-caption{width:100%;height:100%;background:url("/public/image/background.png") repeat;top:0;left:0;padding:60px 15% 0 15%;z-index:1;}
@@ -120,7 +120,7 @@ a, a:hover{text-decoration:none;}
 #comment-textarea{border-radius:.25rem;}
 #comment-textarea textarea{width:100%;font-size:.875rem;border:1px solid #e4e4e4;border-radius:.25rem;}
 .comments{display: block;}
-.comments .comment-body{margin-top:1rem;padding:0!important;font-size:.875rem;background:transparent;}
+.comments .comment-body{margin-top:.5rem;padding:0!important;font-size:.875rem;background:transparent;}
 .comments .media-body{overflow: hidden!important;}
 .comment-tags{margin-top:.5rem;}
 
