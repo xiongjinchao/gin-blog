@@ -32,6 +32,17 @@ $("#comment-textarea").on("click",function(){
     });
 });
 
+// hash link animate
+$("a.hash-link").on("click",function(e){
+    let href = $(this).attr("href");
+    $('html, body').animate({
+        scrollTop: $(href).offset().top - $("nav.navbar").height()
+    }, 500, function () {
+        window.location.hash = href;
+    });
+    e.preventDefault();
+});
+
 // back to top
 $(".back-to-top").on("click",function(){
     $('body,html').animate({

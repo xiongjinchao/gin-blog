@@ -38,7 +38,7 @@
                         <b>{{if gt .article.Favorite 0}}{{ .article.Favorite}}{{ else if gt .article.Favorite 99}}99+{{ end }}</b>
                     </div>
                     <div class="action-icon" title="评论">
-                        <a href="#comment-textarea">
+                        <a class="hash-link" href="#comments">
                         <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-comments-alt fa-stack-1x fa-inverse"></i>
@@ -149,7 +149,7 @@
                     </ul>
                 </div>
 
-                <div class="text-center mt-4">
+                <div id="comments" class="text-center mt-4">
                     <div class="navy-line"></div>
                     <h1 class="font-weight-light navy-title">
                         全部评论
@@ -157,28 +157,34 @@
                     <small class="text-black-50">Recommend</small>
                 </div>
 
-                <div class="comments">
-
-                    <div class="mt-3">
-                        <div class="media">
-                            <img class="avatar" src="/public/image/logo.png" width="52px">
-                            <div class="media-body">
-                                <div id="comment-textarea">
-                                    <textarea rows="2" class="form-control" placeholder="请文明发言" style="display:none"></textarea>
-                                </div>
-                                <span class="pull-left badge badge-dark mr-1">Markdown</span>
-                                <span class="pull-left badge badge-dark">Code</span>
-                                <button class="btn btn-sm btn-primary pull-right"><i class="fal fa-paper-plane"></i> 发表</button>
-                            </div>
+                <div class="mt-3">
+                    <div class="clearfix">
+                        <div class="pull-left comment-avatar">
+                            <img class="avatar" src="/public/image/logo.png">
+                            <a href="javascript:void(0)">游客</a>
                         </div>
+                        <div class="pull-right"></div>
                     </div>
+                    <div id="comment-textarea" class="mt-2">
+                        <textarea rows="2" class="form-control" placeholder="请文明发言" style="display:none"></textarea>
+                    </div>
+                    <div class="clearfix">
+                        <span class="pull-left badge badge-dark mr-1">Markdown</span>
+                        <span class="pull-left badge badge-dark">Code block</span>
+                        <button class="btn btn-sm btn-primary pull-right"><i class="fal fa-paper-plane"></i> 发表</button>
+                    </div>
+                </div>
 
-                    <div class="media mt-5">
-                        <img class="avatar" src="/public/image/avatar.jpg" width="52px">
-                        <div class="media-body">
-                            <a href="#">刘德华</a>
+                <div class="comments">
+                    <div class="mt-5 comment-parent">
+                        <div class="clearfix">
+                            <div class="pull-left comment-avatar">
+                                <img class="avatar" src="/public/image/avatar.jpg">
+                                <a href="javascript:void(0)">刘德华</a>
+                            </div>
                             <small class="text-muted pull-right"><i class="fal fa-clock"></i> 3小数前</small>
-                            <div id="comment-0" class="comment-body">
+                        </div>
+                        <div id="comment-0" class="comment-body">
                                 <textarea style="display:none;">但是正常的做法应该是这样的，同样的 ExecuteTemplate() 中输入的 name 也必须和模板中相同。
 
 ```go
@@ -188,77 +194,122 @@ func (t *Template) Execute(wr io.Writer, data interface{}) error
 
 ```
                                 </textarea>
-                            </div>
-                            <div class="comment-tags text-muted" style="font-size:.875rem">
-                                <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
-                                <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
-                                <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
-                            </div>
+                        </div>
+                        <div class="comment-tags text-muted" style="font-size:.875rem">
+                            <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
+                            <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
+                            <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
+                        </div>
 
-                            <div class="comments-detail mt-5" style="color:#999999">
-                                <div class="media mt-2">
-                                    <img class="avatar" src="/public/image/avatar.jpg" width="42px">
-                                    <div class="media-body">
-                                        <a href="#">谢霆锋</a>
-                                        <small class="text-muted pull-right"><i class="fal fa-clock"></i>  刚刚</small>
-                                        <div id="comment-0-0" class="comment-body">
-                                            <textarea style="display:none;">```go
+                        <div class="comments-children" style="color:#999999">
+                            <div class="media mt-2">
+                                <div class="sub-comment-avatar">
+                                    <img class="avatar" src="/public/image/avatar.jpg">
+                                </div>
+                                <div class="media-body">
+                                    <a href="#">谢霆锋</a>
+                                    <small class="text-muted pull-right"><i class="fal fa-clock"></i>  刚刚</small>
+                                    <div id="comment-0-0" class="comment-body">
+                                        <textarea style="display:none;">```go
 func main() {
     s := []string{"hello", "world", "hello", "golang", "hello", "ruby", "php", "java"}
     fmt.Println(removeDuplicateElement(s))
 }
 ```
                                             </textarea>
-                                        </div>
-                                        <div class="comment-tags text-muted" style="font-size:.875rem">
-                                            <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
-                                            <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
-                                            <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
-                                        </div>
+                                    </div>
+                                    <div class="comment-tags text-muted" style="font-size:.875rem">
+                                        <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
+                                        <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
+                                        <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="media mt-2">
-                                    <img class="avatar" src="/public/image/avatar.jpg" width="42px">
-                                    <div class="media-body">
-                                        <a href="#">小刚</a>
-                                        <small class="text-muted pull-right"><i class="fal fa-clock"></i>  5小数前</small>
-                                        <div id="comment-0-1" class="comment-body">
-                                            <textarea style="display:none;">在编写模板的时候，我们常常将公用的模板进行整合，比如每一个页面都有导航栏和页脚，我们常常将其编写为一个单独的模块，让所有的页面进行导入，这样就不用重复的编写了。</textarea>
-                                        </div>
-                                        <div class="comment-tags text-muted" style="font-size:.875rem">
-                                            <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
-                                            <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
-                                            <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
-                                        </div>
+                            <div class="media mt-2">
+                                <div class="sub-comment-avatar">
+                                    <img class="avatar" src="/public/image/avatar.jpg">
+                                </div>
+                                <div class="media-body">
+                                    <a href="#">小刚</a>
+                                    <small class="text-muted pull-right"><i class="fal fa-clock"></i>  5小数前</small>
+                                    <div id="comment-0-1" class="comment-body">
+                                        <textarea style="display:none;"><a href="#" class="text-primary"><i class="fa fa-hashtag"></i>谢霆锋<i class="fa fa-hashtag"></i></a> 在编写模板的时候，我们常常将公用的模板进行整合，比如每一个页面都有导航栏和页脚，我们常常将其编写为一个单独的模块，让所有的页面进行导入，这样就不用重复的编写了。</textarea>
+                                    </div>
+                                    <div class="comment-tags text-muted" style="font-size:.875rem">
+                                        <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
+                                        <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
+                                        <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="media mt-2">
+                                <div class="sub-comment-avatar">
+                                    <img class="avatar" src="/public/image/avatar.jpg">
+                                </div>
+                                <div class="media-body">
+                                    <a href="#">谢霆锋</a>
+                                    <small class="text-muted pull-right"><i class="fal fa-clock"></i>  5小数前</small>
+                                    <div id="comment-0-3" class="comment-body">
+                                        <textarea style="display:none;"><a href="#" class="text-primary"><i class="fa fa-hashtag"></i>小刚<i class="fa fa-hashtag"></i></a> 对于使用结构体中嵌套结构体的情况，只有receiver为指针类型，而嵌套结构体为结构体的值语义的时候不能触发自定义Json格式化函数MarshalJSON；其他三种组合均能够触发。</textarea>
+                                    </div>
+                                    <div class="comment-tags text-muted" style="font-size:.875rem">
+                                        <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
+                                        <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
+                                        <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="media mt-5">
-                        <img class="avatar" src="/public/image/avatar.jpg" width="52px">
-                        <div class="media-body">
-                            <a href="#">张学友</a>
-                            <small class="text-muted pull-right"><i class="fal fa-clock"></i>  2天前</small>
-                            <div id="comment-1" class="comment-body">
-                                <textarea style="display:none;">在编写模板的时候，我们常常将公用的模板进行整合，比如每一个页面都有导航栏和页脚，我们常常将其编写为一个单独的模块，让所有的页面进行导入，这样就不用重复的编写了。</textarea>
+                    <div class="mt-5 comment-parent">
+                        <div class="clearfix">
+                            <div class="pull-left comment-avatar">
+                                <img class="avatar" src="/public/image/avatar.jpg">
+                                <a href="javascript:void(0)">张学友</a>
                             </div>
-                            <div class="comment-tags text-muted" style="font-size:.875rem">
-                                <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
-                                <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
-                                <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
-                            </div>
+                            <small class="text-muted pull-right"><i class="fal fa-clock"></i> 3小数前</small>
+                        </div>
+                        <div id="comment-1" class="comment-body">
+                            <textarea style="display:none;">在编写模板的时候，我们常常将公用的模板进行整合，比如每一个页面都有导航栏和页脚，我们常常将其编写为一个单独的模块，让所有的页面进行导入，这样就不用重复的编写了。</textarea>
+                        </div>
+                        <div class="comment-tags text-muted" style="font-size:.875rem">
+                            <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
+                            <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
+                            <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
                         </div>
                     </div>
-                    <div class="media mt-5">
-                        <img class="avatar" src="/public/image/avatar.jpg" width="52px">
-                        <div class="media-body">
-                            <a href="#">程序员</a>
-                            <small class="text-muted pull-right"><i class="fal fa-clock"></i>  2天前</small>
-                            <div id="comment-2" class="comment-body">
-                                <textarea style="display:none;">&gt; 其实这都是一些基础问题，但是自己总是忘记，在这里做个记录。
+
+                    <div class="mt-5 comment-parent">
+                        <div class="clearfix">
+                            <div class="pull-left comment-avatar">
+                                <img class="avatar" src="/public/image/avatar.jpg">
+                                <a href="javascript:void(0)">郭富城</a>
+                            </div>
+                            <small class="text-muted pull-right"><i class="fal fa-clock"></i> 3小数前</small>
+                        </div>
+                        <div id="comment-2" class="comment-body">
+                            <textarea style="display:none;">在编写模板的时候，我们常常将公用的模板进行整合，比如每一个页面都有导航栏和页脚，我们常常将其编写为一个单独的模块，让所有的页面进行导入，这样就不用重复的编写了。</textarea>
+                        </div>
+                        <div class="comment-tags text-muted" style="font-size:.875rem">
+                            <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
+                            <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
+                            <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 comment-parent">
+                        <div class="clearfix">
+                            <div class="pull-left comment-avatar">
+                                <img class="avatar" src="/public/image/avatar.jpg">
+                                <a href="javascript:void(0)">程序员</a>
+                            </div>
+                            <small class="text-muted pull-right"><i class="fal fa-clock"></i> 3小数前</small>
+                        </div>
+                        <div id="comment-3" class="comment-body">
+                             <textarea style="display:none;">&gt; 其实这都是一些基础问题，但是自己总是忘记，在这里做个记录。
 
 ```go
 func main() {
@@ -270,17 +321,16 @@ func main() {
 ```
 
 很明显了，就不解释了</textarea>
-                            </div>
-                            <div class="comment-tags text-muted" style="font-size:.875rem">
-                                <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
-                                <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
-                                <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
-                            </div>
+                        </div>
+                        <div class="comment-tags text-muted" style="font-size:.875rem">
+                            <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
+                            <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
+                            <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
                         </div>
                     </div>
                 </div>
-
             </div>
+
             <div class="col-lg-3 content-right">
                 <div class="card border-0 recommend">
                     {{ if gt .hot.ID 0}}
@@ -381,7 +431,7 @@ func main() {
             $(".action-bar").css({"left":left}).fadeIn();
 
             // father comment
-            $(".comments >.media").each(function(i,item){
+            $(".comments > .comment-parent").each(function(i,item){
                 let commentView = editormd.markdownToHTML("comment-"+i, {
                     htmlDecode      : "style,script,iframe",
                     emoji           : true,
@@ -391,7 +441,7 @@ func main() {
                     sequenceDiagram : true,  // 默认不解析
                 });
                 $("#comment-"+i).addClass("editormd-preview-theme-dark");
-                //子评论
+                //sub comment
                 $(item).find(".comment-body").each(function(j,sub){
                     let subView = editormd.markdownToHTML("comment-"+i+"-"+j, {
                         htmlDecode      : "style,script,iframe",
