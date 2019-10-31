@@ -1,12 +1,12 @@
 package routers
 
 import (
-	"gin-admin/middleware"
 	"gin-blog/config"
 	"gin-blog/controllers"
 	"gin-blog/controllers/blog"
 	"gin-blog/controllers/passport"
 	"gin-blog/helper"
+	"gin-blog/middleware"
 	"github.com/foolin/gin-template"
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
