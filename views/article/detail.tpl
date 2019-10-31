@@ -26,7 +26,7 @@
                     </div>
                 {{ end }}
                 <div class="article-notice">
-                    <p class="m-0"><i class="fal fa-info-circle-circle"></i> 未经允许不得转载：转载以<span class="text-primary">超链接形式</span>并注明出处。原文地址：<a class="text-primary" href="/article/detail/{{ .article.ID}}">《{{ .article.Title}}》</a></p>
+                    <p class="m-0"><i class="fal fa-info-circle-circle"></i> 转载请以<span class="text-primary">超链接形式</span>并注明出处。原文地址：<a class="text-primary" href="/article/detail/{{ .article.ID}}">《{{ .article.Title}}》</a></p>
                 </div>
 
                 <div class="action-bar">
@@ -38,10 +38,12 @@
                         <b>{{if gt .article.Favorite 0}}{{ .article.Favorite}}{{ else if gt .article.Favorite 99}}99+{{ end }}</b>
                     </div>
                     <div class="action-icon" title="评论">
+                        <a href="#comment-textarea">
                         <span class="fa-stack">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-comments-alt fa-stack-1x fa-inverse"></i>
                         </span>
+                        </a>
                         <b>{{if gt .article.Comment 0}}{{ .article.Comment}}{{ else if gt .article.Comment 99}}99+{{ end }}</b>
                     </div>
                     <div class="action-icon" title="收藏">
@@ -162,7 +164,7 @@
                             <img class="avatar" src="/public/image/logo.png" width="52px">
                             <div class="media-body">
                                 <div id="comment-textarea">
-                                    <textarea rows="2" placeholder="请文明发言"></textarea>
+                                    <textarea rows="2" class="form-control" placeholder="请文明发言" style="display:none"></textarea>
                                 </div>
                                 <span class="pull-left badge badge-dark mr-1">Markdown</span>
                                 <span class="pull-left badge badge-dark">Code</span>
@@ -190,7 +192,7 @@ func (t *Template) Execute(wr io.Writer, data interface{}) error
                             <div class="comment-tags text-muted" style="font-size:.875rem">
                                 <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
                                 <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
-                                <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
+                                <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
                             </div>
 
                             <div class="comments-detail mt-5" style="color:#999999">
@@ -211,7 +213,7 @@ func main() {
                                         <div class="comment-tags text-muted" style="font-size:.875rem">
                                             <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
                                             <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
-                                            <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
+                                            <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
                                         </div>
                                     </div>
                                 </div>
@@ -227,7 +229,7 @@ func main() {
                                         <div class="comment-tags text-muted" style="font-size:.875rem">
                                             <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
                                             <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
-                                            <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
+                                            <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
                                         </div>
                                     </div>
                                 </div>
@@ -246,7 +248,7 @@ func main() {
                             <div class="comment-tags text-muted" style="font-size:.875rem">
                                 <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
                                 <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
-                                <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
+                                <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
                             </div>
                         </div>
                     </div>
@@ -272,7 +274,7 @@ func main() {
                             <div class="comment-tags text-muted" style="font-size:.875rem">
                                 <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
                                 <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
-                                <i class="fal fa-comment-alt"></i> <a href="#">回复</a>
+                                <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
                             </div>
                         </div>
                     </div>
@@ -316,6 +318,27 @@ func main() {
         <div class="mt-5"></div>
     </div>
 
+    <!-- comment && reply modal -->
+    <div class="modal fade" id="commentModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form id="comment-modal-form" action="/comment/create">
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fal fa-comment-alt"></i> 评论 / 回复</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- append editor.md-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">关闭</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- comment && reply modal -->
+
 {{ end }}
 
 {{ define "js" }}
@@ -333,6 +356,9 @@ func main() {
 
     <script type="text/javascript">
         $(function() {
+            $(window).on("resize",function(){
+                console.log(1);
+            });
             // 文章内容
             let articleView = editormd.markdownToHTML("article-content", {
                 htmlDecode      : "style,script,iframe",
@@ -392,8 +418,58 @@ func main() {
                 autohidemode: false
             });
 
-            //发表评论
-            let editor = editormd("comment-textarea", {
+            // 回复评论
+            $(".reply-comment").on("click",function(){
+                let data = {
+                    "model":$(this).data("model"),
+                    "model_id":$(this).data("model_id"),
+                    "root":$(this).data("root"),
+                    "parent":$(this).data("parent"),
+                };
+
+                // 动态创建回复评论 editor.md
+                $("#commentModal .modal-body").empty().append("<div class=\"form-group\"><div id=\"reply-comment-textarea\"></div></div>");
+                let replyEditor = editormd("reply-comment-textarea", {
+                    width:"100%",
+                    height:"200",
+                    codeFold : true,
+                    htmlDecode : true,
+                    tex : true,
+                    taskList : true,
+                    emoji : true,
+                    flowChart : true,
+                    sequenceDiagram : true,
+                    watch: true,
+                    path: "/public/plug-in/editor-md/lib/",
+                    autoFocus: false,
+                    placeholder:"是时候展现真正的技术了！",
+                    toolbarIcons : function() {
+                        return ["undo", "redo", "bold", "quote", "hr", "h5", "h6", "list-ul", "list-ol","link", "code", "code-block", "table", "||", "watch", "preview"]
+                    },
+                    onload: function () {
+                        this.unwatch();
+                        $("#reply-comment-textarea").css({"width":"99%"})
+                        this.resize();
+
+                        //$("#reply-comment-textarea .CodeMirror-scroll").click();
+                        /*
+                        $("#reply-comment-textarea .CodeMirror").css({"width":"100%","z-index":11,"margin-top":"40px"});
+                        $("#reply-comment-textarea .CodeMirror-gutters").css({"height":"219px;"});
+                        $("#reply-comment-textarea .CodeMirror-linenumbers").css({"width":"28px"});
+                        $("#reply-comment-textarea .CodeMirror-placeholder").click();
+                        */
+                    }
+                });
+
+                $.each(data,function(i,v){
+                    $('#commentModal .modal-body').append('<input type="hidden" name="'+i+'" value="'+v+'">');
+                });
+
+                $('#commentModal').modal('show');
+            });
+
+            // 发表评论
+            let commentEditor = editormd("comment-textarea", {
                 width:"100%",
                 height:"200",
                 codeFold : true,
@@ -403,17 +479,18 @@ func main() {
                 emoji : true,
                 flowChart : true,
                 sequenceDiagram : true,
+                watch:false,
                 path:"/public/plug-in/editor-md/lib/",
-                autoFocus:false,
-                placeholder:"是时候展现真正的技术了！",
+                autoFocus: false,
+                placeholder: "是时候展现真正的技术了！",
                 toolbarIcons : function() {
-                    return ["undo", "redo", "|",
-                        "bold", "quote", "hr", "h5", "h6", "|",
-                        "list-ul", "list-ol","link", "code", "table",
-                        "||", "watch", "preview"]
+                    return ["undo", "redo", "bold", "quote", "hr", "h5", "h6", "list-ul", "list-ol","link", "code", "code-block", "table", "||", "watch", "preview"]
                 },
+                onload: function () {
+                    //this.watch();
+                    //this.unwatch();
+                }
             });
-            //editor.unwatch();
         });
     </script>
 {{ end }}

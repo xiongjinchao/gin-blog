@@ -120,7 +120,7 @@ a, a:hover{text-decoration:none;}
 
 /*评论*/
 #comment-textarea{border-radius:.25rem;}
-#comment-textarea textarea{width:100%;font-size:.875rem;border:1px solid #e4e4e4;border-radius:.25rem;}
+#comment-textarea textarea{font-size:.875rem;}
 .comments img.avatar{border-radius:50%;border:1px solid #e4e4e4;margin-right:.5rem;}
 .comments .comment-body{margin-top:.5rem;padding:0!important;font-size:.875rem;background:transparent;}
 .comments .media-body{overflow: hidden!important;}
@@ -128,8 +128,10 @@ a, a:hover{text-decoration:none;}
 .comment-tags a{margin-right:.5rem}
 
 /*代码高亮左右滚动*/
-pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow-x:auto!important;background:#2d2d2d!important;border:none!important;border-radius:.25rem!important;padding:5px!important;}
-pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;padding:0 .5rem;}
+pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow-x:auto!important;border:none!important;border-radius:.25rem!important;padding:5px!important;}
+pre.prettyprint ol.linenums li{padding:0 .5rem;background:transparent!important;}
+.editormd-preview-theme-dark pre.prettyprint{background:#2d2d2d!important;}
+.editormd-preview-theme-dark pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;}
 
 /**==============小屏样式==============**/
 @media (max-width:576px ) {
