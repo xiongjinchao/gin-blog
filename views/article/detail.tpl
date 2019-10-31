@@ -83,7 +83,7 @@
                 <div class="text-center mt-4">
                     <div class="navy-line"></div>
                     <h1 class="font-weight-light navy-title">
-                        相关推荐
+                        相关 <i class="fal fa-coffee"></i> 推荐
                     </h1>
                     <small class="text-black-50">Recommend</small>
                 </div>
@@ -152,9 +152,9 @@
                 <div id="comments" class="text-center mt-4">
                     <div class="navy-line"></div>
                     <h1 class="font-weight-light navy-title">
-                        全部评论
+                        全部 <i class="fal fa-comments"></i> 评论
                     </h1>
-                    <small class="text-black-50">Recommend</small>
+                    <small class="text-black-50">Comments</small>
                 </div>
 
                 <div class="mt-3">
@@ -337,6 +337,13 @@ func main() {
             </div>
 
             <div class="col-lg-3 content-right">
+                <div class="text-center">
+                    <div class="navy-line"></div>
+                    <h1 class="font-weight-light navy-title">
+                        猜你 <i class="fal fa-heart"></i> 喜欢
+                    </h1>
+                    <small class="text-black-50">Favorite</small>
+                </div>
                 <div class="card border-0 recommend">
                     {{ if gt .hot.ID 0}}
                         <img src="{{ $image }}{{ .hot.File.Path }}" class="card-img-top" alt="...">
@@ -355,9 +362,9 @@ func main() {
                 <div class="text-center mt-4">
                     <div class="navy-line"></div>
                     <h1 class="font-weight-light navy-title">
-                        热门标签
+                        热门 <i class="fal fa-tags"></i> 标签
                     </h1>
-                    <small class="text-black-50">Recommend</small>
+                    <small class="text-black-50">Tags</small>
                 </div>
 
                 <div class="card border-0 mt-4 tag">
@@ -541,7 +548,7 @@ func main() {
                             "action":$(this).data("action"),
                         };
 
-                        $.post("/passport/user-action/create", data, function(result){
+                        $.post("/passport/action-record/create", data, function(result){
                             if(that.closest(".action-icon").length > 0) {
                                 // article action bar
                                 let total = result.data.total > 99 ? "99+" : result.data.total;
