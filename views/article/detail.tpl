@@ -322,7 +322,7 @@ func main() {
     <div class="modal fade" id="commentModal">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <form id="comment-modal-form" action="/comment/create">
+                <form id="comment-modal-form" action="/passport/comment/create">
                 <div class="modal-header">
                     <h4 class="modal-title"><i class="fal fa-comment-alt"></i> 评论 / 回复</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -498,7 +498,7 @@ func main() {
                             "action":$(this).data("action"),
                         };
 
-                        $.post("/user-action/create", data, function(result){
+                        $.post("/passport/user-action/create", data, function(result){
                             if(that.closest(".action-icon").length > 0) {
                                 // article action bar
                                 let total = result.data.total > 99 ? "99+" : result.data.total;
