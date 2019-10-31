@@ -26,7 +26,7 @@ $("#logout").on("click",function(e){
 // checkout login before comment
 $("#comment-textarea").on("click",function(){
     $.get("/auth/user",{},function(result){
-        if(result.user.base.id <= 0){
+        if(result.data.user.base.id <= 0){
             $(".login-btn").trigger("click");
         }
     });

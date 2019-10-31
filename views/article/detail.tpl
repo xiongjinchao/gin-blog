@@ -331,6 +331,7 @@ func main() {
                     <!-- append editor.md-->
                 </div>
                 <div class="modal-footer">
+                    <button type="submit" class="btn btn-sm btn-outline-primary"><i class="fal fa-paper-plane"></i> 发表</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">关闭</button>
                 </div>
                 </form>
@@ -356,10 +357,7 @@ func main() {
 
     <script type="text/javascript">
         $(function() {
-            $(window).on("resize",function(){
-                console.log(1);
-            });
-            // 文章内容
+            // article content markdown to html
             let articleView = editormd.markdownToHTML("article-content", {
                 htmlDecode      : "style,script,iframe",
                 emoji           : true,
@@ -370,19 +368,19 @@ func main() {
             });
             $("#article-content").addClass("editormd-preview-theme-dark");
 
-            // 文章内容图片居中
+            // make image in article align center
             $("#article-content img").each(function(i,item){
                 $(item).closest("p").css({"text-indent":0,"text-align":"center"})
             });
 
-            // 操作条定位
+            // action-bar position
             let bodyWidth = $("body").width();
             let containerWidth = $(".container").width();
             let actionWidth = $(".action-bar").width();
             let left = (bodyWidth-containerWidth)/2 -actionWidth;
             $(".action-bar").css({"left":left}).fadeIn();
 
-            // 父亲评论
+            // father comment
             $(".comments >.media").each(function(i,item){
                 let commentView = editormd.markdownToHTML("comment-"+i, {
                     htmlDecode      : "style,script,iframe",
@@ -407,7 +405,7 @@ func main() {
                 });
             });
 
-            // 美化滚动条
+            // beautiful scroll
             $("pre.prettyprint ol").niceScroll({
                 cursorcolor: "#6c757d",
                 cursoropacitymax: 1,
@@ -418,8 +416,19 @@ func main() {
                 autohidemode: false
             });
 
-            // 回复评论
+            // checkout login before reply comment
             $(".reply-comment").on("click",function(){
+                $.get("/auth/user",{},function(result){
+                    if(result.data.user.base.id <= 0){
+                        $(".login-btn").trigger("click");
+                    }else{
+                        $('#commentModal').modal('show');
+                    }
+                });
+            });
+
+            // show editor in modal
+            $("#commentModal").on("shown.bs.modal",function(){
                 let data = {
                     "model":$(this).data("model"),
                     "model_id":$(this).data("model_id"),
@@ -427,7 +436,6 @@ func main() {
                     "parent":$(this).data("parent"),
                 };
 
-                // 动态创建回复评论 editor.md
                 $("#commentModal .modal-body").empty().append("<div class=\"form-group\"><div id=\"reply-comment-textarea\"></div></div>");
                 let replyEditor = editormd("reply-comment-textarea", {
                     width:"100%",
@@ -439,36 +447,21 @@ func main() {
                     emoji : true,
                     flowChart : true,
                     sequenceDiagram : true,
-                    watch: true,
+                    watch: false,
                     path: "/public/plug-in/editor-md/lib/",
-                    autoFocus: false,
+                    autoFocus: true,
                     placeholder:"是时候展现真正的技术了！",
                     toolbarIcons : function() {
-                        return ["undo", "redo", "bold", "quote", "hr", "h5", "h6", "list-ul", "list-ol","link", "code", "code-block", "table", "||", "watch", "preview"]
+                        return ["undo", "redo", "bold", "quote", "hr", "h5", "h6", "list-ul", "list-ol","link", "code", "table", "||", "watch", "preview"]
                     },
-                    onload: function () {
-                        this.unwatch();
-                        $("#reply-comment-textarea").css({"width":"99%"})
-                        this.resize();
-
-                        //$("#reply-comment-textarea .CodeMirror-scroll").click();
-                        /*
-                        $("#reply-comment-textarea .CodeMirror").css({"width":"100%","z-index":11,"margin-top":"40px"});
-                        $("#reply-comment-textarea .CodeMirror-gutters").css({"height":"219px;"});
-                        $("#reply-comment-textarea .CodeMirror-linenumbers").css({"width":"28px"});
-                        $("#reply-comment-textarea .CodeMirror-placeholder").click();
-                        */
-                    }
                 });
 
                 $.each(data,function(i,v){
                     $('#commentModal .modal-body').append('<input type="hidden" name="'+i+'" value="'+v+'">');
                 });
-
-                $('#commentModal').modal('show');
             });
 
-            // 发表评论
+            // publish comment
             let commentEditor = editormd("comment-textarea", {
                 width:"100%",
                 height:"200",
@@ -484,7 +477,7 @@ func main() {
                 autoFocus: false,
                 placeholder: "是时候展现真正的技术了！",
                 toolbarIcons : function() {
-                    return ["undo", "redo", "bold", "quote", "hr", "h5", "h6", "list-ul", "list-ol","link", "code", "code-block", "table", "||", "watch", "preview"]
+                    return ["undo", "redo", "bold", "quote", "hr", "h5", "h6", "list-ul", "list-ol","link", "code", "table", "||", "watch", "preview"]
                 },
                 onload: function () {
                     //this.watch();
