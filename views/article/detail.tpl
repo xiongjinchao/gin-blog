@@ -160,8 +160,13 @@
                 <div class="mt-3">
                     <div class="clearfix">
                         <div class="pull-left comment-avatar">
-                            <img class="avatar" src="/public/image/logo.png">
-                            <a href="javascript:void(0)">游客</a>
+                            {{if gt .user.User.ID 0}}
+                                <img class="avatar" src="{{ if .user.UserAuth.Avatar }}{{ .user.UserAuth.Avatar }}{{ else }}/public/image/logo.png{{ end }}">
+                                <a href="javascript:void(0)">{{ .user.User.Name }}</a>
+                            {{ else }}
+                                <img class="avatar" src="/public/image/logo.png">
+                                <a href="javascript:void(0)">游客</a>
+                            {{ end }}
                         </div>
                         <div class="pull-right"></div>
                     </div>
