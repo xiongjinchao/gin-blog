@@ -152,7 +152,7 @@
                 <div id="comments" class="text-center mt-4">
                     <div class="navy-line"></div>
                     <h1 class="font-weight-light navy-title">
-                        全部 <i class="fal fa-comments"></i> 评论
+                        全部 <i class="fal fa-comments-alt"></i> 评论
                     </h1>
                     <small class="text-black-50">Comments</small>
                 </div>

@@ -3,10 +3,20 @@ particlesJS.load('particles-js', '/public/plug-in/particles/particles.json', fun
     //console.log('callback - particles.js config loaded');
 });
 
+let LOCATION_HREF = window.location.href;
+let LOCATION_URI = LOCATION_HREF.split('/');
+console.log(LOCATION_URI);
+//set active state menu
+$("nav .dropdown-menu").each(function(i,dropdown){
+    $(dropdown).find(".dropdown-item").each(function(j,item){
+        console.log($(item).attr("href"));
+    })
+});
+
 // third platform login
 $("#loginModal .modal-body a").on("click",function(e){
     let href = $(this).data('href');
-    let redirect = encodeURIComponent(window.location.href);
+    let redirect = encodeURIComponent(LOCATION_HREF);
 
     href += redirect.indexOf("?") >= 0? "&redirect="+redirect:"?redirect="+redirect;
     window.location.href = href;
@@ -16,7 +26,7 @@ $("#loginModal .modal-body a").on("click",function(e){
 // logout
 $("#logout").on("click",function(e){
     let href = $(this).data('href');
-    let redirect = encodeURIComponent(window.location.href);
+    let redirect = encodeURIComponent(LOCATION_HREF);
 
     href += redirect.indexOf("?") >= 0? "&redirect="+redirect:"?redirect="+redirect;
     window.location.href = href;
