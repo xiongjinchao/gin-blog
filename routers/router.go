@@ -1,9 +1,11 @@
 package routers
 
 import (
+	"gin-admin/middleware"
 	"gin-blog/config"
 	"gin-blog/controllers"
 	"gin-blog/controllers/blog"
+	"gin-blog/controllers/passport"
 	"gin-blog/helper"
 	"github.com/foolin/gin-template"
 	"github.com/gin-gonic/contrib/sessions"
@@ -85,6 +87,18 @@ func Router() *gin.Engine {
 	router.GET("/auth/logout", auth.Logout)
 	router.GET("/auth/callback/:type", auth.Callback)
 	router.GET("/auth/user", auth.User)
+
+	authorized := router.Group("passport")
+	authorized.Use((&middleware.Auth{}).CheckAuth())
+	{
+		// 操作记录
+		comment := &passport.Comment{}
+		router.GET("/comment/create", comment.Create)
+
+		// 评论
+		actionRecord := &passport.ActionRecord{}
+		router.GET("/action-record/create", actionRecord.Create)
+	}
 
 	return router
 }

@@ -31,7 +31,7 @@
 
                 <div class="action-bar">
                     <div class="action-icon" title="有用">
-                        <span class="fa-stack">
+                        <span class="fa-stack useful" data-model="article" data-model-id="{{ .article.ID }}" data-action="useful">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-thumbs-up fa-stack-1x fa-inverse"></i>
                         </span>
@@ -47,7 +47,7 @@
                         <b>{{if gt .article.Comment 0}}{{ .article.Comment}}{{ else if gt .article.Comment 99}}99+{{ end }}</b>
                     </div>
                     <div class="action-icon" title="收藏">
-                        <span class="fa-stack">
+                        <span class="fa-stack favorite" data-model="article" data-model-id="{{ .article.ID }}" data-action="favorite">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-star fa-stack-1x fa-inverse"></i>
                         </span>
@@ -190,8 +190,8 @@ func (t *Template) Execute(wr io.Writer, data interface{}) error
                                 </textarea>
                             </div>
                             <div class="comment-tags text-muted" style="font-size:.875rem">
-                                <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
-                                <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
+                                <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
+                                <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
                                 <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
                             </div>
 
@@ -211,8 +211,8 @@ func main() {
                                             </textarea>
                                         </div>
                                         <div class="comment-tags text-muted" style="font-size:.875rem">
-                                            <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
-                                            <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
+                                            <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
+                                            <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
                                             <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
                                         </div>
                                     </div>
@@ -227,8 +227,8 @@ func main() {
                                             <textarea style="display:none;">在编写模板的时候，我们常常将公用的模板进行整合，比如每一个页面都有导航栏和页脚，我们常常将其编写为一个单独的模块，让所有的页面进行导入，这样就不用重复的编写了。</textarea>
                                         </div>
                                         <div class="comment-tags text-muted" style="font-size:.875rem">
-                                            <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
-                                            <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
+                                            <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
+                                            <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
                                             <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
                                         </div>
                                     </div>
@@ -246,8 +246,8 @@ func main() {
                                 <textarea style="display:none;">在编写模板的时候，我们常常将公用的模板进行整合，比如每一个页面都有导航栏和页脚，我们常常将其编写为一个单独的模块，让所有的页面进行导入，这样就不用重复的编写了。</textarea>
                             </div>
                             <div class="comment-tags text-muted" style="font-size:.875rem">
-                                <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
-                                <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
+                                <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
+                                <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
                                 <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
                             </div>
                         </div>
@@ -272,8 +272,8 @@ func main() {
 很明显了，就不解释了</textarea>
                             </div>
                             <div class="comment-tags text-muted" style="font-size:.875rem">
-                                <i class="fal fa-chevron-up"></i> <a href="#">赞 (32)</a>
-                                <i class="fal fa-chevron-down"></i> <a href="#">踩 (2)</a>
+                                <i class="fal fa-chevron-up"></i> <a class="useful" data-model="comment" data-model-id="0" data-action="useful" href="javascript:void(0)">赞 (<span>32</span>)</a>
+                                <i class="fal fa-chevron-down"></i> <a class="useless" data-model="comment" data-model-id="0" data-action="useless" href="javascript:void(0)">踩 (<span>2</span>)</a>
                                 <i class="fal fa-comment-alt"></i> <a class="reply-comment" data-model="article" data-model-id="{{ .article.ID }}" data-root="0" data-parent="0" href="javascript:void(0)">回复</a>
                             </div>
                         </div>
@@ -427,7 +427,7 @@ func main() {
                 });
             });
 
-            // show editor in modal
+            // reply editor
             $("#commentModal").on("shown.bs.modal",function(){
                 let data = {
                     "model":$(this).data("model"),
@@ -461,7 +461,7 @@ func main() {
                 });
             });
 
-            // publish comment
+            // comment editor
             let commentEditor = editormd("comment-textarea", {
                 width:"100%",
                 height:"200",
@@ -483,6 +483,33 @@ func main() {
                     //this.watch();
                     //this.unwatch();
                 }
+            });
+
+            // click useful useless favorite
+            $(".useful, .useless, .favorite").on("click",function(){
+                let that = $(this);
+                $.get("/auth/user",{},function(result){
+                    if(result.data.user.base.id <= 0){
+                        $(".login-btn").trigger("click");
+                    }else{
+                        let data = {
+                            "model":$(this).data("model"),
+                            "model_id":$(this).data("model_id"),
+                            "action":$(this).data("action"),
+                        };
+
+                        $.post("/user-action/create", data, function(result){
+                            if(that.closest(".action-icon").length > 0) {
+                                // article action bar
+                                let total = result.data.total > 99 ? "99+" : result.data.total;
+                                that.closest(".action-icon").find("b").text(total);
+                            }else{
+                                // comment list
+                                that.find("span").text(result.data.total);
+                            }
+                        });
+                    }
+                });
             });
         });
     </script>
