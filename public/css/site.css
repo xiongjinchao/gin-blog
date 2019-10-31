@@ -131,7 +131,8 @@ a, a:hover{text-decoration:none;}
 .comment-tags a{margin-right:.5rem}
 
 /*代码高亮左右滚动*/
-pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow-x:auto!important;border:none!important;border-radius:.25rem!important;padding:5px!important;}
+pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow-x:auto!important;border:none!important;border-radius:.25rem!important;padding:.2rem !important;}
+pre.prettyprint ol.linenums{overflow:auto;padding:.5rem 2.5rem;}
 pre.prettyprint ol.linenums li{padding:0 .5rem;background:transparent!important;}
 .editormd-preview-theme-dark pre.prettyprint{background:#2d2d2d!important;}
 .editormd-preview-theme-dark pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;}
