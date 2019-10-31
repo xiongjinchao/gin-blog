@@ -14,16 +14,16 @@
 
                             {{if eq (len $v.Children) 0}}
                                 <li class="nav-item {{if eq $i 0}}active{{ end }}">
-                                    <a class="nav-link" href="{{$v.Tag}}">{{$v.Name}} <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="{{$v.Tag}}">{{if $v.Icon}}<i class="{{$v.Icon}} fa-fw"></i> {{end}}{{$v.Name}} <span class="sr-only">(current)</span></a>
                                 </li>
                             {{else}}
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{$i}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        {{$v.Name}}
+                                        {{if $v.Icon}}<i class="{{$v.Icon}} fa-fw"></i> {{end}}{{$v.Name}}
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown{{$i}}">
                                         {{ range $j, $c := $v.Children }}
-                                            <a class="dropdown-item" href="{{ $c.Tag }}">{{$c.Name}}</a>
+                                            <a class="dropdown-item" href="{{ $c.Tag }}">{{if $c.Icon}}<i class="{{$c.Icon}} fa-fw"></i> {{end}}{{$c.Name}}</a>
                                         {{ end }}
                                     </div>
                                 </li>
