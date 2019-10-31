@@ -381,6 +381,17 @@ func main() {
                 });
             });
 
+            // 美化滚动条
+            $("pre.prettyprint ol").niceScroll({
+                cursorcolor: "#6c757d",
+                cursoropacitymax: 1,
+                touchbehavior: false,
+                cursorwidth: "4px",
+                cursorborder: "0",
+                cursorborderradius: "4px",
+                autohidemode: false
+            });
+
             //发表评论
             let editor = editormd("comment-textarea", {
                 width:"100%",
@@ -402,17 +413,7 @@ func main() {
                         "||", "watch", "preview"]
                 },
             });
-
-            // 美化滚动条
-            $("pre.prettyprint ol").niceScroll({
-                cursorcolor: "#6c757d",
-                cursoropacitymax: 1,
-                touchbehavior: false,
-                cursorwidth: "4px",
-                cursorborder: "0",
-                cursorborderradius: "4px",
-                autohidemode: false
-            });
+            //editor.unwatch();
         });
     </script>
 {{ end }}

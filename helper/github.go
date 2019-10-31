@@ -1,15 +1,12 @@
 package helper
 
 import (
-	"crypto/sha1"
-	"encoding/hex"
+	"encoding/base64"
 	"encoding/json"
 	"gin-blog/config"
 	"io/ioutil"
 	"net/http"
-	"strconv"
 	"strings"
-	"time"
 )
 
 type Github struct {
@@ -46,18 +43,15 @@ type Github struct {
 	UpdatedAt         string `json:"updated_at"`
 }
 
-func (g Github) GenerateUrl() (url string) {
+func (g Github) GenerateUrl(redirect string) (url string) {
 
 	clientID := config.Setting["github"]["id"]
-	now := time.Now().Unix()
-	s := sha1.New()
-	s.Write([]byte(strconv.FormatInt(now, 10)))
-	state := hex.EncodeToString(s.Sum([]byte("")))
+	state := base64.URLEncoding.EncodeToString([]byte(redirect))
 	return "https://github.com/login/oauth/authorize?client_id=" + clientID + "&state=" + state + "&scope=user:email"
 
 }
 
-func (g Github) GetAccessToken(code, state string) (github Github, err error) {
+func (g Github) GetAccessToken(code string) (github Github, err error) {
 
 	client := &http.Client{}
 	url := "https://github.com/login/oauth/access_token"

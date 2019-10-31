@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	db "gin-blog/database"
@@ -17,8 +18,12 @@ type Auth struct{}
 // Login handles GET /auth/login/:type route
 func (a *Auth) Login(c *gin.Context) {
 
+	// after login redirect url
+	redirect := c.Query("redirect")
+
+	// login by github
 	if c.Param("type") == "github" {
-		url := helper.Github{}.GenerateUrl()
+		url := helper.Github{}.GenerateUrl(redirect)
 		c.Redirect(http.StatusFound, url)
 		return
 	}
@@ -34,8 +39,17 @@ func (a *Auth) Callback(c *gin.Context) {
 
 	code := c.Query("code")
 	state := c.Query("state")
+	redirect, err := base64.URLEncoding.DecodeString(state)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"code":    401,
+			"message": err.Error(),
+		})
+		return
+	}
+
 	if code != "" && c.Param("type") == "github" {
-		github, err := helper.Github{}.GetAccessToken(code, state)
+		github, err := helper.Github{}.GetAccessToken(code)
 		if err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
 				"code":    401,
@@ -129,7 +143,10 @@ func (a *Auth) Callback(c *gin.Context) {
 			return
 		}
 
-		c.Redirect(http.StatusFound, "/")
+		if len(redirect) == 0 {
+			redirect = []byte("/")
+		}
+		c.Redirect(http.StatusFound, string(redirect))
 		return
 	}
 
@@ -161,9 +178,16 @@ func (a *Auth) User(c *gin.Context) {
 
 // Logout handles GET /auth/logout route
 func (a *Auth) Logout(c *gin.Context) {
+
+	redirect := c.Query("redirect")
+	if redirect == "" {
+		redirect = "/"
+	}
+
 	session := sessions.Default(c)
 	session.Delete("passport")
 	session.Clear()
 	_ = session.Save()
-	c.Redirect(http.StatusFound, "/")
+	c.Redirect(http.StatusFound, redirect)
+
 }

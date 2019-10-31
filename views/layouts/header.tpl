@@ -44,7 +44,7 @@
                                 <a class="dropdown-item" href=""><i class="fal fa-home"></i> 我的主页</a>
                                 <a class="dropdown-item" href=""><i class="fal fa-heart"></i> 喜欢的文章</a>
                                 <a class="dropdown-item" href=""><i class="fal fa-cog"></i> 设置</a>
-                                <a class="dropdown-item" href="/auth/logout"><i class="fal fa-sign-out"></i> 退出</a>
+                                <a id="logout" class="dropdown-item" href="javascript:void(0)" data-href="/auth/logout"><i class="fal fa-sign-out"></i> 退出</a>
                             </div>
                         </span>
                     {{ else }}
@@ -55,7 +55,7 @@
         </nav>
     </div>
 
-    <!-- 登录模态框 -->
+    <!-- login modal -->
     <div class="modal fade" id="loginModal">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
@@ -65,7 +65,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="text-center">
-                        <p><a href="/auth/login/github"><i class="fab fa-github text-info" style="font-size:6rem;"></i></a></p>
+                        <p><a href="javascript:void(0)" data-href="/auth/login/github"><i class="fab fa-github text-info" style="font-size:6rem;"></i></a></p>
                         <p style="font-size:.875rem;color:#999999;">更多登录方式敬请期待</p>
                         <p style="font-size:1.4rem;color:#6c757d">
                             <span class="fa-stack">
@@ -89,6 +89,6 @@
             </div>
         </div>
     </div>
-    <!-- 登录模态框 -->
+    <!-- login modal -->
 
 {{ end }}
