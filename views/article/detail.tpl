@@ -408,7 +408,6 @@ func main() {
     <script src="/public/plug-in/editor-md/lib/jquery.flowchart.min.js"></script>
 
     <script src="/public/plug-in/editor-md/editormd.js"></script>
-    <script src="/public/js/jquery.nicescroll.min.js"></script>
 
     <script type="text/javascript">
         $(function() {
@@ -458,17 +457,6 @@ func main() {
                     });
                     $("#comment-"+i+"-"+j).addClass("editormd-preview-theme-dark");
                 });
-            });
-
-            // beautiful scroll
-            $("pre.prettyprint ol").niceScroll({
-                cursorcolor: "#6c757d",
-                cursoropacitymax: 1,
-                touchbehavior: false,
-                cursorwidth: "4px",
-                cursorborder: "0",
-                cursorborderradius: "4px",
-                autohidemode: false
             });
 
             // checkout login before reply comment
