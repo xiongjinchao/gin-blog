@@ -43,7 +43,7 @@ func (a *Article) Category(c *gin.Context) {
 	var articles []models.Article
 
 	query := db.Mysql.Model(models.Article{}).
-		Select("id,title,cover,category_id,summary,hit,comment,favorite,user_id,created_at").
+		Select("id,title,cover,category_id,summary,hit,useful,useless,comment,favorite,user_id,created_at").
 		Where("audit = 1 and category_id = ?", category.ID)
 
 	query.Count(&total)
