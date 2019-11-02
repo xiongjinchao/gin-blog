@@ -93,11 +93,11 @@ func Router() *gin.Engine {
 	{
 		// 操作记录
 		comment := &passport.Comment{}
-		router.GET("/comment/create", comment.Create)
+		router.POST("/comment/create", comment.Create)
 
 		// 评论
 		actionRecord := &passport.ActionRecord{}
-		router.GET("/action-record/create", actionRecord.Create)
+		router.POST("/action-record/create", actionRecord.Create)
 	}
 
 	return router
