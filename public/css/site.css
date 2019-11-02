@@ -54,6 +54,10 @@ a, a:hover{text-decoration:none;}
 .page-item .page-link{margin:0 .2rem;color:#999999}
 .page-item.active .page-link{color:#007bff;border:1px solid #007bff;background:transparent;}
 
+/*头像转动*/
+.avatar{transition:all 1.0s;}
+.avatar:hover{transform:rotate(360deg);}
+
 
 
 
@@ -81,8 +85,6 @@ a, a:hover{text-decoration:none;}
 .card.recommend .card-title{font-size:1.125rem;font-weight:500}
 .card.recommend .card-text{color:#999999;}
 
-.card.about .avatar{transition:all 1.0s;}
-.card.about .avatar:hover{transform:rotate(360deg);}
 .card.about .card-footer span{margin:0 .4rem;}
 .card.about .card-footer{border-top: 1px solid rgba(0,0,0,.125);font-size:.875rem;}
 .card.about .card-title,.card.about .card-footer a{color:#f4f4f4}
@@ -129,8 +131,6 @@ a, a:hover{text-decoration:none;}
 .comments .media-body{overflow: hidden!important;}
 .comment-tags{margin-top:.5rem;}
 .comment-tags a{margin-right:.5rem}
-.comments .avatar{transition:all 1.0s;}
-.comments .avatar:hover{transform:rotate(360deg);}
 
 /*代码高亮左右滚动*/
 pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow-x:auto!important;border:none!important;border-radius:.25rem!important;padding:.2rem !important;}
