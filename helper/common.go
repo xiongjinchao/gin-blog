@@ -137,7 +137,7 @@ type RelatedArticle struct {
 func GetRelatedArticle(ID, categoryID int64) (articles RelatedArticle, err error) {
 
 	if err := db.Mysql.Model(models.Article{}).
-		Select("id,title,cover,category_id,summary,hit,comment,favorite,user_id,created_at").
+		Select("id,title,cover,category_id,summary,hit,useful,useless,comment,favorite,user_id,created_at").
 		Where("audit = 1 and category_id = ? and ID < ?", categoryID, ID).
 		Preload("File").Preload("User").Preload("ArticleCategory").
 		Order("id desc").
@@ -147,7 +147,7 @@ func GetRelatedArticle(ID, categoryID int64) (articles RelatedArticle, err error
 	(&models.Article{}).SetTag(&articles.Prev)
 
 	if err := db.Mysql.Model(models.Article{}).
-		Select("id,title,cover,category_id,summary,hit,comment,favorite,user_id,created_at").
+		Select("id,title,cover,category_id,summary,hit,useful,useless,comment,favorite,user_id,created_at").
 		Where("audit = 1 and category_id = ? and ID > ?", categoryID, ID).
 		Preload("File").Preload("User").Preload("ArticleCategory").
 		Order("id asc").
@@ -162,7 +162,7 @@ func GetRelatedArticle(ID, categoryID int64) (articles RelatedArticle, err error
 func GetHotArticle(ID, categoryID int64) (article models.Article, err error) {
 
 	if err := db.Mysql.Model(models.Article{}).
-		Select("id,title,cover,category_id,summary,hit,comment,favorite,user_id,created_at").
+		Select("id,title,cover,category_id,summary,hit,useful,useless,comment,favorite,user_id,created_at").
 		Where("audit = 1 and hot =1 and cover >0 and category_id = ? and ID != ?", categoryID, ID).
 		Preload("File").Preload("User").Preload("ArticleCategory").
 		Order("id desc").
@@ -177,7 +177,7 @@ func GetHotArticle(ID, categoryID int64) (article models.Article, err error) {
 func GetRecommendArticle(ID, categoryID int64) (articles []models.Article, err error) {
 	var SetRecommendArticle = func(ID, categoryID int64) (articles []models.Article, err error) {
 		if err := db.Mysql.Model(models.Article{}).
-			Select("id,title,cover,category_id,summary,hit,comment,favorite,user_id,created_at").
+			Select("id,title,cover,category_id,summary,hit,useful,useless,comment,favorite,user_id,created_at").
 			Where("audit = 1 and category_id = ? and ID != ?", categoryID, ID).
 			Preload("File").Preload("User").Preload("ArticleCategory").
 			Order("id desc").
