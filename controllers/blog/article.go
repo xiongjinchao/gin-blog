@@ -47,7 +47,6 @@ func (a *Article) Category(c *gin.Context) {
 		Where("audit = 1 and category_id = ?", category.ID)
 
 	query.Count(&total)
-
 	query.Preload("File").Preload("User").Preload("ArticleCategory").
 		Order("id desc").Offset((page - 1) * size).Limit(size).Find(&articles)
 	(&models.Article{}).SetTags(&articles)
@@ -96,6 +95,13 @@ func (a *Article) Detail(c *gin.Context) {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 	}
 
+	var category models.ArticleCategory
+	if err := db.Mysql.Where("id = ?", article.ID).First(&category).Error; err != nil {
+		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
+	}
+	categories := helper.GetArticleCategories()
+	category.SetParents(&categories, category.Parent, &category.Parents)
+
 	var tags []models.Tag
 	if err := db.Mysql.Model(&models.Tag{}).Where("model = ? and model_id = ?", "article", id).Find(&tags).Error; err != nil {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
@@ -116,15 +122,51 @@ func (a *Article) Detail(c *gin.Context) {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 	}
 
+	breadcrumb := make([]map[string]string, 0)
+	breadcrumb = append(breadcrumb, map[string]string{"label": "首页", "link": "/", "active": ""})
+	for _, v := range category.Parents {
+		breadcrumb = append(breadcrumb, map[string]string{"label": v.Name, "link": "/article/category/" + v.Tag, "active": ""})
+	}
+	breadcrumb = append(breadcrumb, map[string]string{"label": category.Name, "link": "/article/category/" + category.Tag, "active": ""})
+	breadcrumb = append(breadcrumb, map[string]string{"label": article.Title, "link": "/article/detail/" + c.Param("id"), "active": "1"})
+
+	// pagination comments
+	total, size, page := 0, 10, 1
+	page, err = strconv.Atoi(c.Query("page"))
+	if err != nil {
+		page = 1
+	}
+	if page <= 0 {
+		page = 1
+	}
+	var comments []models.Comment
+
+	query := db.Mysql.Model(models.Comment{}).Where("root = 0 and model= 'article' and model_id=?", c.Param("id"))
+	query.Count(&total)
+	query.Order("id desc").Preload("User").Preload("UserAuth").Offset((page - 1) * size).Limit(size).Find(&comments)
+
+	for i, v := range comments {
+		db.Mysql.Model(models.Comment{}).Where("root = ?", v.ID).Preload("User").Preload("UserAuth").Find(&(comments[i].Children))
+		for j, c := range comments[i].Children {
+			comment := models.Comment{}
+			db.Mysql.Model(models.Comment{}).Where("id = ?", c.Parent).Preload("User").Preload("UserAuth").First(&comment)
+			comments[i].Children[j].Father = comment
+		}
+	}
+
 	c.HTML(http.StatusOK, "article/detail", gin.H{
-		"title":     article.Title + "-" + config.Setting["app"]["title"],
-		"user":      helper.GetUser(c),
-		"menu":      helper.GetMenu(),
-		"article":   article,
-		"tags":      tags,
-		"related":   related,
-		"hot":       hot,
-		"recommend": recommend,
-		"image":     config.Setting["domain"]["image"],
+		"title":      article.Title + "-" + config.Setting["app"]["title"],
+		"breadcrumb": breadcrumb,
+		"user":       helper.GetUser(c),
+		"menu":       helper.GetMenu(),
+		"article":    article,
+		"tags":       tags,
+		"related":    related,
+		"hot":        hot,
+		"recommend":  recommend,
+		"comments":   comments,
+		"model":      "article",
+		"pagination": (&helper.Pagination{}).Generate(total, size, page, "/article/detail/"+c.Param("id")),
+		"image":      config.Setting["domain"]["image"],
 	})
 }

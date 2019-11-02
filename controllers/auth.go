@@ -182,3 +182,41 @@ func (a *Auth) Logout(c *gin.Context) {
 	c.Redirect(http.StatusFound, redirect)
 
 }
+
+// Local login GET /auth/local-login route
+func (a *Auth) LocalLogin(c *gin.Context) {
+	user := models.User{}
+	userAuth := models.UserAuth{}
+
+	db.Mysql.Where("id = ?", 1).First(&userAuth)
+	if userAuth.UserID > 0 {
+		db.Mysql.First(&user, userAuth.UserID)
+	}
+
+	passport, err := json.Marshal(models.Auth{
+		user,
+		userAuth,
+	})
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"code":    401,
+			"message": err.Error(),
+		})
+		return
+	}
+
+	// login success
+	session := sessions.Default(c)
+	session.Set("passport", string(passport))
+	if err := session.Save(); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"code":    401,
+			"message": err.Error(),
+		})
+		return
+	}
+
+	c.Redirect(http.StatusFound, "/")
+	return
+}

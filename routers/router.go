@@ -40,7 +40,7 @@ func Router() *gin.Engine {
 		Root:      "views",
 		Extension: ".tpl",
 		Master:    "layouts/main",
-		Partials:  []string{"layouts/header", "layouts/footer"},
+		Partials:  []string{"layouts/header", "layouts/footer", "common/comment"},
 		Funcs: template.FuncMap{
 			"Interface2Int64": helper.Interface2Int64,
 			"TypeOf":          reflect.TypeOf,
@@ -87,6 +87,7 @@ func Router() *gin.Engine {
 	router.GET("/auth/logout", auth.Logout)
 	router.GET("/auth/callback/:type", auth.Callback)
 	router.GET("/auth/user", auth.User)
+	router.GET("/auth/local-login", auth.LocalLogin)
 
 	authorized := router.Group("passport")
 	authorized.Use((&middleware.Auth{}).CheckAuth())
@@ -96,8 +97,8 @@ func Router() *gin.Engine {
 		authorized.POST("comment/create", comment.Create)
 
 		// 评论
-		actionRecord := &passport.ActionRecord{}
-		authorized.POST("action-record/create", actionRecord.Create)
+		actionLog := &passport.ActionLog{}
+		authorized.POST("action-log/create", actionLog.Create)
 	}
 
 	return router

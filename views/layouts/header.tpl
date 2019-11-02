@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal"><i class="fal fa-ban"></i> 关闭</button>
                 </div>
             </div>
         </div>
