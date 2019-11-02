@@ -25,20 +25,12 @@ func (a *Article) Index(c *gin.Context) {
 // Category handles GET /article/category/:tag route
 func (a *Article) Category(c *gin.Context) {
 
-	var category, father models.ArticleCategory
+	var category models.ArticleCategory
 	if err := db.Mysql.Where("tag = ?", c.Param("tag")).First(&category).Error; err != nil {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 	}
-	if category.Parent > 0 {
-		if err := db.Mysql.Where("id = ?", category.Parent).First(&father).Error; err != nil {
-			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
-		}
-		category.Father = models.Category{
-			ID:   father.ID,
-			Name: father.Name,
-			Tag:  father.Tag,
-		}
-	}
+	categories := helper.GetArticleCategories()
+	category.SetParents(&categories, category.Parent, &category.Parents)
 
 	total, size, page := 0, 10, 1
 	page, err := strconv.Atoi(c.Query("page"))
@@ -70,8 +62,16 @@ func (a *Article) Category(c *gin.Context) {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 	}
 
+	breadcrumb := make([]map[string]string, 0)
+	breadcrumb = append(breadcrumb, map[string]string{"label": "首页", "link": "/", "active": ""})
+	for _, v := range category.Parents {
+		breadcrumb = append(breadcrumb, map[string]string{"label": v.Name, "link": "/article/category/" + v.Tag, "active": ""})
+	}
+	breadcrumb = append(breadcrumb, map[string]string{"label": category.Name, "link": "/article/category/" + category.Tag, "active": "1"})
+
 	c.HTML(http.StatusOK, "article/category", gin.H{
 		"title":      category.Name + "-" + config.Setting["app"]["title"],
+		"breadcrumb": breadcrumb,
 		"user":       helper.GetUser(c),
 		"menu":       helper.GetMenu(),
 		"category":   category,

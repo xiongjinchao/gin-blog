@@ -344,7 +344,7 @@ func main() {
                     </h1>
                     <small class="text-black-50">Favorite</small>
                 </div>
-                <div class="card border-0 recommend">
+                <div class="card border-0 mt-4 recommend">
                     {{ if gt .hot.ID 0}}
                         <img src="{{ $image }}{{ .hot.File.Path }}" class="card-img-top" alt="...">
                         <div class="card-body">

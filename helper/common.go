@@ -38,6 +38,21 @@ func GetMenu() []models.Menu {
 	return data
 }
 
+// get all article category
+func GetArticleCategories() []models.ArticleCategory {
+	var categories, data []models.ArticleCategory
+	data, err := (&models.ArticleCategory{}).GetCache()
+	if err != nil {
+		if err := db.Mysql.Model(&models.Menu{}).Find(&categories).Error; err != nil {
+			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
+		}
+		(&models.ArticleCategory{}).SetSort(&categories, 0, &data)
+		(&models.ArticleCategory{}).SetData(&data)
+	}
+
+	return data
+}
+
 // get the newest article from cache
 func GetNewNote() (articles []models.Article, err error) {
 

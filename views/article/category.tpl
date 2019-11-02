@@ -13,7 +13,10 @@
                 <div class="text-center mt-4">
                     <div class="navy-line"></div>
                     <h1 class="font-weight-light navy-title">
-                        首页 / {{ .category.Father.Name }} / <span class="active">{{ .category.Name }}</span>
+                        {{ $len := len .breadcrumb }}
+                        {{ range $i,$v := .breadcrumb }}
+                            <span class="{{ if eq $v.active "1" }}active{{ end }}">{{ $v.label }}</span> {{ if lt (Add $i 1) $len}} / {{ end }}
+                        {{ end }}
                     </h1>
                     <small class="text-black-50">{{ .category.Tag }}</small>
                 </div>
@@ -84,12 +87,12 @@
                     </div>
                 </div>
 
-                <div class="text-center mt-4">
+                <div class="mt-4 text-center">
                     <div class="navy-line"></div>
                     <h1 class="font-weight-light navy-title">
-                        站长推荐
+                        猜你 <i class="fal fa-heart"></i> 喜欢
                     </h1>
-                    <small class="text-black-50">Recommend</small>
+                    <small class="text-black-50">Favorite</small>
                 </div>
 
                 <div class="card border-0 mt-4 recommend">
@@ -110,9 +113,9 @@
                 <div class="text-center mt-4">
                     <div class="navy-line"></div>
                     <h1 class="font-weight-light navy-title">
-                        热门标签
+                        热门 <i class="fal fa-tags"></i> 标签
                     </h1>
-                    <small class="text-black-50">Recommend</small>
+                    <small class="text-black-50">Tags</small>
                 </div>
 
                 <div class="card border-0 mt-4 tag">
