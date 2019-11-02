@@ -129,6 +129,8 @@ a, a:hover{text-decoration:none;}
 .comments .media-body{overflow: hidden!important;}
 .comment-tags{margin-top:.5rem;}
 .comment-tags a{margin-right:.5rem}
+.comments .avatar{transition:all 1.0s;}
+.comments .avatar:hover{transform:rotate(360deg);}
 
 /*代码高亮左右滚动*/
 pre.prettyprint {white-space:pre!important;word-wrap:break-word!important;overflow-x:auto!important;border:none!important;border-radius:.25rem!important;padding:.2rem !important;}
