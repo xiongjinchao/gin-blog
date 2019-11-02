@@ -35,7 +35,7 @@
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-thumbs-up fa-stack-1x fa-inverse"></i>
                         </span>
-                        <b>{{if gt .article.Favorite 0}}{{ .article.Favorite}}{{ else if gt .article.Favorite 99}}99+{{ end }}</b>
+                        <b>{{if gt .article.Useful 0}}{{ .article.Useful }}{{ else if gt .article.Useful 99}}99+{{ end }}</b>
                     </div>
                     <div class="action-icon" title="评论">
                         <a class="hash-link" href="#comments">
@@ -98,9 +98,9 @@
                                     <h5 class="mt-0 mb-2"><a href="/article/detail/{{ .related.Prev.ID}}">{{ .related.Prev.Title }}</a></h5>
                                     <p class="mb-1 media-summary">{{ .related.Prev.Summary }}</p>
                                     <p class="mb-1 media-icon">
-                                        <span><i class="fal fa-eye"></i> {{ .related.Prev.Hit }}</span>
+                                        <span><i class="fal fa-thumbs-up"></i> {{ .related.Prev.Useful }}</span>
                                         <span><i class="fal fa-comments-alt"></i> {{ .related.Prev.Comment }}</span>
-                                        <span><i class="fal fa-chevron-up"></i> {{ .related.Prev.Favorite }}</span></p>
+                                        <span><i class="fal fa-star"></i> {{ .related.Prev.Favorite }}</span>
                                     {{if gt (len .related.Prev.Tags) 0}}
                                     <p class="mb-1 media-tag">
                                         <span>
@@ -126,9 +126,9 @@
                                     <h5 class="mt-0 mb-2"><a href="/article/detail/{{ .related.Next.ID}}">{{ .related.Next.Title }}</a></h5>
                                     <p class="mb-1 media-summary">{{ .related.Next.Summary }}</p>
                                     <p class="mb-1 media-icon">
-                                        <span><i class="fal fa-eye"></i> {{ .related.Next.Hit }}</span>
+                                        <span><i class="fal fa-thumbs-up"></i> {{ .related.Next.Useful }}</span>
                                         <span><i class="fal fa-comments-alt"></i> {{ .related.Next.Comment }}</span>
-                                        <span><i class="fal fa-chevron-up"></i> {{ .related.Next.Favorite }}</span></p>
+                                        <span><i class="fal fa-star"></i> {{ .related.Next.Favorite }}</span>
                                     {{if gt (len .related.Next.Tags) 0}}
                                         <p class="mb-1 media-tag">
                                         <span>

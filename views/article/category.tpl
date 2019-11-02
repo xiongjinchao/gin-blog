@@ -32,9 +32,9 @@
                                         <p class="mb-1 media-summary">{{ $v.Summary }}</p>
                                         <div class="clearfix">
                                             <p class="mb-1 media-icon">
-                                                <span><i class="fal fa-eye"></i> {{ $v.Hit }}</span>
+                                                <span><i class="fal fa-thumbs-up"></i> {{ $v.Useful }}</span>
                                                 <span><i class="fal fa-comments-alt"></i> {{ $v.Comment }}</span>
-                                                <span><i class="fal fa-chevron-up"></i> {{ $v.Favorite }}</span>
+                                                <span><i class="fal fa-star"></i> {{ $v.Favorite }}</span>
                                             </p>
                                             {{if gt (len $v.Tags) 0}}
                                                 <p class="mb-1 media-tag">
