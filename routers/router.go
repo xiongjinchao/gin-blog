@@ -40,7 +40,7 @@ func Router() *gin.Engine {
 		Root:      "views",
 		Extension: ".tpl",
 		Master:    "layouts/main",
-		Partials:  []string{"layouts/header", "layouts/footer", "common/comment"},
+		Partials:  []string{"layouts/header", "layouts/footer", "common/comment", "common/guess", "common/tag"},
 		Funcs: template.FuncMap{
 			"Interface2Int64": helper.Interface2Int64,
 			"TypeOf":          reflect.TypeOf,

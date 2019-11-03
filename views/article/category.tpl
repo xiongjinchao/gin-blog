@@ -69,7 +69,7 @@
 
             </div>
             <div class="col-lg-3 content-right">
-                <div class="card border-0 about bg-dark">
+                <div class="card border-0 about bg-dark mb-4">
                     <div class="card-body text-center">
                         <div>
                             <img class="rounded-circle mx-auto d-block avatar" src="/public/image/avatar.jpg">
@@ -87,44 +87,10 @@
                     </div>
                 </div>
 
-                <div class="mt-4 text-center">
-                    <div class="navy-line"></div>
-                    <h1 class="font-weight-light navy-title">
-                        猜你 <i class="fal fa-heart"></i> 喜欢
-                    </h1>
-                    <small class="text-black-50">Favorite</small>
-                </div>
+                {{ template "guess" .}}
 
-                <div class="card border-0 mt-4 recommend">
-                    {{ if gt .hot.ID 0}}
-                        <img src="{{ $image }}{{ .hot.File.Path }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">{{ .hot.Title }}</a></h5>
-                            <p class="card-text">{{ .hot.Summary }}</p>
-                        </div>
-                    {{ end }}
-                    <ul class="list-group list-group-flush">
-                        {{ range $v := .recommend }}
-                            <li class="list-group-item"><a href="/article/detail/{{ $v.ID}}">{{ $v.Title }}</a><br/><span>阅读 {{ $v.Hit }}</span></li>
-                        {{ end }}
-                    </ul>
-                </div>
+                {{ template "tag" .}}
 
-                <div class="text-center mt-4">
-                    <div class="navy-line"></div>
-                    <h1 class="font-weight-light navy-title">
-                        热门 <i class="fal fa-tags"></i> 标签
-                    </h1>
-                    <small class="text-black-50">Tags</small>
-                </div>
-
-                <div class="card border-0 mt-4 tag">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a href="#">PHP(120)</a></li>
-                        <li class="list-group-item"><a href="#">Golang(800)</a></li>
-                        <li class="list-group-item"><a href="#">MySQL(10)</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
 
