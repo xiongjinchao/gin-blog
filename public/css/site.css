@@ -164,4 +164,12 @@ pre.prettyprint ol.linenums li{padding:0 .5rem;background:transparent!important;
     .article-detail{border:none;padding:0;}
     .article-title{font-size:1.25rem;margin:0}
     .article-notice{display:none;}
+
+    .book-index{display:block;overflow:hidden}
+    .book-index .card{width:calc(50% - .5rem);float:left}
+    .book-index .card:nth-child(odd){margin-right:1rem;}
+
+    .book-index.book-half .card:nth-child(odd){margin-right:0;}
+    .book-index.book-half .card:first-child{width:100%;}
+    .book-index.book-half .card:nth-child(even){margin-right:1rem;}
 }
