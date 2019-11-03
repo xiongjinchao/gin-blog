@@ -82,6 +82,16 @@
         {{ end}}
     </div>
 
+    {{ if gt (len .pagination) 0}}
+        <div class="row justify-content-center mt-4">
+            <ul class="pagination pagination-sm">
+                {{ range $v := .pagination }}
+                    <li class="page-item {{ if $v.Active }}active{{ end }} {{ if $v.Disabled }}disabled{{ end }}"><a class="page-link" href="{{ $v.Url }}#comments">{{ $v.Label }}</a></li>
+                {{ end }}
+            </ul>
+        </div>
+    {{ end }}
+
 
     <!-- comment && reply modal -->
     <div class="modal fade" id="commentModal">
