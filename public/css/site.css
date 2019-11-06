@@ -101,7 +101,7 @@ a, a:hover{text-decoration:none;}
 #article-content h1{font-size:1.4rem; border-bottom: 0!important;}
 #article-content h2{font-size:1.25rem; border-bottom: 0!important;}
 #article-content h3{font-size:1.2rem; border-bottom: 0!important;}
-#article-content h3{font-size:1.15rem; border-bottom: 0!important;}
+#article-content h4{font-size:1.15rem; border-bottom: 0!important;}
 #article-content h5,#article-content h6{font-size:1.1rem;border-bottom: 0!important;}
 #article-content table{display:table!important;}
 
@@ -167,6 +167,11 @@ pre.prettyprint ol.linenums li{padding:0 .5rem;background:transparent!important;
     .card.article-list .media .media-body .media-tag{display:none}
     .card.recommend .card-title,.card.article-list .list-group-item .media-body h5{font-size:1rem;}
 
+    #article-content h1{font-size:1.2rem; border-bottom: 0!important;}
+    #article-content h2{font-size:1.2rem; border-bottom: 0!important;}
+    #article-content h3{font-size:1.15rem; border-bottom: 0!important;}
+    #article-content h4{font-size:1.15rem; border-bottom: 0!important;}
+    #article-content h5,#article-content h6{font-size:1.1rem;border-bottom: 0!important;}
     .article-detail{border:none;padding:0;}
     .article-title{font-size:1.25rem;margin:0}
     .article-notice{display:none;}
