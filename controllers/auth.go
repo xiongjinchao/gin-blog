@@ -120,8 +120,8 @@ func (a *Auth) Callback(c *gin.Context) {
 		}
 
 		passport, err := json.Marshal(models.Auth{
-			user,
-			userAuth,
+			User:     user,
+			UserAuth: userAuth,
 		})
 		if err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
@@ -194,8 +194,8 @@ func (a *Auth) LocalLogin(c *gin.Context) {
 	}
 
 	passport, err := json.Marshal(models.Auth{
-		user,
-		userAuth,
+		User:     user,
+		UserAuth: userAuth,
 	})
 
 	if err != nil {
