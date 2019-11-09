@@ -1,7 +1,9 @@
 package models
 
 import (
+	"fmt"
 	db "gin-blog/database"
+	"github.com/gin-gonic/gin"
 )
 
 type Article struct {
@@ -37,8 +39,13 @@ func (Article) TableName() string {
 // set tags data to article
 func (a *Article) SetTag(article *Article) {
 
-	if err := db.Mysql.Model(&Tag{}).Select("id,tag").Where("model = ? and model_id = ?", "article", article.ID).Find(&article.Tags).Error; err != nil {
-		article.Tags = nil
+	var tagModel []TagModel
+	if err := db.Mysql.Model(&TagModel{}).Preload("Tag").Where("model = ? and model_id = ?", a.TableName(), article.ID).Find(&tagModel).Error; err != nil {
+		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
+		(*article).Tags = nil
+	}
+	for _, t := range tagModel {
+		(*article).Tags = append((*article).Tags, t.Tag)
 	}
 }
 
@@ -46,8 +53,13 @@ func (a *Article) SetTag(article *Article) {
 func (a *Article) SetTags(articles *[]Article) {
 
 	for i, v := range *articles {
-		if err := db.Mysql.Model(&Tag{}).Select("id,tag").Where("model = ? and model_id = ?", "article", v.ID).Find(&(*articles)[i].Tags).Error; err != nil {
+		var tagModel []TagModel
+		if err := db.Mysql.Model(&TagModel{}).Preload("Tag").Where("model = ? and model_id = ?", a.TableName(), v.ID).Find(&tagModel).Error; err != nil {
+			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 			v.Tags = nil
+		}
+		for _, t := range tagModel {
+			(*articles)[i].Tags = append((*articles)[i].Tags, t.Tag)
 		}
 	}
 }

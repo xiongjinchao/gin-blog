@@ -31,12 +31,29 @@ func (Book) TableName() string {
 }
 
 // set tags data to book
+func (b *Book) SetTag(book *Book) {
+
+	var tagModel []TagModel
+	if err := db.Mysql.Model(&TagModel{}).Preload("Tag").Where("model = ? and model_id = ?", b.TableName(), book.ID).Find(&tagModel).Error; err != nil {
+		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
+		(*book).Tags = nil
+	}
+	for _, t := range tagModel {
+		(*book).Tags = append((*book).Tags, t.Tag)
+	}
+}
+
+// set tags data to book
 func (b *Book) SetTags(books *[]Book) {
 
 	for i, v := range *books {
-		if err := db.Mysql.Model(&Tag{}).Select("id,tag").Where("model = ? and model_id = ?", "book", v.ID).Find(&(*books)[i].Tags).Error; err != nil {
+		var tagModel []TagModel
+		if err := db.Mysql.Model(&TagModel{}).Preload("Tag").Where("model = ? and model_id = ?", b.TableName(), v.ID).Find(&tagModel).Error; err != nil {
 			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 			v.Tags = nil
+		}
+		for _, t := range tagModel {
+			(*books)[i].Tags = append((*books)[i].Tags, t.Tag)
 		}
 	}
 }

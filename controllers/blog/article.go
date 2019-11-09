@@ -95,17 +95,14 @@ func (a *Article) Detail(c *gin.Context) {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 	}
 
+	(&models.Article{}).SetTag(&article)
+
 	var category models.ArticleCategory
 	if err := db.Mysql.Where("id = ?", article.ID).First(&category).Error; err != nil {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 	}
 	categories := helper.GetArticleCategories()
 	category.SetParents(&categories, category.Parent, &category.Parents)
-
-	var tags []models.Tag
-	if err := db.Mysql.Model(&models.Tag{}).Where("model = ? and model_id = ?", "article", id).Find(&tags).Error; err != nil {
-		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
-	}
 
 	related, err := helper.GetRelatedArticle(article.ID, article.CategoryID)
 	if err != nil {
@@ -160,7 +157,6 @@ func (a *Article) Detail(c *gin.Context) {
 		"user":       helper.GetUser(c),
 		"menu":       helper.GetMenu(),
 		"article":    article,
-		"tags":       tags,
 		"related":    related,
 		"hot":        hot,
 		"recommend":  recommend,

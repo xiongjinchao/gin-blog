@@ -17,11 +17,11 @@
                     </div>
                 </div>
 
-                {{if .tags}}
+                {{if .article}}
                     <div class="article-tips">
                         <i class="fal fa-tags"></i>
-                        {{ range $v := .tags }}
-                            <a href="#">{{ $v.Tag }}</a>
+                        {{ range $v := .article.Tags }}
+                            <a href="#">{{ $v.Name }}</a>
                         {{ end }}
                     </div>
                 {{ end }}
