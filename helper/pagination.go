@@ -26,11 +26,11 @@ func (p *Pagination) Generate(total, size, page int, link string) (pagination []
 	if page > count {
 		return
 	}
-
+	base := link
 	if strings.Contains(link, "?") {
-		link += "&page="
+		link = base + "&page="
 	} else {
-		link += "?page="
+		link = base + "?page="
 	}
 
 	prevPage := page - 1
@@ -43,6 +43,9 @@ func (p *Pagination) Generate(total, size, page int, link string) (pagination []
 	if prevPage <= 0 {
 		prev.Url = link + "1"
 		prev.Disabled = true
+	}
+	if prevPage == 1 {
+		prev.Url = base
 	}
 	pagination = append(pagination, prev)
 
@@ -60,6 +63,9 @@ func (p *Pagination) Generate(total, size, page int, link string) (pagination []
 			false,
 			false,
 		}
+		if page == 1 {
+			itemPage.Url = base
+		}
 		if page == i {
 			itemPage.Active = true
 		}
@@ -73,8 +79,13 @@ func (p *Pagination) Generate(total, size, page int, link string) (pagination []
 		false,
 		false,
 	}
+
+	if nextPage == 1 {
+		next.Url = base
+	}
+
 	if nextPage > count {
-		prev.Url = link + strconv.Itoa(count)
+		next.Url = link + strconv.Itoa(count)
 		next.Disabled = true
 	}
 	pagination = append(pagination, next)
