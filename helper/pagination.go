@@ -63,7 +63,7 @@ func (p *Pagination) Generate(total, size, page int, link string) (pagination []
 			false,
 			false,
 		}
-		if page == 1 {
+		if i == 1 {
 			itemPage.Url = base
 		}
 		if page == i {
