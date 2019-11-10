@@ -106,7 +106,7 @@
                                         <span>
                                             <i class="fal fa-tags"></i>
                                             {{ range $t := .related.Prev.Tags }}
-                                                <a href="#">{{ $t.Tag }}</a>
+                                                <a href="#">{{ $t.Name }}</a>
                                             {{ end }}
                                         </span>
                                     </p>
