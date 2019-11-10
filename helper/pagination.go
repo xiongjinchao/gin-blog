@@ -14,7 +14,7 @@ type Pagination struct {
 }
 
 // generate pagination data
-func (p *Pagination) Generate(total, size, page int, link string) (pagination []Pagination) {
+func (p *Pagination) Generate(total, size, page int, base string) (pagination []Pagination) {
 	if total <= 0 {
 		return
 	}
@@ -26,7 +26,7 @@ func (p *Pagination) Generate(total, size, page int, link string) (pagination []
 	if page > count {
 		return
 	}
-	base := link
+	link := base
 	if strings.Contains(link, "?") {
 		link = base + "&page="
 	} else {
