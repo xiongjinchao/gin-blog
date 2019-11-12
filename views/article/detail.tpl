@@ -17,7 +17,7 @@
                     </div>
                 </div>
 
-                {{if .article}}
+                {{if .article.Tags}}
                     <div class="article-tips">
                         <i class="fal fa-tags"></i>
                         {{ range $v := .article.Tags }}
@@ -91,7 +91,7 @@
                 <div class="card border-0 mt-4 article-list">
                     <ul class="list-group list-group-flush">
                         {{ $image := .image }}
-                        {{ if gt .related.Prev.ID 0 }}
+                        {{ if .related.Prev.ID }}
                         <li class="list-group-item">
                             <div class="media">
                                 <div class="media-body">
@@ -101,7 +101,7 @@
                                         <span><i class="fal fa-thumbs-up"></i> {{ .related.Prev.Useful }}</span>
                                         <span><i class="fal fa-comments-alt"></i> {{ .related.Prev.Comment }}</span>
                                         <span><i class="fal fa-star"></i> {{ .related.Prev.Favorite }}</span>
-                                    {{if gt (len .related.Prev.Tags) 0}}
+                                    {{if .related.Prev.Tags}}
                                     <p class="mb-1 media-tag">
                                         <span>
                                             <i class="fal fa-tags"></i>
@@ -119,7 +119,7 @@
                         </li>
                         {{ end }}
 
-                        {{ if gt .related.Next.ID 0 }}
+                        {{ if .related.Next.ID }}
                         <li class="list-group-item">
                             <div class="media">
                                 <div class="media-body">
@@ -129,7 +129,7 @@
                                         <span><i class="fal fa-thumbs-up"></i> {{ .related.Next.Useful }}</span>
                                         <span><i class="fal fa-comments-alt"></i> {{ .related.Next.Comment }}</span>
                                         <span><i class="fal fa-star"></i> {{ .related.Next.Favorite }}</span>
-                                    {{if gt (len .related.Next.Tags) 0}}
+                                    {{if .related.Next.Tags }}
                                         <p class="mb-1 media-tag">
                                         <span>
                                             <i class="fal fa-tags"></i>

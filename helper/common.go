@@ -2,7 +2,6 @@ package helper
 
 import (
 	"encoding/json"
-	"fmt"
 	db "gin-blog/database"
 	"gin-blog/models"
 	"github.com/gin-gonic/contrib/sessions"
@@ -15,10 +14,7 @@ func GetUser(c *gin.Context) (auth models.Auth) {
 	session := sessions.Default(c)
 	passport := session.Get("passport")
 	if passport != nil {
-		if err := json.Unmarshal([]byte(passport.(string)), &auth); err != nil {
-			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
-			return
-		}
+		_ = json.Unmarshal([]byte(passport.(string)), &auth)
 	}
 	return
 }
@@ -28,9 +24,7 @@ func GetMenu() []models.Menu {
 	var menus, data []models.Menu
 	data, err := (&models.Menu{}).GetCache()
 	if err != nil {
-		if err := db.Mysql.Model(&models.Menu{}).Find(&menus).Error; err != nil {
-			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
-		}
+		db.Mysql.Model(&models.Menu{}).Find(&menus)
 		(&models.Menu{}).SetSort(&menus, 0, &data)
 		(&models.Menu{}).SetData(&data)
 	}
@@ -43,9 +37,7 @@ func GetArticleCategories() []models.ArticleCategory {
 	var categories, data []models.ArticleCategory
 	data, err := (&models.ArticleCategory{}).GetCache()
 	if err != nil {
-		if err := db.Mysql.Model(&models.Menu{}).Find(&categories).Error; err != nil {
-			_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
-		}
+		db.Mysql.Model(&models.Menu{}).Find(&categories)
 		(&models.ArticleCategory{}).SetSort(&categories, 0, &data)
 		(&models.ArticleCategory{}).SetData(&data)
 	}
@@ -136,24 +128,20 @@ type RelatedArticle struct {
 // prev article and next article
 func GetRelatedArticle(ID, categoryID int64) (articles RelatedArticle, err error) {
 
-	if err := db.Mysql.Model(models.Article{}).
+	err = db.Mysql.Model(models.Article{}).
 		Select("id,title,cover,category_id,summary,hit,useful,useless,comment,favorite,user_id,created_at").
 		Where("audit = 1 and category_id = ? and ID < ?", categoryID, ID).
 		Preload("File").Preload("User").Preload("ArticleCategory").
 		Order("id desc").
-		First(&articles.Prev).Error; err != nil {
-		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
-	}
+		First(&articles.Prev).Error
 	(&models.Article{}).SetTag(&articles.Prev)
 
-	if err := db.Mysql.Model(models.Article{}).
+	err = db.Mysql.Model(models.Article{}).
 		Select("id,title,cover,category_id,summary,hit,useful,useless,comment,favorite,user_id,created_at").
 		Where("audit = 1 and category_id = ? and ID > ?", categoryID, ID).
 		Preload("File").Preload("User").Preload("ArticleCategory").
 		Order("id asc").
-		First(&articles.Next).Error; err != nil {
-		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
-	}
+		First(&articles.Next).Error
 	(&models.Article{}).SetTag(&articles.Next)
 	return
 }
@@ -161,14 +149,12 @@ func GetRelatedArticle(ID, categoryID int64) (articles RelatedArticle, err error
 // hot article
 func GetHotArticle(ID, categoryID int64) (article models.Article, err error) {
 
-	if err := db.Mysql.Model(models.Article{}).
+	err = db.Mysql.Model(models.Article{}).
 		Select("id,title,cover,category_id,summary,hit,useful,useless,comment,favorite,user_id,created_at").
 		Where("audit = 1 and hot =1 and cover >0 and category_id = ? and ID != ?", categoryID, ID).
 		Preload("File").Preload("User").Preload("ArticleCategory").
 		Order("id desc").
-		First(&article).Error; err != nil {
-		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
-	}
+		First(&article).Error
 	return
 
 }

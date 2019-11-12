@@ -33,11 +33,8 @@ func (a *Article) Category(c *gin.Context) {
 	category.SetParents(&categories, category.Parent, &category.Parents)
 
 	total, size, page := 0, 10, 1
-	page, err := strconv.Atoi(c.Query("page"))
+	page, err := strconv.Atoi(c.DefaultQuery("page", "1"))
 	if err != nil {
-		page = 1
-	}
-	if page <= 0 {
 		page = 1
 	}
 	var articles []models.Article

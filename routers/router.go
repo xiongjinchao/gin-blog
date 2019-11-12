@@ -67,7 +67,8 @@ func Router() *gin.Engine {
 	// 书籍
 	book := &blog.Book{}
 	router.GET("/book", book.Index)
-	router.GET("/book/detail/:id", book.Detail)
+	router.GET("/book/detail/:tag", book.Detail)
+	router.GET("/book/chapter/:id", book.Chapter)
 
 	// 链接分享
 	friendLink := &blog.FriendLink{}
