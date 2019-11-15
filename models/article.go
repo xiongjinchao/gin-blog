@@ -37,15 +37,15 @@ func (Article) TableName() string {
 }
 
 // set tags data to article
-func (a *Article) SetTag(article *Article) {
+func (a *Article) SetTag() {
 
 	var tagModel []TagModel
-	if err := db.Mysql.Model(&TagModel{}).Preload("Tag").Where("model = ? and model_id = ?", a.TableName(), article.ID).Find(&tagModel).Error; err != nil {
+	if err := db.Mysql.Model(&TagModel{}).Preload("Tag").Where("model = ? and model_id = ?", a.TableName(), a.ID).Find(&tagModel).Error; err != nil {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
-		(*article).Tags = nil
+		(*a).Tags = nil
 	}
 	for _, t := range tagModel {
-		(*article).Tags = append((*article).Tags, t.Tag)
+		(*a).Tags = append((*a).Tags, t.Tag)
 	}
 }
 

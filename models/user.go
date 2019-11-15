@@ -23,10 +23,10 @@ func (User) TableName() string {
 	return "user"
 }
 
-func (u *User) GeneratePassword(password string) string {
+func (u *User) GeneratePassword() {
 	s := sha1.New()
-	s.Write([]byte(password))
-	return hex.EncodeToString(s.Sum([]byte("")))
+	s.Write([]byte(u.Password))
+	u.Password = hex.EncodeToString(s.Sum([]byte("")))
 }
 
 func (u *User) GenerateToken(id int64) (accessToken, resetKey string, err error) {

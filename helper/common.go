@@ -134,7 +134,7 @@ func GetRelatedArticle(ID, categoryID int64) (articles RelatedArticle, err error
 		Preload("File").Preload("User").Preload("ArticleCategory").
 		Order("id desc").
 		First(&articles.Prev).Error
-	(&models.Article{}).SetTag(&articles.Prev)
+	(articles.Prev).SetTag()
 
 	err = db.Mysql.Model(models.Article{}).
 		Select("id,title,cover,category_id,summary,hit,useful,useless,comment,favorite,user_id,created_at").
@@ -142,7 +142,7 @@ func GetRelatedArticle(ID, categoryID int64) (articles RelatedArticle, err error
 		Preload("File").Preload("User").Preload("ArticleCategory").
 		Order("id asc").
 		First(&articles.Next).Error
-	(&models.Article{}).SetTag(&articles.Next)
+	(articles.Next).SetTag()
 	return
 }
 

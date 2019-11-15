@@ -27,14 +27,14 @@ func (BookChapter) TableName() string {
 }
 
 // set tags data to book chapter
-func (b *BookChapter) SetTag(bookChapter *BookChapter) {
+func (b *BookChapter) SetTag() {
 
 	var tagModel []TagModel
-	if err := db.Mysql.Model(&TagModel{}).Preload("Tag").Where("model = ? and model_id = ?", b.TableName(), bookChapter.ID).Find(&tagModel).Error; err != nil {
-		(*bookChapter).Tags = nil
+	if err := db.Mysql.Model(&TagModel{}).Preload("Tag").Where("model = ? and model_id = ?", b.TableName(), b.ID).Find(&tagModel).Error; err != nil {
+		(*b).Tags = nil
 	}
 	for _, t := range tagModel {
-		(*bookChapter).Tags = append((*bookChapter).Tags, t.Tag)
+		(*b).Tags = append((*b).Tags, t.Tag)
 	}
 }
 

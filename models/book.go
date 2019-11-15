@@ -31,15 +31,15 @@ func (Book) TableName() string {
 }
 
 // set tags data to book
-func (b *Book) SetTag(book *Book) {
+func (b *Book) SetTag() {
 
 	var tagModel []TagModel
-	if err := db.Mysql.Model(&TagModel{}).Preload("Tag").Where("model = ? and model_id = ?", b.TableName(), book.ID).Find(&tagModel).Error; err != nil {
+	if err := db.Mysql.Model(&TagModel{}).Preload("Tag").Where("model = ? and model_id = ?", b.TableName(), b.ID).Find(&tagModel).Error; err != nil {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
-		(*book).Tags = nil
+		(*b).Tags = nil
 	}
 	for _, t := range tagModel {
-		(*book).Tags = append((*book).Tags, t.Tag)
+		(*b).Tags = append((*b).Tags, t.Tag)
 	}
 }
 

@@ -92,7 +92,7 @@ func (a *Article) Detail(c *gin.Context) {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 	}
 
-	(&models.Article{}).SetTag(&article)
+	(article).SetTag()
 
 	var category models.ArticleCategory
 	if err := db.Mysql.Where("id = ?", article.ID).First(&category).Error; err != nil {
