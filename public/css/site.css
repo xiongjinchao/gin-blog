@@ -105,12 +105,6 @@ a, a:hover{text-decoration:none;}
 #article-content h5,#article-content h6{font-size:1.1rem;border-bottom: 0!important;}
 #article-content table{display:table!important;}
 
-.toc-container{position:fixed;top:6rem;width:auto;display:none;overflow-y:scroll}
-.toc-container .markdown-toc > ul.markdown-toc-list{margin:.5rem 1rem .5rem 0;}
-.toc-container > .markdown-toc > ul.markdown-toc-list > li > a{font-weight:600;color:#666666}
-.toc-container .markdown-toc li{color:#cccccc;padding:.2rem;font-size:.875rem;}
-.toc-container .markdown-toc > ul.markdown-toc-list a{color:#999999;}
-
 .article-title{font-size:1.75rem;margin:1rem 0;}
 .article-icon span{margin-right:1rem;color:#999999;font-size:.875rem;}
 .article-tips{font-size:.875rem;padding:.5rem 1rem;color:#999999}
@@ -124,6 +118,16 @@ a, a:hover{text-decoration:none;}
 .action-bar .action-icon b{font-size:.875rem;color:#999999;}
 .action-bar .action-icon .back-to-top{transform:rotate(-45deg);-ms-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-o-transform:rotate(-45deg);}
 .action-bar .action-icon .back-to-top .fa-rocket{font-size:2.2rem;}
+
+/*书籍目录*/
+.book-container{
+    margin-top:5.325rem;min-height:calc(100vh - 10.325rem);
+}
+.toc-container{position:fixed;width:auto;overflow-y:scroll;}
+.toc-container .markdown-toc > ul.markdown-toc-list{margin:.5rem 1rem .5rem 0;}
+.toc-container > .markdown-toc > ul.markdown-toc-list > li > a{font-weight:600;color:#666666}
+.toc-container .markdown-toc li{color:#cccccc;padding:.2rem;font-size:.875rem;}
+.toc-container .markdown-toc > ul.markdown-toc-list a{color:#999999;}
 
 
 /*评论*/
@@ -183,4 +187,6 @@ pre.prettyprint ol.linenums li{padding:0 .5rem;background:transparent!important;
     .book-index.book-half .card:nth-child(odd){margin-right:0;}
     .book-index.book-half .card:first-child{width:100%;}
     .book-index.book-half .card:nth-child(even){margin-right:1rem;}
+
+    .toc-container{position:static}
 }

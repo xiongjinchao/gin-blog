@@ -1,21 +1,33 @@
 {{ define "css" }}
     <link rel="stylesheet" href="/public/plug-in/editor-md/css/editormd.min.css" />
+    <style>
+        .book-container{
+            margin-top:5.325rem;min-height:calc(100vh - 10.325rem);
+        }
+        .toc-container{position:fixed;width:auto;overflow-y:scroll;}
+        .toc-container .markdown-toc > ul.markdown-toc-list{margin:.5rem 1rem .5rem 0;}
+        .toc-container > .markdown-toc > ul.markdown-toc-list > li > a{font-weight:600;color:#666666}
+        .toc-container .markdown-toc li{color:#cccccc;padding:.2rem;font-size:.875rem;}
+        .toc-container .markdown-toc > ul.markdown-toc-list a{color:#999999;}
+    </style>
 {{ end }}
 
 {{ define "content" }}
-
-    <div class="container sub-container" style="max-width:960px;">
+    <div class="container-fluid book-container">
         <div class="row">
-            <div class="col-lg-12 content-left mb-4">
+            <div class="col-lg-3 mb-4">
+                <div id="toc-catalogue-container" class="toc-container"></div>
+                <div id="book-catalogue" style="display:none">
+                    <textarea style="display:none;">{{ .bookChapter.Book.Catalogue}}</textarea>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
                 <div class="article-detail">
                     <h1 class="article-title text-center" data-book_name="{{ .bookChapter.Book.Name }}">{{ .bookChapter.Title}}</h1>
                     <div class="article-icon text-center">
                         <span><i class="fal fa-calendar-alt"></i> 发布时间 {{ .bookChapter.Book.CreatedAt.Format "2006/01/02"}}</span>
                     </div>
-                    <div id="toc-container" class="toc-container"></div>
-                    <div id="book-catalogue" style="display:none">
-                        <textarea style="display:none;">{{ .bookChapter.Book.Catalogue}}</textarea>
-                    </div>
+
                     <div id="article-content" class="article-content">
                         <textarea style="display:none;">{{ .bookChapter.Chapter}}</textarea>
                     </div>
@@ -34,11 +46,11 @@
                 </div>
 
             </div>
+            <div class="col-lg-3 mb-4">
+                <div id="toc-chapter-container" class="toc-container"></div>
+            </div>
         </div>
-
-        <div class="mt-5"></div>
     </div>
-
 {{ end }}
 
 {{ define "js" }}
@@ -65,12 +77,12 @@
                 flowChart       : true,  // 默认不解析
                 sequenceDiagram : true,  // 默认不解析
                 toc: true,
-                tocContainer:"#toc-container",
+                tocContainer:"#toc-catalogue-container",
                 tocDropdown:true,
             });
             // 修改TOC的链接
             $("#book-catalogue a.reference-link").remove();
-            $("#toc-container a").each(function(i,item){
+            $("#toc-catalogue-container a").each(function(i,item){
                 $(item).attr("href",$("#book-catalogue a:eq("+i+")").attr("href"));
             });
 
@@ -83,30 +95,42 @@
                 flowChart       : true,  // 默认不解析
                 sequenceDiagram : true,  // 默认不解析
                 toc: true,
+                tocContainer:"#toc-chapter-container",
+                tocDropdown:true,
             });
             $("#article-content").addClass("editormd-preview-theme-dark");
 
-            //  菜单定位 显示与隐藏
-            $("#toc-container").prepend('<h4 style="padding-left:1rem;"> <i class="fal fa-bars"></i> '+$("h1.article-title").data("book_name")+'</h4>');
-            let bodyWidth = $("body").width();
-            let containerWidth = $(".container").width() + 30;
-            let tocWidth = $("#toc-container").width();
-            let left = (bodyWidth-containerWidth)/2 -tocWidth;
-            if(left > 0 && $(".container").offset().left - $("#toc-container").offset().left - left > 0) {
-                let height = $(window).height()-$("nav.navbar").height()-80-144;
-                $("#toc-container").css({"left": left,"height":height+"px"}).show();
-                $('#toc-container').niceScroll({
-                    cursorcolor: "#6f42c1",
-                    cursoropacitymax: 1,
-                    touchbehavior: false,
-                    cursorwidth: "4px",
-                    cursorborder: "0",
-                    cursorborderradius: "4px",
-                    autohidemode: false
-                });
-            }else{
-                $("#toc-container").css({"position":"static","overflow-y":"auto","display":"block","border-left":"4px solid #6f42c1"});
-            }
+            // make image in article align center
+            $("#article-content img").each(function(i,item){
+                $(item).closest("p").css({"text-indent":0,"text-align":"center"})
+            });
+
+            let height = $(window).height()-$("nav.navbar").height()-80-144;
+            $("#toc-catalogue-container,#toc-chapter-container").css({"height":height+"px"});
+
+            // 书籍菜单定位
+            $("#toc-catalogue-container").prepend('<h4 style="padding-left:1rem;"> <i class="fal fa-bars"></i> '+$("h1.article-title").data("book_name")+'</h4>');
+            $('#toc-catalogue-container').niceScroll({
+                cursorcolor: "#6f42c1",
+                cursoropacitymax: 1,
+                touchbehavior: false,
+                cursorwidth: "4px",
+                cursorborder: "0",
+                cursorborderradius: "4px",
+                autohidemode: false
+            });
+
+            // 章节菜单定位
+            $('#toc-chapter-container').niceScroll({
+                cursorcolor: "#6f42c1",
+                cursoropacitymax: 1,
+                touchbehavior: false,
+                cursorwidth: "4px",
+                cursorborder: "0",
+                cursorborderradius: "4px",
+                autohidemode: false
+            });
+
         });
     </script>
 {{ end }}
