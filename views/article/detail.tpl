@@ -35,7 +35,7 @@
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-thumbs-up fa-stack-1x fa-inverse"></i>
                         </span>
-                        <b>{{if gt .article.Useful 0}}{{ .article.Useful }}{{ else if gt .article.Useful 99}}99+{{ end }}</b>
+                        <b>{{if gt .article.Useful 99}}99+{{ else if gt .article.Useful 0}}{{ .article.Useful }}{{ end }}</b>
                     </div>
                     <div class="action-icon" title="评论">
                         <a class="hash-link" href="#comments">
@@ -44,14 +44,14 @@
                           <i class="fal fa-comments-alt fa-stack-1x fa-inverse"></i>
                         </span>
                         </a>
-                        <b>{{if gt .article.Comment 0}}{{ .article.Comment}}{{ else if gt .article.Comment 99}}99+{{ end }}</b>
+                        <b>{{if gt .article.Comment 99}}99+{{ else if gt .article.Comment 0}}{{ .article.Comment}}{{ end }}</b>
                     </div>
                     <div class="action-icon" title="收藏">
                         <span class="fa-stack favorite" data-model="{{ .model }}" data-model_id="{{ .article.ID }}" data-action="favorite">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fal fa-star fa-stack-1x fa-inverse"></i>
                         </span>
-                        <b>{{if gt .article.Favorite 0}}{{ .article.Favorite}}{{ else if gt .article.Favorite 99}}99+{{ end }}</b>
+                        <b>{{if gt .article.Favorite 99}}99+{{ else if gt .article.Favorite 0}}{{ .article.Favorite}}{{ end }}</b>
                     </div>
                     {{ if gt .related.Prev.ID 0 }}
                         <div class="action-icon" title="上一篇">

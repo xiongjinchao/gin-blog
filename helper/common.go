@@ -197,3 +197,27 @@ func GetRecommendArticle(ID, categoryID int64) (articles []models.Article, err e
 
 	return
 }
+
+type RelatedBookChapter struct {
+	Prev models.BookChapter
+	Next models.BookChapter
+}
+
+// prev book chapter and next book chapter
+func GetRelatedBookChapter(ID, bookID int64) (bookChapters RelatedBookChapter, err error) {
+
+	err = db.Mysql.Model(models.BookChapter{}).
+		Select("id,title,book_id,hit,useful,useless,comment,favorite,created_at").
+		Where("audit = 1 and book_id = ? and ID < ?", bookID, ID).
+		Order("id desc").
+		First(&bookChapters.Prev).Error
+	(bookChapters.Prev).SetTag()
+
+	err = db.Mysql.Model(models.BookChapter{}).
+		Select("id,title,book_id,hit,useful,useless,comment,favorite,created_at").
+		Where("audit = 1 and book_id = ? and ID > ?", bookID, ID).
+		Order("id asc").
+		First(&bookChapters.Next).Error
+	(bookChapters.Next).SetTag()
+	return
+}
