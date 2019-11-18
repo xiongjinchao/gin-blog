@@ -45,6 +45,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
     border-left:6px solid transparent;
     content:'';
 }
+.navbar form .dropdown-menu::before,.navbar form .dropdown-menu::after{left:auto;right:10px}
 
 /*大标题*/
 .navy-title{font-size:1.75rem;font-weight:500;margin-top:1rem;}
