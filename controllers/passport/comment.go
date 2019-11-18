@@ -64,7 +64,7 @@ func (co *Comment) Create(c *gin.Context) {
 	case "book":
 		db.Mysql.Model(&models.Book{}).Where("id = ?", c.PostForm("model_id")).Update("comment", total)
 		break
-	case "bookChapter":
+	case "book-chapter":
 		db.Mysql.Model(&models.BookChapter{}).Where("id = ?", c.PostForm("model_id")).Update("comment", total)
 		break
 	case "comment":
