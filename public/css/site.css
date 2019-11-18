@@ -141,7 +141,7 @@ a, a:hover{text-decoration:none;}
 .action-bar .action-icon span.fa-stack{color:#666666;font-size:1.4rem;cursor:pointer}
 .action-bar .action-icon b{font-size:.875rem;color:#999999;}
 .action-bar .action-icon .back-to-top{transform:rotate(-45deg);-ms-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-o-transform:rotate(-45deg);}
-.action-bar .action-icon .back-to-top .fa-rocket{font-size:2.2rem;}
+.action-bar .action-icon .back-to-top .fa-rocket{font-size:2.2rem;color:#007bff}
 
 /*书籍目录*/
 .book-container{
