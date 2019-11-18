@@ -146,19 +146,6 @@ func GetRelatedArticle(ID, categoryID int64) (articles RelatedArticle, err error
 	return
 }
 
-// hot article
-func GetHotArticle(ID, categoryID int64) (article models.Article, err error) {
-
-	err = db.Mysql.Model(models.Article{}).
-		Select("id,title,cover,category_id,summary,hit,useful,useless,comment,favorite,user_id,created_at").
-		Where("audit = 1 and hot =1 and cover >0 and category_id = ? and ID != ?", categoryID, ID).
-		Preload("File").Preload("User").Preload("ArticleCategory").
-		Order("id desc").
-		First(&article).Error
-	return
-
-}
-
 // get the recommend article from cache
 func GetRecommendArticle(ID, categoryID int64) (articles []models.Article, err error) {
 	var SetRecommendArticle = func(ID, categoryID int64) (articles []models.Article, err error) {

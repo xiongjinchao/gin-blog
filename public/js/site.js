@@ -59,3 +59,10 @@ $(".back-to-top").on("click",function(){
         scrollTop: 0
     },500);
 });
+
+// image link
+$("a>img").each(function(i,item){
+    $(item).closest("a").hover(function(){
+       $(item).closest("a").css({"border":"0"})
+    });
+});

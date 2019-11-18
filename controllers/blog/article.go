@@ -48,11 +48,6 @@ func (a *Article) Category(c *gin.Context) {
 		Order("id desc").Offset((page - 1) * size).Limit(size).Find(&articles)
 	(&models.Article{}).SetTags(&articles)
 
-	hot, err := helper.GetHotArticle(0, category.ID)
-	if err != nil {
-		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
-	}
-
 	recommend, err := helper.GetRecommendArticle(0, category.ID)
 	if err != nil {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
@@ -73,7 +68,6 @@ func (a *Article) Category(c *gin.Context) {
 		"category":   category,
 		"articles":   articles,
 		"pagination": (&helper.Pagination{}).Generate(total, size, page, "/article/category/"+c.Param("tag")),
-		"hot":        hot,
 		"recommend":  recommend,
 		"image":      config.Setting["domain"]["image"],
 	})
@@ -102,11 +96,6 @@ func (a *Article) Detail(c *gin.Context) {
 	category.SetParents(&categories, category.Parent, &category.Parents)
 
 	related, err := helper.GetRelatedArticle(article.ID, article.CategoryID)
-	if err != nil {
-		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
-	}
-
-	hot, err := helper.GetHotArticle(article.ID, article.CategoryID)
 	if err != nil {
 		_, _ = fmt.Fprintln(gin.DefaultWriter, err.Error())
 	}
@@ -155,7 +144,6 @@ func (a *Article) Detail(c *gin.Context) {
 		"menu":       helper.GetMenu(),
 		"article":    article,
 		"related":    related,
-		"hot":        hot,
 		"recommend":  recommend,
 		"comments":   comments,
 		"model":      "article",

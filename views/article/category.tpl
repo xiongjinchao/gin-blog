@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-lg-9 content-left">
                 <div class="banner">
-                    <img style="width:100%;height:100%" src="http://www.daqianduan.com/wp-content/uploads/2017/09/tb-1.jpg" alt="">
+                    <a href="https://www.aliyun.com/1111/2019/home?userCode=bgtvhz0i"><img style="width:100%;height:100%" src="/public/ad/banner.jpg" alt=""></a>
                 </div>
 
                 <div class="text-center mt-4">
@@ -69,7 +69,7 @@
 
             </div>
             <div class="col-lg-3 content-right">
-                <div class="card border-0 about bg-dark mb-4">
+                <div class="card border-0 about bg-dark mb-4" style="display:none">
                     <div class="card-body text-center">
                         <div>
                             <img class="rounded-circle mx-auto d-block avatar" src="/public/image/avatar.jpg">
