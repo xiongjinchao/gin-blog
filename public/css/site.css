@@ -23,6 +23,29 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 #main-carousel .btn{font-size:.875rem;}
 #main-carousel a,#main-carousel a:hover{border:none;color:#ffffff}
 
+/*下拉菜单三角形*/
+.navbar .dropdown-menu::before {
+    position:absolute;
+    top:-7px;
+    left:9px;
+    display:inline-block;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #CCC;
+    border-left: 7px solid transparent;
+    border-bottom-color:rgba(0,0,0,0.2);
+    content: '';
+}
+.navbar .dropdown-menu::after {
+    position:absolute;
+    top:-6px;
+    left:10px;
+    display:inline-block;
+    border-right:6px solid transparent;
+    border-bottom:6px solid white;
+    border-left:6px solid transparent;
+    content:'';
+}
+
 /*大标题*/
 .navy-title{font-size:1.75rem;font-weight:500;margin-top:1rem;}
 .navy-title .active{color:#007bff}
@@ -151,6 +174,9 @@ pre.prettyprint ol.linenums li{padding:0 .5rem;background:transparent!important;
 
 /**==============小屏样式==============**/
 @media (max-width:576px ) {
+    /*下拉菜单三角形*/
+    .navbar .dropdown-menu::before,.navbar .dropdown-menu::after{display:none;}
+
     .container a:not(.page-link){color:#333333;border-bottom:none}
     .container a:not(.page-link):hover{color:#007bff;border-bottom:none}
 
