@@ -1,15 +1,5 @@
 {{ define "css" }}
     <link rel="stylesheet" href="/public/plug-in/editor-md/css/editormd.min.css" />
-    <style>
-        .book-container{
-            margin-top:5.325rem;min-height:calc(100vh - 10.325rem);
-        }
-        .toc-container{position:fixed;width:auto;overflow-y:scroll;}
-        .toc-container .markdown-toc > ul.markdown-toc-list{margin:.5rem 1rem .5rem 0;}
-        .toc-container > .markdown-toc > ul.markdown-toc-list > li > a{font-weight:600;color:#666666}
-        .toc-container .markdown-toc li{color:#cccccc;padding:.2rem;font-size:.875rem;}
-        .toc-container .markdown-toc > ul.markdown-toc-list a{color:#999999;}
-    </style>
 {{ end }}
 
 {{ define "content" }}
@@ -105,8 +95,9 @@
                 $(item).closest("p").css({"text-indent":0,"text-align":"center"})
             });
 
-            let height = $(window).height()-$("nav.navbar").height()-80-144;
-            $("#toc-catalogue-container,#toc-chapter-container").css({"height":height+"px"});
+            let height = $(window).height()-$("nav.navbar").height()-$(".footer").height()-130;
+            let width = $(".col-lg-3").width();
+            $("#toc-catalogue-container,#toc-chapter-container").css({"height":height+"px","width":width+"px"});
 
             // 书籍菜单定位
             $("#toc-catalogue-container").prepend('<h4 style="padding-left:1rem;"> <i class="fal fa-bars"></i> '+$("h1.article-title").data("book_name")+'</h4>');
