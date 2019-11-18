@@ -56,8 +56,13 @@ func (a *ActionLog) Create(c *gin.Context) {
 	case "book":
 		db.Mysql.Model(&models.Book{}).Where("id = ?", c.PostForm("model_id")).Update(c.PostForm("action"), total)
 		break
-	case "book-chapter":
+	case "book_chapter":
 		db.Mysql.Model(&models.BookChapter{}).Where("id = ?", c.PostForm("model_id")).Update(c.PostForm("action"), total)
+
+		bookChapter := models.BookChapter{}
+		db.Mysql.Model(&models.BookChapter{}).Where("id = ?", c.PostForm("model_id")).First(&bookChapter)
+		db.Mysql.Model(&models.BookChapter{}).Select("SUM("+c.PostForm("action")+")").Where("book_id = ?", bookChapter.BookID).Pluck("SUM("+c.PostForm("action")+")", &total)
+		db.Mysql.Model(&models.Book{}).Where("id = ?", bookChapter.BookID).Update(c.PostForm("action"), total)
 		break
 	case "comment":
 		db.Mysql.Model(&models.Comment{}).Where("id = ?", c.PostForm("model_id")).Update(c.PostForm("action"), total)
