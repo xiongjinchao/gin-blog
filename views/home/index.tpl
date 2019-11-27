@@ -251,44 +251,44 @@
     <div class="card-group mt-3 book">
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/1"><img src="/public/image/gorm.png" class="card-img-top" alt="gorm中文文档"></a>
+                <a href="/book/detail/golang-simple-book"><img src="/public/image/golang.jpg" class="card-img-top" alt="..."></a></a>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/1"><img src="/public/image/gin.png" class="card-img-top" alt="..."></a>
+                <a href="/book/detail/golang-gin"><img src="/public/image/gin.jpg" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/1"><img src="/public/image/mysql.jpg" class="card-img-top" alt="..."></a>
+                <a href="/book/detail/golang-gorm"><img src="/public/image/gorm.png" class="card-img-top" alt="gorm中文文档"></a>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/1"><img src="/public/image/bootstrap.jpg" class="card-img-top" alt="..."></a>
+                <a href="/book/detail/lris"><img src="/public/image/lris.png" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/1"><img src="/public/image/mysql.jpg" class="card-img-top" alt="..."></a>
+                <a href="/book/detail/golang-web-application"><img src="/public/image/go-web.png" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/1"><img src="/public/image/bootstrap.jpg" class="card-img-top" alt="..."></a>
+                <a href="/book/detail/python"><img src="/public/image/python.png" class="card-img-top" alt="..."></a>
             </div>
         </div>
     </div>
     <div class="card-group book">
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/1"><img src="/public/image/golang.jpg" class="card-img-top" alt="..."></a></a>
+                <a href="/book/detail/git"><img src="/public/image/git.png" class="card-img-top" alt="..."></a></a>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/1"><img src="/public/image/gin.jpg" class="card-img-top" alt="..."></a>
+                <a href="#"><img src="/public/image/bootstrap.jpg" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card">
