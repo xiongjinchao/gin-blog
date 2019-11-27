@@ -131,7 +131,7 @@
             <div class="card-header bg-transparent border-info text-center">
                 Bootstrap
             </div>
-            <img src="/public/image/bootstrap.jpg" class="card-img-top" alt="...">
+            <img src="/public/image/bootstrap.png" class="card-img-top" alt="...">
             <div class="card-body">
                 <p class="card-text">Bootstrap是Twitter推出的一个用于前端开发的开源框架。</p>
             </div>
@@ -288,27 +288,27 @@
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="#"><img src="/public/image/bootstrap.jpg" class="card-img-top" alt="..."></a>
+                <a href="#"><img src="/public/image/bootstrap.png" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/1"><img src="/public/image/redis.png" class="card-img-top" alt="..."></a>
+                <a href="#"><img src="/public/image/redis.png" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/1"><img src="/public/image/bootstrap.jpg" class="card-img-top" alt="..."></a>
+                <a href="#"><img src="/public/image/bootstrap.png" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/1"><img src="/public/image/redis.png" class="card-img-top" alt="..."></a>
+                <a href="#"><img src="/public/image/redis.png" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/1"><img src="/public/image/bootstrap.jpg" class="card-img-top" alt="..."></a>
+                <a href="#"><img src="/public/image/bootstrap.png" class="card-img-top" alt="..."></a>
             </div>
         </div>
     </div>
