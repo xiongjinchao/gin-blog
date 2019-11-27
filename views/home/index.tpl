@@ -266,7 +266,7 @@
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/lris"><img src="/public/image/lris.png" class="card-img-top" alt="..."></a>
+                <a href="/book/detail/golang-lris"><img src="/public/image/lris.png" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card">
