@@ -120,7 +120,7 @@ a, a:hover{text-decoration:none;}
 /*文章详情*/
 .article-detail{padding:.5rem 1rem 1rem 1rem;position:relative;z-index:3;}
 #article-content{margin-top:2rem;padding:0;background:transparent;font-size:1rem;color:#333333;overflow:hidden!important;overflow-x:auto!important;}
-#article-content > p{text-indent:28px;}
+#article-content > p{text-indent:28px; text-align: justify;}
 #article-content > ul{margin-left:18px;}
 #article-content h1{font-size:1.4rem; border-bottom: 0!important;}
 #article-content h2{font-size:1.25rem; border-bottom: 0!important;}
