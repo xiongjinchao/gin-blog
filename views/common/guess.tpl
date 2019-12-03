@@ -2,7 +2,7 @@
 
     <div class="card border-0 mb-4">
         <a href="https://promotion.aliyun.com/ntms/act/enterprise-discount.html?userCode=bgtvhz0i">
-            <img src="https://img.alicdn.com/tfs/TB1Gc3zmAL0gK0jSZFxXXXWHVXa-259-194.jpg" class="card-img-top" style="height:187px;border-radius:.25rem">
+            <img src="https://img.alicdn.com/tfs/TB1Gc3zmAL0gK0jSZFxXXXWHVXa-259-194.jpg" class="card-img-top" style="border-radius:.25rem">
         </a>
     </div>
 
