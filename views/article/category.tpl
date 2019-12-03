@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-lg-9 content-left">
                 <div class="banner">
-                    <a href="https://www.aliyun.com/1111/2019/home?userCode=bgtvhz0i"><img style="width:100%;height:100%" src="/public/ad/banner.jpg" alt=""></a>
+                    <a href="https://www.aliyun.com/1212/2019/home?userCode=bgtvhz0i"><img style="width:100%;height:100%" src="/public/ad/banner.jpg" alt=""></a>
                 </div>
 
                 <div class="text-center mt-4">
