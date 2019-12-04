@@ -288,12 +288,12 @@
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="#"><img src="/public/image/bootstrap.png" class="card-img-top" alt="..."></a>
+                <a href="/book/detail/php-design-pattern"><img src="/public/image/php-design-pattern.png" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="#"><img src="/public/image/redis.png" class="card-img-top" alt="..."></a>
+                <a href="/book/detail/composer"><img src="/public/image/composer.png" class="card-img-top" alt="..."></a>
             </div>
         </div>
         <div class="card">
