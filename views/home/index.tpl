@@ -251,49 +251,58 @@
     <div class="card-group mt-3 book">
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/golang-simple-book"><img src="/public/image/golang.jpg" class="card-img-top" alt="..."></a></a>
+                <a href="/book/detail/golang-simple-book"><img src="/public/image/golang.jpg" class="card-img-top" alt="Go 简易教程"></a></a>
+                <p class="card-text">《Go 简易教程》</p>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/golang-gin"><img src="/public/image/gin.jpg" class="card-img-top" alt="..."></a>
+                <a href="/book/detail/golang-gin"><img src="/public/image/gin.jpg" class="card-img-top" alt="Gin 框架中文文档"></a>
+                <p class="card-text">《Gin 框架中文文档》</p>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
                 <a href="/book/detail/golang-gorm"><img src="/public/image/gorm.png" class="card-img-top" alt="gorm中文文档"></a>
+                <p class="card-text">《GORM 中文文档》</p>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/golang-lris"><img src="/public/image/lris.png" class="card-img-top" alt="..."></a>
+                <a href="/book/detail/golang-lris"><img src="/public/image/lris.png" class="card-img-top" alt="Iris 框架中文文档"></a>
+                <p class="card-text">《Iris 框架中文文档》</p>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/golang-web-application"><img src="/public/image/go-web.png" class="card-img-top" alt="..."></a>
+                <a href="/book/detail/golang-web-application"><img src="/public/image/go-web.png" class="card-img-top" alt="Go Web 编程"></a>
+                <p class="card-text">《Go Web 编程》</p>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/python"><img src="/public/image/python.png" class="card-img-top" alt="..."></a>
+                <a href="/book/detail/python"><img src="/public/image/python.png" class="card-img-top" alt="Python 官方文档：入门教程"></a>
+                <p class="card-text">《Python 官方文档：入门教程》</p>
             </div>
         </div>
     </div>
     <div class="card-group book">
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/git"><img src="/public/image/git.png" class="card-img-top" alt="..."></a></a>
+                <a href="/book/detail/git"><img src="/public/image/git.png" class="card-img-top" alt="Git 基础教程"></a></a>
+                <p class="card-text">《Git 基础教程》</p>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/php-design-pattern"><img src="/public/image/php-design-pattern.png" class="card-img-top" alt="..."></a>
+                <a href="/book/detail/php-design-pattern"><img src="/public/image/php-design-pattern.png" class="card-img-top" alt="PHP 设计模式全集 2018"></a>
+                <p class="card-text">《PHP 设计模式全集 2018》</p>
             </div>
         </div>
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/composer"><img src="/public/image/composer.png" class="card-img-top" alt="..."></a>
+                <a href="/book/detail/composer"><img src="/public/image/composer.png" class="card-img-top" alt="Composer 中文文档"></a>
+                <p class="card-text">《Composer 中文文档》</p>
             </div>
         </div>
         <div class="card">
