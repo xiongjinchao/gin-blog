@@ -251,7 +251,7 @@
     <div class="card-group mt-3 book">
         <div class="card">
             <div class="card-body text-center">
-                <a href="/book/detail/golang-simple-book"><img src="/public/image/golang.jpg" class="card-img-top" alt="Go 简易教程"></a></a>
+                <a href="/book/detail/golang-simple-book"><img src="/public/image/golang.png" class="card-img-top" alt="Go 简易教程"></a></a>
                 <p class="card-text"><a href="/book/detail/golang-simple-book">《Go 简易教程》</a></p>
             </div>
         </div>
