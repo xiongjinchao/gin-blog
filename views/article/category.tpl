@@ -11,6 +11,7 @@
                 </div>
 
                 <div class="text-center mt-4">
+                    <img src="/public/image/{{ .category.Tag }}.png">
                     <div class="navy-line"></div>
                     <h1 class="font-weight-light navy-title">
                         {{ $len := len .breadcrumb }}
