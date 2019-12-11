@@ -66,6 +66,7 @@ body{font-family:"open sans", "Helvetica Neue", "Helvetica, Arial", sans-serif,"
 /*首页书籍*/
 .container .book.card-group:nth-child(even) .card{border-bottom:none;border-bottom-left-radius:0; border-bottom-right-radius:0}
 .container .book.card-group:nth-child(odd) .card{border-top-left-radius:0; border-top-right-radius:0}
+.container .book.card-group p.card-text{height:2.625rem;}
 
 /*全局链接效果*/
 a, a:hover{text-decoration:none;}
