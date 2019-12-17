@@ -173,6 +173,7 @@ pre.prettyprint ol.linenums{overflow:auto;padding:.5rem 2.5rem;}
 pre.prettyprint ol.linenums li{padding:0 .5rem;background:transparent!important;}
 .editormd-preview-theme-dark pre.prettyprint{background:#2d2d2d!important;}
 .editormd-preview-theme-dark pre.prettyprint ol.linenums li{border-left:1px solid #4d4d4d;}
+.editormd-preview-theme-dark .typ{color:#a6c!important;}
 
 /**==============小屏样式==============**/
 @media (max-width:576px ) {
