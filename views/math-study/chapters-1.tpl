@@ -1,9 +1,10 @@
 {{ define "css" }}
     <style>
-        input{text-align:center;border:none;border-bottom:3px solid #e83e8c;width:5rem;}
+        input{text-align:center;border:none;border-bottom:3px solid #e83e8c;width:4rem;}
         input:focus{outline:none;border:none;border-bottom:3px solid #e83e8c;}
         .card{color:#e83e8c}
-        .subject{display:inline-block;width:10rem;}
+        .number{min-width:3rem;display:inline-block}
+        .score{color:#e83e8c;}
     </style>
 {{ end }}
 
@@ -19,12 +20,12 @@
                 <div class="card mt-4">
                     <div class="card-body bg-transparent text-center" style="font-size:2rem">
                         <i class="fa fa-question-circle text-black-50"></i>
-                        <span class="subject">{{ $v.NumberOne }} {{ $v.Mark }} {{ $v.NumberTwo }} = </span>
-                        <input data-result="{{ $v.Result }}" type="text" value="">
+                        <span><span class="number">{{ $v.NumberOne }}</span> {{ $v.Mark }} <span class="number">{{ $v.NumberTwo }}</span> = </span>
+                        <input data-result="{{ $v.Result }}" type="text" value="{{ $v.Result }}">
                     </div>
                 </div>
                 {{ end }}
-                <button id="calculate" class="btn btn-lg btn-danger w-100 mt-4 mb-4">计算分数</button>
+                <button id="calculate" class="btn btn-lg btn-danger w-100 mt-4 mb-4 p-3">计算分数</button>
             </div>
         </div>
     </div>
@@ -40,7 +41,7 @@
                     <!--内容-->
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-info" data-dismiss="modal">关闭</button>
+                    <button class="btn btn-info" data-dismiss="modal">知道了</button>
                 </div>
             </div>
         </div>
@@ -52,13 +53,13 @@
     <script>
         $(function(){
             $("input").on("blur",function(){
-                $(this).closest('.card').removeClass('border-info');
+                $(this).closest('.card').removeClass('border-primary');
                 if($(this).val() != ''){
                     if($(this).val() != $(this).data("result")){
-                        $(this).closest('.card').removeClass('border-info').addClass('border-danger');
+                        $(this).closest('.card').removeClass('border-primary').addClass('border-danger');
                         $(this).closest('.card').find('i').removeClass('fa-question-circle text-black-50').addClass('fa-close text-danger');
                     }else{
-                        $(this).closest('.card').removeClass('border-info').addClass('border-success');
+                        $(this).closest('.card').removeClass('border-primary').addClass('border-success');
                         $(this).closest('.card').find('i').removeClass('fa-question-circle text-black-50').addClass('fa-check text-success');
                     }
                 }
@@ -66,7 +67,7 @@
 
             $("input").on("focus",function(){
                 $(this).closest('.card').find('i').removeClass('fa-check text-success fa-close text-danger').addClass('fa-question-circle text-black-50');
-                $(this).closest('.card').removeClass('border-danger border-success').addClass('border-info');
+                $(this).closest('.card').removeClass('border-danger border-success').addClass('border-primary');
             });
 
             $("#calculate").on("click",function(){
@@ -80,13 +81,13 @@
                 score = score%1 === 0?score:score.toFixed(2);
                 var html = '';
                 if( score >= 90 ) {
-                    html += '<p><i class="fas fa-4x fa-award text-warning"></i></p><h4>恭喜，你获得: ' + score + ' 分</h4>';
+                    html += '<p><i class="fas fa-4x fa-award text-warning"></i></p><h4>恭喜，你获得: <span class="score">' + score + '</span> 分</h4>';
                 }else if( score >= 80 ) {
-                    html += '<p><i class="fas fa-4x fa-smile-wink text-warning"></i></p><h4>恭喜，你获得: ' + score + ' 分</h4>';
+                    html += '<p><i class="fas fa-4x fa-smile-wink text-warning"></i></p><h4>恭喜，你获得: <span class="score">' + score + '</span> 分</h4>';
                 }else if( score >= 60 ) {
-                    html += '<p><i class="fas fa-4x fa-frown-open text-warning"></i></p><h4>加油，你获得: ' + score + ' 分</h4>';
+                    html += '<p><i class="fas fa-4x fa-frown-open text-warning"></i></p><h4>加油，你获得: <span class="score">' + score + '</span> 分</h4>';
                 }else {
-                    html += '<p><i class="fas fa-4x fa-sad-cry text-warning"></i></p><h4>很遗憾，你获得: ' + score + ' 分</h4>';
+                    html += '<p><i class="fas fa-4x fa-sad-cry text-warning"></i></p><h4>很遗憾，你获得: <span class="score">' + score + '</span> 分</h4>';
                 }
                 $("#result").html(html);
                 $("#result-modal").modal();
