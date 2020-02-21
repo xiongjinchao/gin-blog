@@ -21,7 +21,7 @@
                     <div class="card-body bg-transparent text-center" style="font-size:2rem">
                         <i class="fa fa-question-circle text-black-50"></i>
                         <span><span class="number">{{ $v.NumberOne }}</span> {{ $v.Mark }} <span class="number">{{ $v.NumberTwo }}</span> = </span>
-                        <input data-result="{{ $v.Result }}" type="text" value="{{ $v.Result }}">
+                        <input data-result="{{ $v.Result }}" type="text" value="">
                     </div>
                 </div>
                 {{ end }}
