@@ -220,8 +220,8 @@ type Subject struct {
 // make math subject
 func SubjectChapter1() (subject Subject) {
 
-	numberOne := rand.Int63n(100)
-	numberTwo := rand.Int63n(100)
+	numberOne := rand.Int63n(20)
+	numberTwo := rand.Int63n(20)
 
 	mark := "+"
 	if numberOne > numberTwo {

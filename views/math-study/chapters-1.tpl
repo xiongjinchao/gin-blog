@@ -14,7 +14,7 @@
             <div class="col-lg-12">
                 <div class="text-center"><img src="/public/image/yao-ming.jpg"></div>
                 <input id="count" type="hidden" value="{{len .subjects}}">
-                <h5 class="text-center">100以内的加减法共 {{.count}} 道题，每题 {{.score}} 分</h5>
+                <h5 class="text-center">20以内的加减法共 {{.count}} 道题，每题 {{.score}} 分</h5>
                 {{ range $v := .subjects }}
                 <div class="card mt-4">
                     <div class="card-body bg-transparent text-center" style="font-size:2rem">

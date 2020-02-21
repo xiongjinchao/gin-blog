@@ -16,7 +16,7 @@ func (m *MathStudy) Chapters1(c *gin.Context) {
 	count := 0
 	for {
 		subject := helper.SubjectChapter1()
-		if subject.Result > 0 && subject.Result < 100 {
+		if subject.Result > 0 && subject.Result < 20 {
 			count++
 			subjects = append(subjects, subject)
 		}
@@ -26,7 +26,7 @@ func (m *MathStudy) Chapters1(c *gin.Context) {
 	}
 
 	c.HTML(http.StatusOK, "math-study/chapters-1", gin.H{
-		"title":    "数学题第一章：100以内的加减法练习题" + "-" + config.Setting["app"]["title"],
+		"title":    "数学题第一章：20以内的加减法练习题" + "-" + config.Setting["app"]["title"],
 		"user":     helper.GetUser(c),
 		"menu":     helper.GetMenu(),
 		"count":    len(subjects),
