@@ -6,6 +6,7 @@ import (
 	"gin-blog/models"
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
+	"math/rand"
 	"strconv"
 )
 
@@ -207,4 +208,33 @@ func GetRelatedBookChapter(ID, bookID int64) (bookChapters RelatedBookChapter, e
 		First(&bookChapters.Next).Error
 	(bookChapters.Next).SetTag()
 	return
+}
+
+type Subject struct {
+	NumberOne int64
+	Mark      string
+	NumberTwo int64
+	Result    int64
+}
+
+// make math subject
+func SubjectChapter1() (subject Subject) {
+
+	numberOne := rand.Int63n(100)
+	numberTwo := rand.Int63n(100)
+
+	mark := "+"
+	if numberOne > numberTwo {
+		mark = "-"
+	}
+	result := numberOne + numberTwo
+	if mark == "-" {
+		result = numberOne - numberTwo
+	}
+	return Subject{
+		numberOne,
+		mark,
+		numberTwo,
+		result,
+	}
 }

@@ -4,6 +4,7 @@ import (
 	"gin-blog/config"
 	"gin-blog/controllers"
 	"gin-blog/controllers/blog"
+	"gin-blog/controllers/homework"
 	"gin-blog/controllers/passport"
 	"gin-blog/helper"
 	"gin-blog/middleware"
@@ -81,6 +82,10 @@ func Router() *gin.Engine {
 	// 其他静态页
 	page := &blog.Page{}
 	router.GET("/about", page.About)
+
+	// 家庭作业
+	mathStudy := &homework.MathStudy{}
+	router.GET("/math-study/chapter-1", mathStudy.Chapters1)
 
 	// 登录 退出
 	auth := &controllers.Auth{}
